@@ -17,7 +17,7 @@ const props = defineProps({
 })
  
 const imgSrc = computed(() => {
-    const path = new URL('@/assets/images/', import.meta.url).href;
+    const path = new URL('../assets/images/', import.meta.url).href;
     return `${path}/${props.icon}.png`
 });
 </script>
