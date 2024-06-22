@@ -1,6 +1,6 @@
 <template>
 	<div class="shieldWrapper">
-		<div class="shieldInner" contenteditable :value="props.modelValue" @input="sync($event.target as any)">
+		<div class="shieldInner" contenteditable @input="sync($event.target as any)">
 			{{ props.modelValue }}
 		</div>
 	</div>

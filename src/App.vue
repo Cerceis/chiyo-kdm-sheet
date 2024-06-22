@@ -30,7 +30,7 @@ import CharacterPanel from '@/components/CharacterPanel.vue';
 	display: flex;
 	align-items: center;
 }
-input{
+input, textarea{
 	outline: 1px solid rgba(255,255,255,.3);
 	border-radius: 4px;
 	padding: 0 .25em;
@@ -38,5 +38,7 @@ input{
 	justify-content: center;
 	align-items: center;
 }
-
+.v-expansion-panel-text__wrapper{
+	padding: 0;
+}
 </style>

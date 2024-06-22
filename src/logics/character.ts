@@ -84,7 +84,7 @@ export type Character = {
 		parents: string[],
 		childs: string[],
 	},
-	notes: string[],
+	notes: string,
 }
 
 export const usefulFuncs = {
@@ -177,7 +177,7 @@ export const characterFunc: {
 				parents: [],
 				childs: [],
 			},
-			notes: [],
+			notes: "",
 		};
 		characters.value.push(tmpChar);
 		return tmpChar;
