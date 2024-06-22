@@ -1,9 +1,8 @@
 <template>
-	<img :width="size" :height="size" :src="imgSrc"  />
+	<img :width="size" :height="size" :src="getImgSrc()"  />
 </template>
  
 <script setup lang="ts">
-import { computed } from "vue";
 
 const props = defineProps({
 	icon:{
@@ -16,10 +15,9 @@ const props = defineProps({
 	}
 })
  
-const imgSrc = computed(() => {
-    const path = new URL('../assets/images/', import.meta.url).href;
-    return `${path}/${props.icon}.png`
-});
+const getImgSrc = () => {
+    return new URL(`../assets/images/${props.icon}.png`, import.meta.url).href;
+};
 </script>
  
 <style scoped>
