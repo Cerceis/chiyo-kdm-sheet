@@ -10,7 +10,6 @@ declare module 'vue' {
     BoxInput: typeof import('./src/components/BoxInput.vue')['default']
     CharacterPanel: typeof import('./src/components/CharacterPanel.vue')['default']
     CharacterSheet: typeof import('./src/components/CharacterSheet.vue')['default']
-    HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
     KDMIcon: typeof import('./src/components/KDMIcon.vue')['default']
     Nav: typeof import('./src/components/Nav.vue')['default']
     Shield: typeof import('./src/components/Shield.vue')['default']
