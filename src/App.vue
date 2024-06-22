@@ -21,4 +21,22 @@ import CharacterPanel from '@/components/CharacterPanel.vue';
   font-weight: 400;
   font-style: normal;
 }
+.styledRow{
+	display: flex;
+	align-items: center;
+	gap: .5em;
+}
+.styledRowDense{
+	display: flex;
+	align-items: center;
+}
+input{
+	outline: 1px solid rgba(255,255,255,.3);
+	border-radius: 4px;
+	padding: 0 .25em;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
 </style>

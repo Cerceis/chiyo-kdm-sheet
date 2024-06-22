@@ -1,6 +1,6 @@
 <template>
-	<div class="shieldWrapper">
-		<div class="shieldInner" contenteditable :value="props.modelValue" @input="sync($event.target as any)">
+	<div class="boxWrapper">
+		<div class="boxInner" contenteditable :value="props.modelValue" @input="sync($event.target as any)">
 			{{ props.modelValue }}
 		</div>
 	</div>
@@ -9,10 +9,10 @@
 <script setup lang="ts">
 
 const props = defineProps({
-	modelValue: {
+	modelValue:{
 		type: [String, Number],
 	}
-}) 
+})
 
 const emit = defineEmits(["update:modelValue"])
 
@@ -21,24 +21,24 @@ const sync = (e: HTMLDivElement | null) => {
 	emit("update:modelValue", e.textContent?.trim())
 }
 
+ 
 </script>
  
 <style scoped>
-.shieldWrapper{
+.boxWrapper{
 	position: relative;
+	border: 1px solid rgba(255,255,255,.3);
 	height: 48px;
 	width: 48px;
-	background-image: url("../assets/images/Shield.png");
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center;
+	overflow: hidden;
 }
-.shieldInner{
+.boxInner{
 	position: absolute;
-	left: 50%;
-	transform: translate(-50%, 0);
-	font-size: 26px;
-	min-width: 30px;
+	font-size: 36px;
+	top: -10px;
+	left: 50%; 
+	transform: translateX(-50%);
+	min-width: 36px;
 	text-align: center;
 }
 </style>

@@ -1,3 +1,8 @@
+import { Generate } from "cerceis-lib";
+import { ref, type Ref } from "vue";
+
+export const characters: Ref<Character[]> = ref([]);
+export const graveyard: Ref<Character[]> = ref([]);
 
 type KDMCheckbox = {
 	type: number,
@@ -7,7 +12,8 @@ type BodyPart = {
 	armor: number,
 	injury: { light: boolean, heavy: boolean },
 }
-type Character = {
+export type Character = {
+	id: string,
 	name: string,
 	gender: {
 		m: boolean, f: boolean,
@@ -81,7 +87,7 @@ type Character = {
 	notes: string[],
 }
 
-const usefulFuncs = {
+export const usefulFuncs = {
 	generateKDMCheckbox(types: number[]){
 		const tmp: KDMCheckbox[] = [];
 		types.forEach(t => tmp.push({type: t, value: false}))
@@ -95,11 +101,12 @@ const usefulFuncs = {
 	}
 }
 
-const characterFunc: {
+export const characterFunc: {
 	new: () => Character,
 } = {
 	new(){
-		return {
+		const tmpChar: Character = {
+			id: Generate.objectId(),
 			name: "",
 			gender: {
 				m: false, f: false,
@@ -172,6 +179,8 @@ const characterFunc: {
 			},
 			notes: [],
 		};
+		characters.value.push(tmpChar);
+		return tmpChar;
 	}
 }
 

@@ -11,6 +11,7 @@ import { registerPlugins } from '@/plugins'
 import App from './App.vue';
 import KDMIcon from "./components/KDMIcon.vue";
 import Shield from "./components/Shield.vue";
+import BoxInput from './components/BoxInput.vue';
 
 // Composables
 import { createApp } from 'vue'
@@ -23,4 +24,6 @@ registerPlugins(app)
 
 app.component("KDMIcon", KDMIcon);
 app.component("Shield", Shield);
+app.component("BoxInput", BoxInput);
+
 app.mount('#app')
