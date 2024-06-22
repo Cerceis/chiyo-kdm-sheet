@@ -391,10 +391,10 @@
 			<div>
 				Chronicles
 				<table>
-					<tr><td>Age</td><td><input v-moel="c.chronicles.age" type="text" /></td></tr>
-					<tr><td>Born</td><td><input v-moel="c.chronicles.born" type="text" /></td></tr>
-					<tr><td>Death</td><td><input v-moel="c.chronicles.death" type="text" /></td></tr>
-					<tr><td>Cause</td><td><textarea v-moel="c.chronicles.cause" type="text" /></td></tr>
+					<tr><td>Age</td><td><input v-model="c.chronicles.age" type="text" /></td></tr>
+					<tr><td>Born</td><td><input v-model="c.chronicles.born" type="text" /></td></tr>
+					<tr><td>Death</td><td><input v-model="c.chronicles.death" type="text" /></td></tr>
+					<tr><td>Cause</td><td><textarea v-model="c.chronicles.cause" type="text" /></td></tr>
 				</table>
 			</div>
 			<v-divider class="mx-3" vertical/>
