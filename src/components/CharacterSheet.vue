@@ -412,7 +412,7 @@
 					</v-btn>	
 				</div>
 				<div class="styledRow">
-					Childrens
+					Children
 					<v-btn @click="c.family.childs.push('')" color="success" size="18">
 						<v-icon>mdi-plus</v-icon>
 					</v-btn>	

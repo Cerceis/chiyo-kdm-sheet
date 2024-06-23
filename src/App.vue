@@ -11,6 +11,13 @@
 <script setup lang="ts">
 import Nav from "@/components/Nav.vue";
 import CharacterPanel from '@/components/CharacterPanel.vue';
+import { load } from "@/logics/system";
+import { onMounted } from "vue";
+
+onMounted(() => {
+	load();
+})
+
 </script>
 
 <style>
