@@ -3,15 +3,20 @@
 		<v-main>
 			<Nav />
 			<v-divider class="my-1" />
-			<CharacterPanel />
+			<CharacterPanel v-if="survivorView" :key="`cp-${refreshKey}`" />
+			<SettlementPanel v-else :key="`sp-${refreshKey}`" />
 		</v-main>
+		<Popup />
 	</v-app>
 </template>
 
 <script setup lang="ts">
 import Nav from "@/components/Nav.vue";
+import Popup from "@/components/Popup.vue";
 import CharacterPanel from '@/components/CharacterPanel.vue';
+import SettlementPanel from "@/components/SettlementPanel.vue";
 import { load } from "@/logics/system";
+import { survivorView, refreshKey } from "@/logics/global";
 import { onMounted } from "vue";
 
 onMounted(() => {
@@ -19,14 +24,18 @@ onMounted(() => {
 })
 
 </script>
-
+  
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+html{
+	overflow: hidden;
+}
+
 *{
-  font-family: "Playfair Display", serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
+	font-family: "Oswald", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 400;
+	font-style: normal;
 }
 .styledRow{
 	display: flex;
@@ -47,5 +56,9 @@ input, textarea{
 }
 .v-expansion-panel-text__wrapper{
 	padding: 0;
+}
+.largeCheckbox{
+	width: 24px;
+	height: 24px;
 }
 </style>

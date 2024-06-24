@@ -1,12 +1,15 @@
 import { Ref, ref, watch } from "vue";
-import { characters } from "@/logics/character";
+import { characters, archive } from "@/logics/character";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
+import { refreshKey } from "@/logics/global";
+
 dayjs.extend(relativeTime)
 
 export const saving: Ref<boolean> = ref(false);
 let lastSaved = dayjs();
 export const lastSavedString: Ref<string> = ref(lastSaved.fromNow());
+export const notSavedYet: Ref<boolean> = ref(true);
 
 // Time interval
 setInterval(() => {
@@ -16,25 +19,37 @@ setInterval(() => {
 export const save = () => {
 	saving.value = true;
 	const root = {
-		survivors: characters.value
+		survivors: characters.value,
+		archive: archive.value
 	}
-	localStorage.setItem("chiyoKDMSaveString", JSON.stringify(root));
+	const saveString = JSON.stringify(root);
+	localStorage.setItem("chiyoKDMSaveString", saveString);
 	lastSaved = dayjs();
 	saving.value = false;
+	notSavedYet.value = false;
+	return saveString;
 }
 
-export const load = () => {
-	const saveString = localStorage.getItem("chiyoKDMSaveString");
+export const load = (inputString?: string) => {
+	let saveString = null;
+	if(inputString){
+		saveString = inputString;
+	}else{
+		saveString = localStorage.getItem("chiyoKDMSaveString");
+	}
 	if(!saveString) return;
 	const parsedSaveString = JSON.parse(saveString);
-	characters.value = parsedSaveString.survivors;
+	characters.value = parsedSaveString.survivors ?? [];
+	archive.value = parsedSaveString.archive ?? [];
+	refreshKey.value ++;
 }
 
 let saveTimeout: any = null;
 
 watch(
-	() => characters.value,
+	() => characters.value || archive.value,
 	() => {
+		notSavedYet.value = true;
 		if(saveTimeout) clearTimeout(saveTimeout);
 		saveTimeout = setTimeout(() => {
 			save();

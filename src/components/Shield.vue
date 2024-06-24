@@ -35,8 +35,9 @@ const sync = (e: HTMLDivElement | null) => {
 }
 .shieldInner{
 	position: absolute;
+	top: 50%;
 	left: 50%;
-	transform: translate(-50%, 0);
+	transform: translate(-50%, -50%);
 	font-size: 26px;
 	min-width: 30px;
 	text-align: center;

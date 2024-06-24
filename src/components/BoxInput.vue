@@ -65,9 +65,9 @@ const sync = (e: HTMLDivElement | null) => {
 .boxInner{
 	position: absolute;
 	font-size: 36px;
-	top: -10px;
+	top: 50%;
 	left: 50%; 
-	transform: translateX(-50%);
+	transform: translate(-50%, -50%);
 	min-width: 36px;
 	text-align: center;
 }

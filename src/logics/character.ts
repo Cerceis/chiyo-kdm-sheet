@@ -1,10 +1,11 @@
 import { Generate } from "cerceis-lib";
 import { ref, type Ref } from "vue";
+import { Popup } from "@/logics/popup";
 
 export const characters: Ref<Character[]> = ref([]);
-export const graveyard: Ref<Character[]> = ref([]);
+export const archive: Ref<Character[]> = ref([]);
 
-type KDMCheckbox = {
+export type KDMCheckbox = {
 	type: number,
 	value: boolean,
 }
@@ -14,6 +15,7 @@ type BodyPart = {
 }
 export type Character = {
 	id: string,
+	type: "character",
 	name: string,
 	gender: {
 		m: boolean, f: boolean,
@@ -103,11 +105,15 @@ export const usefulFuncs = {
 
 export const characterFunc: {
 	new: () => Character,
+	moveToArchive: (c: Character) => void,
+	eraseSurvivor: (c: Character) => Promise<void>,
+	revive: (c: Character) => void,
 } = {
 	new(){
 		const tmpChar: Character = {
 			id: Generate.objectId(),
-			name: "",
+			type: "character",
+			name: "Unnamed Survivor",
 			gender: {
 				m: false, f: false,
 			},
@@ -160,27 +166,60 @@ export const characterFunc: {
 			},
 			fightingArts: {
 				locked: false,
-				values: [],
+				values: [""],
 			},
 			disorders: {
-				values: [],
+				values: [""],
 			},
 			abilitiesNImpairments: {
 				locked: false,
-				values: [],
+				values: [""],
 			},
 			oncePerLifetime: {
 				locked: false,
-				values: [],
+				values: [""],
 			},
 			family:{
-				parents: [],
-				childs: [],
+				parents: [""],
+				childs: [""],
 			},
 			notes: "",
 		};
 		characters.value.push(tmpChar);
 		return tmpChar;
+	},
+	moveToArchive(c: Character){
+		for(let i = 0; i < characters.value.length; i++){
+			if(characters.value[i].id === c.id){
+				archive.value.push(c)
+				characters.value.splice(i, 1);
+				return;
+			}
+		}
+	},
+	async eraseSurvivor(c: Character){
+		const confirmation = new Popup({
+			title: "Delete",
+			color: "error",
+			text: "You are about to permenantly delete a survivor. The data cannot be restore afterwards. Are you sure you want to proceed?"
+		})
+		const confirmed = await confirmation.prompt();
+		if(!confirmed) return;
+		for(let i = 0; i < archive.value.length; i++){
+			if(archive.value[i].id === c.id){
+				archive.value.splice(i, 1);
+				break;
+			}
+		}
+	},
+	revive(c: Character){
+		for(let i = 0; i < archive.value.length; i++){
+			if(archive.value[i].id === c.id){
+				characters.value.push(c)
+				archive.value.splice(i, 1);
+				return;
+			}
+		}
 	}
 }
 

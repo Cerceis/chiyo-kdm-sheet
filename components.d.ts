@@ -10,8 +10,12 @@ declare module 'vue' {
     BoxInput: typeof import('./src/components/BoxInput.vue')['default']
     CharacterPanel: typeof import('./src/components/CharacterPanel.vue')['default']
     CharacterSheet: typeof import('./src/components/CharacterSheet.vue')['default']
+    copy: typeof import('./src/components/SettlementPanel copy.vue')['default']
     KDMIcon: typeof import('./src/components/KDMIcon.vue')['default']
     Nav: typeof import('./src/components/Nav.vue')['default']
+    Popup: typeof import('./src/components/Popup.vue')['default']
+    SettlementPanel: typeof import('./src/components/SettlementPanel.vue')['default']
+    SettlementSheet: typeof import('./src/components/SettlementSheet.vue')['default']
     Shield: typeof import('./src/components/Shield.vue')['default']
   }
 }
