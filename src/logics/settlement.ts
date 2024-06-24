@@ -1,6 +1,7 @@
 import { Generate } from "cerceis-lib";
 import { ref, type Ref } from "vue";
 import { Popup } from "@/logics/popup";
+import { archive } from "@/logics/character";
 
 export const settlements: Ref<Settlement[]> = ref([]);
 
@@ -32,8 +33,8 @@ export type Settlement = {
 	namesis: {
 		text: string, value: boolean, level: boolean[]
 	}[],
-	resourceStorage: string[],
-	gearStorage: string[],
+	resourceStorage: {text: string, count: number}[],
+	gearStorage: {text: string, count: number}[],
 	lanternResearchLevel: number,
 	monsterVolumes: string[]
 	notes: string,
@@ -128,8 +129,8 @@ export const settlementFunc = {
 				{ text: "King's Man", value: false, level: [false, false, false] },
 				{ text: "The Hand", value: false, level: [false, false, false] },
 			],
-			resourceStorage: [""],
-			gearStorage: [""],
+			resourceStorage: [{text:'', count:0}],
+			gearStorage: [{text:'', count:0}],
 			lanternResearchLevel: 0,
 			monsterVolumes: [""],
 			notes: "",
@@ -137,5 +138,38 @@ export const settlementFunc = {
 		}
 		settlements.value.push(tmpSettlement);
 		return tmpSettlement;
+	},
+	moveToArchive(s: Settlement){
+		for(let i = 0; i < settlements.value.length; i++){
+			if(settlements.value[i].id === s.id){
+				archive.value.push(s)
+				settlements.value.splice(i, 1);
+				return;
+			}
+		}
+	},
+	async eraseSettlement(c: Settlement){
+		const confirmation = new Popup({
+			title: "Delete",
+			color: "error",
+			text: "You are about to permenantly delete a settlement. The data cannot be restore afterwards. Are you sure you want to proceed?"
+		})
+		const confirmed = await confirmation.prompt();
+		if(!confirmed) return;
+		for(let i = 0; i < archive.value.length; i++){
+			if(archive.value[i].id === c.id){
+				archive.value.splice(i, 1);
+				break;
+			}
+		}
+	},
+	restore(s: Settlement){
+		for(let i = 0; i < archive.value.length; i++){
+			if(archive.value[i].id === s.id){
+				settlements.value.push(s)
+				archive.value.splice(i, 1);
+				return;
+			}
+		}
 	}
 }

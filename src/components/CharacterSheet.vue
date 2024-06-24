@@ -495,10 +495,10 @@
 			</table>
 		</div>
 		<v-divider class="mt-1" />
-		<div class="d-flex justify-center">
+		<div class="d-flex justify-center pb-3">
 			<div>
 				Notes
-				<textarea v-model="c.notes" cols="125" rows="5"></textarea>
+				<textarea v-model="c.notes" cols="100" rows="5"></textarea>
 			</div>
 		</div>
 	</div>

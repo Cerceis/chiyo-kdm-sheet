@@ -22,30 +22,18 @@
 				</div>
 				<v-divider class="my-1" />
 				<div class="d-flex justify-end gap-1">
-					<!---v-tooltip text="Move to archive">
+					<v-tooltip text="Move to archive">
 						<template v-slot:activator="{ props }">
 							<v-btn
 								v-bind="props"
-								@click="$event.stopPropagation(); characterFunc.moveToArchive(settlement)"
+								@click="$event.stopPropagation(); settlementFunc.moveToArchive(settlement)"
 								color="primary"
 								size="32"
 							>
 								<v-icon>mdi-grave-stone</v-icon>
 							</v-btn>
 						</template>
-					</!---v-tooltip>
-					<v-tooltip--- text="Set as monster controller">
-						<template v-slot:activator="{ props }">
-							<v-btn
-								v-bind="props"
-								@click="$event.stopPropagation(); monsterController = settlement.id"
-								color="primary"
-								size="32"
-							>
-								<v-icon>mdi-brain</v-icon>
-							</v-btn>
-						</template>
-					</v-tooltip--->
+					</v-tooltip>
 				</div>
 			</v-list-item>
 		</div>

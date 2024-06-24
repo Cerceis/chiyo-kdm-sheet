@@ -36,7 +36,9 @@
 						<input class="largeCheckbox" v-model="timeline.value" type="checkbox">
 					</td>
 					<td class="borderLeft">LY {{timeline.year}}</td>
-					<td>{{timeline.text}}</td>
+					<td>
+						<input type="text" v-model="timeline.text" style="width: 280px;">
+					</td>
 				</tr>
 			</table>
 			<div class="grid justify-center">
@@ -227,15 +229,19 @@
 			<table>
 				<tr>
 					<td>Resource Storage</td>
+					<td></td>
 					<td>
-						<v-btn @click="s.resourceStorage.push('')" color="success" size="24">
+						<v-btn @click="s.resourceStorage.push({text:'', count:1})" color="success" size="24">
 							<v-icon>mdi-plus</v-icon>
 						</v-btn>	
 					</td>
 				</tr>
 				<tr v-for="(v, i) in s.resourceStorage">
 					<td>
-						<input type="text" v-model="s.resourceStorage[i]" />
+						<input type="text" v-model="s.resourceStorage[i].text" />
+					</td>
+					<td>
+						<input type="number" v-model="s.resourceStorage[i].count" style="width:48px" />
 					</td>
 					<td>
 						<v-btn @click="s.resourceStorage.splice(i, 1)" color="error" size="24">
@@ -248,15 +254,19 @@
 			<table>
 				<tr>
 					<td>Gear Storage</td>
+					<td></td>
 					<td>
-						<v-btn @click="s.gearStorage.push('')" color="success" size="24">
+						<v-btn @click="s.gearStorage.push({text:'', count:1})" color="success" size="24">
 							<v-icon>mdi-plus</v-icon>
 						</v-btn>	
 					</td>
 				</tr>
 				<tr v-for="(v, i) in s.gearStorage">
 					<td>
-						<input type="text" v-model="s.gearStorage[i]" />
+						<input type="text" v-model="s.gearStorage[i].text" />
+					</td>
+					<td>
+						<input type="number" v-model="s.gearStorage[i].count" style="width:48px" />
 					</td>
 					<td>
 						<v-btn @click="s.gearStorage.splice(i, 1)" color="error" size="24">
@@ -265,6 +275,13 @@
 					</td>
 				</tr>
 			</table>
+		</div>
+		<v-divider class="mt-1" />
+		<div class="d-flex justify-center pb-3">
+			<div>
+				Notes
+				<textarea v-model="s.notes" cols="100" rows="5"></textarea>
+			</div>
 		</div>
 	</div>
 </template>

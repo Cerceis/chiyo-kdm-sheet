@@ -35,19 +35,35 @@
 				>
 					<v-icon>mdi-grave-stone</v-icon>
 					<v-menu activator="parent" :close-on-content-click="false">
-						<v-list v-for="survivor in archive" density="compact" class="border">
-							<v-list-item :title="survivor.name">
-								<template v-slot:append>
-									<div class="d-flex ml-3 gap-1">
-										<v-btn @click="characterFunc.revive(survivor)" color="primary" size="x-small">
-											Revive
-										</v-btn>
-										<v-btn @click="characterFunc.eraseSurvivor(survivor)" color="primary" size="x-small">
-											Erase
-										</v-btn>
-									</div>
-								</template>
-							</v-list-item>
+						<v-list v-for="item in archive" density="compact" class="border">
+							<template v-if="item.type === 'character'">
+								<v-list-item :title="item.name">
+									<template v-slot:append>
+										<div class="d-flex ml-3 gap-1">
+											<v-btn @click="characterFunc.restore(item)" color="primary" size="x-small">
+												Revive
+											</v-btn>
+											<v-btn @click="characterFunc.eraseSurvivor(item)" color="primary" size="x-small">
+												Erase
+											</v-btn>
+										</div>
+									</template>
+								</v-list-item>
+							</template>
+							<template v-if="item.type === 'settlement'">
+								<v-list-item :title="item.settlementName">
+									<template v-slot:append>
+										<div class="d-flex ml-3 gap-1">
+											<v-btn @click="settlementFunc.restore(item)" color="primary" size="x-small">
+												Revive
+											</v-btn>
+											<v-btn @click="settlementFunc.eraseSettlement(item)" color="primary" size="x-small">
+												Erase
+											</v-btn>
+										</div>
+									</template>
+								</v-list-item>
+							</template>
 						</v-list>
 					</v-menu>
 				</v-btn>

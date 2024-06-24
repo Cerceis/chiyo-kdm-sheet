@@ -1,8 +1,11 @@
 import { Ref, ref, watch } from "vue";
 import { characters, archive } from "@/logics/character";
+import { settlements } from "@/logics/settlement";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 import { refreshKey } from "@/logics/global";
+
+// Settlements can be moved to archive too
 
 dayjs.extend(relativeTime)
 
@@ -20,7 +23,8 @@ export const save = () => {
 	saving.value = true;
 	const root = {
 		survivors: characters.value,
-		archive: archive.value
+		archive: archive.value,
+		settlements: settlements.value
 	}
 	const saveString = JSON.stringify(root);
 	localStorage.setItem("chiyoKDMSaveString", saveString);
@@ -41,6 +45,7 @@ export const load = (inputString?: string) => {
 	const parsedSaveString = JSON.parse(saveString);
 	characters.value = parsedSaveString.survivors ?? [];
 	archive.value = parsedSaveString.archive ?? [];
+	settlements.value = parsedSaveString.settlements ?? [];
 	refreshKey.value ++;
 }
 

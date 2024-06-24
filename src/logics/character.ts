@@ -1,9 +1,10 @@
 import { Generate } from "cerceis-lib";
 import { ref, type Ref } from "vue";
 import { Popup } from "@/logics/popup";
+import { Settlement } from "@/logics/settlement";
 
 export const characters: Ref<Character[]> = ref([]);
-export const archive: Ref<Character[]> = ref([]);
+export const archive: Ref<(Character | Settlement)[]> = ref([]);
 
 export type KDMCheckbox = {
 	type: number,
@@ -107,7 +108,7 @@ export const characterFunc: {
 	new: () => Character,
 	moveToArchive: (c: Character) => void,
 	eraseSurvivor: (c: Character) => Promise<void>,
-	revive: (c: Character) => void,
+	restore: (c: Character) => void,
 } = {
 	new(){
 		const tmpChar: Character = {
@@ -212,7 +213,7 @@ export const characterFunc: {
 			}
 		}
 	},
-	revive(c: Character){
+	restore(c: Character){
 		for(let i = 0; i < archive.value.length; i++){
 			if(archive.value[i].id === c.id){
 				characters.value.push(c)
