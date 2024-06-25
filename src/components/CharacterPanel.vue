@@ -18,7 +18,13 @@
 						v-if="survivor.id === monsterController" class="mr-1"
 						color="warning"
 					>mdi-brain</v-icon>
+					<v-icon 
+						v-if="survivor.dead" class="mr-1"
+						color="red"
+					>mdi-emoticon-dead-outline</v-icon>
 					<span>{{ survivor.name }}</span>
+					<v-divider class="my-1"/>
+					<CharacterSummary :c="survivor" />
 				</div>
 				<v-divider class="my-1" />
 				<div class="d-flex justify-end gap-1">
@@ -59,6 +65,7 @@
 import { ref, Ref, computed } from "vue";
 import { characters, characterFunc, Character } from '@/logics/character';
 import CharacterSheet from '@/components/CharacterSheet.vue';
+import CharacterSummary from "@/components/CharacterSummary.vue";
 
 const keyword: Ref<string> = ref("");
 const selectedCharacter: Ref<Character | null> = ref(null);

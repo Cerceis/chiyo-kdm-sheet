@@ -3,8 +3,17 @@ import { ref, type Ref } from "vue";
 import { Popup } from "@/logics/popup";
 import { Settlement } from "@/logics/settlement";
 
+/**
+ * How to update schema.
+ * 1) Increase currentVersion by 1.
+ * 2) Create versionUpdaterFunctions for the newly created version.
+ * Done.
+ * Smae goes for settlements
+ */
+
 export const characters: Ref<Character[]> = ref([]);
 export const archive: Ref<(Character | Settlement)[]> = ref([]);
+const currentVersion = 1;
 
 export type KDMCheckbox = {
 	type: number,
@@ -15,9 +24,11 @@ type BodyPart = {
 	injury: { light: boolean, heavy: boolean },
 }
 export type Character = {
+	v: number,
 	id: string,
 	type: "character",
 	name: string,
+	dead: boolean,
 	gender: {
 		m: boolean, f: boolean,
 	},
@@ -109,12 +120,15 @@ export const characterFunc: {
 	moveToArchive: (c: Character) => void,
 	eraseSurvivor: (c: Character) => Promise<void>,
 	restore: (c: Character) => void,
+	update: (c: Character) => void,
 } = {
 	new(){
 		const tmpChar: Character = {
+			v: currentVersion,
 			id: Generate.objectId(),
 			type: "character",
 			name: "Unnamed Survivor",
+			dead: false,
 			gender: {
 				m: false, f: false,
 			},
@@ -221,6 +235,22 @@ export const characterFunc: {
 				return;
 			}
 		}
+	},
+	update(c: Character){
+		if(!c) return;
+		if(!c.type) return;
+		if(c.type !== "character") return;
+		if(!c.v) c.v = 0;
+		while(c.v < currentVersion)	{
+			const upgradeTo: number = ++c.v;
+			versionUpdaterFunctions[upgradeTo](c)
+		}
+	}
+}
+
+const versionUpdaterFunctions: any = {
+	1:(c: Character) => {
+		c.dead = false;
 	}
 }
 

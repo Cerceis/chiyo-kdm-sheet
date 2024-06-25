@@ -4,6 +4,7 @@ import { Popup } from "@/logics/popup";
 import { archive } from "@/logics/character";
 
 export const settlements: Ref<Settlement[]> = ref([]);
+const currentVersion = 1;
 
 export type SettlementTimeline = {
 	value: boolean,
@@ -16,6 +17,7 @@ export type CheckboxTextItem = {
 }
 
 export type Settlement = {
+	v: number,
 	id: string,
 	type: "settlement",
 	settlementName: string,
@@ -84,6 +86,7 @@ export const settlementFunc = {
 	},
 	new(){
 		const tmpSettlement: Settlement = {
+			v: currentVersion,
 			id: Generate.objectId(),
 			type: "settlement",
 			settlementName: "Unnamed Settlement",
@@ -171,5 +174,19 @@ export const settlementFunc = {
 				return;
 			}
 		}
+	},
+	update(s: Settlement){
+		if(!s) return;
+		if(!s.type) return;
+		if(s.type !== "settlement") return;
+		if(!s.v) s.v = 0;
+		while(s.v < currentVersion)	{
+			const upgradeTo: number = ++s.v;
+			versionUpdaterFunctions[upgradeTo](s)
+		}
 	}
+}
+
+const versionUpdaterFunctions: any = {
+	1:(s: Settlement) => {}
 }

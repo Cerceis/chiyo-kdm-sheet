@@ -7,6 +7,7 @@
 					<input v-model="c.name"/>
 					<v-checkbox v-model="c.gender.m" label="M" density="compact" hide-details/>
 					<v-checkbox v-model="c.gender.f" label="F" density="compact" hide-details/>
+					<v-checkbox v-model="c.dead" label="Dead" density="compact" hide-details/>
 				</div>
 				<v-divider class="mb-2" />
 				<div class="text-caption caption">When you name your survivor, gain +1 survival</div>
@@ -537,18 +538,5 @@ defineProps({
 	max-height: 8px;
 	border-radius: 1px;
 	border: 1px solid black;;
-}
-.crossText{
-	position: relative;  
-}
-.crossText:after {
-  position: absolute;
-  left: 0;
-  top: 50%;
-  height: 1px;
-  background: #c00;
-  content: "";
-  width: 100%;
-  display: block;
 }
 </style>

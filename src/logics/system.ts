@@ -1,5 +1,5 @@
 import { Ref, ref, watch } from "vue";
-import { characters, archive } from "@/logics/character";
+import { characters, archive, characterFunc, Character } from "@/logics/character";
 import { settlements } from "@/logics/settlement";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
@@ -43,22 +43,32 @@ export const load = (inputString?: string) => {
 	}
 	if(!saveString) return;
 	const parsedSaveString = JSON.parse(saveString);
-	characters.value = parsedSaveString.survivors ?? [];
-	archive.value = parsedSaveString.archive ?? [];
+	characters.value = parsedSaveString.survivors.map( (c: Character) => {characterFunc.update(c); return c}) ?? [];
+	archive.value = parsedSaveString.archive.map( (c: Character) => {characterFunc.update(c); return c}) ?? [];
 	settlements.value = parsedSaveString.settlements ?? [];
 	refreshKey.value ++;
 }
 
 let saveTimeout: any = null;
-
+const watchedFunc = () => {
+	notSavedYet.value = true;
+	if(saveTimeout) clearTimeout(saveTimeout);
+	saveTimeout = setTimeout(() => {
+		save();
+	}, 5000)
+}
 watch(
-	() => characters.value || archive.value,
-	() => {
-		notSavedYet.value = true;
-		if(saveTimeout) clearTimeout(saveTimeout);
-		saveTimeout = setTimeout(() => {
-			save();
-		}, 5000)
-	},
+	() => characters.value,
+	() => { watchedFunc	()},
+	{ deep: true }
+)
+watch(
+	() => archive.value,
+	() => { watchedFunc	()},
+	{ deep: true }
+)
+watch(
+	() => settlements.value,
+	() => { watchedFunc	()},
 	{ deep: true }
 )

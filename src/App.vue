@@ -61,4 +61,17 @@ input, textarea{
 	width: 24px;
 	height: 24px;
 }
+.crossText{
+	position: relative;  
+}
+.crossText:after {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  height: 1px;
+  background: #c00;
+  content: "";
+  width: 100%;
+  display: block;
+}
 </style>

@@ -1,7 +1,9 @@
 <template>
 	<div class="ma-1 d-flex gap-1 align-center">
 		Chiyo KDM Sheet 
-		<div class="caption text-caption">v0.9</div>
+		<div class="caption text-caption">
+			v0.99
+		</div>
 		<v-btn  color="primary" size="small" @click="characterFunc.new()">
 			<v-icon>mdi-plus</v-icon>
 			New Survivor
@@ -41,7 +43,7 @@
 									<template v-slot:append>
 										<div class="d-flex ml-3 gap-1">
 											<v-btn @click="characterFunc.restore(item)" color="primary" size="x-small">
-												Revive
+												Restore
 											</v-btn>
 											<v-btn @click="characterFunc.eraseSurvivor(item)" color="primary" size="x-small">
 												Erase
@@ -55,7 +57,7 @@
 									<template v-slot:append>
 										<div class="d-flex ml-3 gap-1">
 											<v-btn @click="settlementFunc.restore(item)" color="primary" size="x-small">
-												Revive
+												Restore
 											</v-btn>
 											<v-btn @click="settlementFunc.eraseSettlement(item)" color="primary" size="x-small">
 												Erase
@@ -127,6 +129,10 @@
 				Saved: {{ lastSavedString }}
 			</template>
 		</v-btn>
+		<div class="styledRow">
+			<v-chip density="compact" class="text-caption" color="secondary">KDM: 1.6</v-chip>
+			<v-chip density="compact" class="text-caption crossText" color="secondary">GCE</v-chip>
+		</div>
 		<v-dialog v-model="showDialog" persistent>
 			<v-sheet class="pa-3">
 				<div class="styledRow justify-space-between">
