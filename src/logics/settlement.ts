@@ -184,6 +184,27 @@ export const settlementFunc = {
 			const upgradeTo: number = ++s.v;
 			versionUpdaterFunctions[upgradeTo](s)
 		}
+	},
+	move(sid: string, state: 1 | -1){
+		for(let i = 0; i<settlements.value.length; i++){
+			if(settlements.value[i].id === sid){
+				// Invalid movement
+				if(
+					(i === 0 && state === -1) ||
+					(i === settlements.value.length - 1 && state === 1)
+				) return;
+				// Move back
+				if(state === 1){
+					[settlements.value[i], settlements.value[i+1]] = [settlements.value[i+1], settlements.value[i]];
+					return;
+				}
+				// Move front
+				if(state === -1){
+					[settlements.value[i], settlements.value[i-1]] = [settlements.value[i-1], settlements.value[i]];
+					return;
+				}
+			}
+		}
 	}
 }
 

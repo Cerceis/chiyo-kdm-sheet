@@ -31,21 +31,27 @@
 		</div>
 		<table class="text-caption">
 			<tr>
-				<td>Move</td>
+				<td :class="c.survival.locked?'crossText':''">Survi</td>
+				<td :class="c.survival.locked?'crossText':''">{{ c.survival.value }}</td>
+				<td>Hunt XP</td>
+				<td>{{ c.huntExp.reduce((a,b) => a + (b.value ? 1 : 0),0) }}</td>
+			</tr>
+			<tr>
+				<td>Mov</td>
 				<td>{{ c.movement.base + c.movement.gear }}</td>
-				<td>Accu</td>
+				<td>Acc</td>
 				<td>{{ c.accuracy.base + c.accuracy.gear }}</td>
 			</tr>
 			<tr>
-				<td>Stre</td>
+				<td>Str</td>
 				<td>{{ c.strength.base + c.strength.gear }}</td>
 				<td>Evas</td>
 				<td>{{ c.evasion.base + c.evasion.gear }}</td>
 			</tr>
 			<tr>
-				<td>Luck</td>
+				<td>Luc</td>
 				<td>{{ c.luck.base + c.luck.gear }}</td>
-				<td>Sped</td>
+				<td>Spd</td>
 				<td>{{ c.speed.base + c.speed.gear }}</td>
 			</tr>
 			<tr>
@@ -54,10 +60,7 @@
 				<td>Under</td>
 				<td>{{ c.understanding.level.reduce((a,b) => a + (b.value ? 1 : 0),0) }}</td>
 			</tr>
-			<tr>
-				<td colspan="2" >Hunt XP</td>
-				<td colspan="2">{{ c.huntExp.reduce((a,b) => a + (b.value ? 1 : 0),0) }}</td>
-			</tr>
+			
 		</table>
 	</div>
 </template>

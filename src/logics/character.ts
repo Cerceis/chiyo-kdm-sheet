@@ -121,6 +121,7 @@ export const characterFunc: {
 	eraseSurvivor: (c: Character) => Promise<void>,
 	restore: (c: Character) => void,
 	update: (c: Character) => void,
+	move: (id: string, state: 1 | -1) => void,
 } = {
 	new(){
 		const tmpChar: Character = {
@@ -244,6 +245,27 @@ export const characterFunc: {
 		while(c.v < currentVersion)	{
 			const upgradeTo: number = ++c.v;
 			versionUpdaterFunctions[upgradeTo](c)
+		}
+	},
+	move(cid, state: 1 | -1){
+		for(let i = 0; i<characters.value.length; i++){
+			if(characters.value[i].id === cid){
+				// Invalid movement
+				if(
+					(i === 0 && state === -1) ||
+					(i === characters.value.length - 1 && state === 1)
+				) return;
+				// Move back
+				if(state === 1){
+					[characters.value[i], characters.value[i+1]] = [characters.value[i+1], characters.value[i]];
+					return;
+				}
+				// Move front
+				if(state === -1){
+					[characters.value[i], characters.value[i-1]] = [characters.value[i-1], characters.value[i]];
+					return;
+				}
+			}
 		}
 	}
 }

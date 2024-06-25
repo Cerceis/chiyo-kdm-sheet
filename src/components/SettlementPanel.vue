@@ -12,6 +12,7 @@
 				v-for="settlement in filteredSettlement" 
 				class="settlementCard"
 				@click="selectedSettlement = settlement;"
+				style="min-height: 80px;"
 			>
 				<div>
 					<v-icon 
@@ -22,6 +23,30 @@
 				</div>
 				<v-divider class="my-1" />
 				<div class="d-flex justify-end gap-1">
+					<v-tooltip text="Move up">
+						<template v-slot:activator="{ props }">
+							<v-btn
+								v-bind="props"
+								@click="$event.stopPropagation(); settlementFunc.move(settlement.id, -1)"
+								color="primary"
+								size="32"
+							>
+								<v-icon>mdi-arrow-up-bold</v-icon>
+							</v-btn>
+						</template>
+					</v-tooltip>
+					<v-tooltip text="Move down">
+						<template v-slot:activator="{ props }">
+							<v-btn
+								v-bind="props"
+								@click="$event.stopPropagation(); settlementFunc.move(settlement.id, 1)"
+								color="primary"
+								size="32"
+							>
+								<v-icon>mdi-arrow-down-bold</v-icon>
+							</v-btn>
+						</template>
+					</v-tooltip>
 					<v-tooltip text="Move to archive">
 						<template v-slot:activator="{ props }">
 							<v-btn
@@ -67,7 +92,7 @@ const filteredSettlement = computed( () => {
 	align-content: start;
 	width: 280px;
 	max-width: 280px;
-	height: calc(100vh - 56px);
+	height: calc(100vh - 56px - 40px);
 	overflow-x: hidden;
 	overflow-y: scroll;
 }
