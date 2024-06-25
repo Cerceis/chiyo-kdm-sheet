@@ -2,7 +2,7 @@
 	<div class="ma-1 d-flex gap-1 align-center">
 		Chiyo KDM Sheet 
 		<div class="caption text-caption">
-			v1.01
+			v1.02
 		</div>
 		<v-btn  color="primary" size="small" @click="characterFunc.new()">
 			<v-icon>mdi-plus</v-icon>

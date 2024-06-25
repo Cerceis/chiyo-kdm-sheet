@@ -229,7 +229,11 @@
 			<table>
 				<tr>
 					<td>Resource Storage</td>
-					<td></td>
+					<td align="right">
+						<v-btn size="24" color="primary" @click="s.resourceStorage.sort((a,b) => a.text.localeCompare(b.text))">
+							<v-icon>mdi-sort-alphabetical-ascending</v-icon>
+						</v-btn>
+					</td>
 					<td>
 						<v-btn @click="s.resourceStorage.push({text:'', count:1})" color="success" size="24">
 							<v-icon>mdi-plus</v-icon>
@@ -254,7 +258,11 @@
 			<table>
 				<tr>
 					<td>Gear Storage</td>
-					<td></td>
+					<td align="right">
+						<v-btn size="24" color="primary" @click="s.gearStorage.sort((a,b) => a.text.localeCompare(b.text))">
+							<v-icon>mdi-sort-alphabetical-ascending</v-icon>
+						</v-btn>
+					</td>
 					<td>
 						<v-btn @click="s.gearStorage.push({text:'', count:1})" color="success" size="24">
 							<v-icon>mdi-plus</v-icon>
