@@ -238,7 +238,7 @@
 				</tr>
 				<tr v-for="(v, i) in s.resourceStorage">
 					<td>
-						<input type="text" v-model="s.resourceStorage[i].text" />
+						<input @keyup="triggerNewLine($event, () => s.resourceStorage.push({text:'', count:1}) )" type="text" v-model="s.resourceStorage[i].text" />
 					</td>
 					<td>
 						<input type="number" v-model="s.resourceStorage[i].count" style="width:48px" />
@@ -263,7 +263,7 @@
 				</tr>
 				<tr v-for="(v, i) in s.gearStorage">
 					<td>
-						<input type="text" v-model="s.gearStorage[i].text" />
+						<input @keyup="triggerNewLine($event, () => s.gearStorage.push({text:'', count:1}) )" type="text" v-model="s.gearStorage[i].text" />
 					</td>
 					<td>
 						<input type="number" v-model="s.gearStorage[i].count" style="width:48px" />
@@ -296,6 +296,19 @@ defineProps({
 		required: true,
 	}
 })
+
+const triggerNewLine = (e: KeyboardEvent, func: Function) => {
+	if(!e || !e.code) return;
+	if(e.code === "Enter"){
+		func();
+		setTimeout(() => {
+			const t = e.target as HTMLElement || null
+			if(!t) return;
+			t.closest("tr")?.nextElementSibling?.querySelector("input")?.focus();
+		}, 50);
+	}
+}
+
 </script>
  
 <style scoped>
