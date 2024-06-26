@@ -1,0 +1,9211 @@
+{
+	"survivors": [
+		{
+			"v": 2,
+			"id": "667a325f188b0951c6c95054",
+			"type": "character",
+			"name": "MDDDDDDr.Small PP",
+			"dead": true,
+			"gender": {
+				"m": true,
+				"f": false
+			},
+			"huntExp": [
+				{
+					"type": 1,
+					"value": false
+				},
+				{
+					"type": 2,
+					"value": false
+				},
+				{
+					"type": 1,
+					"value": false
+				},
+				{
+					"type": 1,
+					"value": false
+				},
+				{
+					"type": 1,
+					"value": false
+				},
+				{
+					"type": 2,
+					"value": false
+				},
+				{
+					"type": 1,
+					"value": false
+				},
+				{
+					"type": 1,
+					"value": false
+				},
+				{
+					"type": 1,
+					"value": false
+				},
+				{
+					"type": 2,
+					"value": false
+				},
+				{
+					"type": 1,
+					"value": false
+				},
+				{
+					"type": 1,
+					"value": false
+				},
+				{
+					"type": 1,
+					"value": false
+				},
+				{
+					"type": 2,
+					"value": false
+				},
+				{
+					"type": 3,
+					"value": false
+				}
+			],
+			"chronicles": {
+				"age": "",
+				"born": "",
+				"death": "",
+				"cause": "Fell into toilet"
+			},
+			"survival": {
+				"value": 1,
+				"locked": false,
+				"dodge": true,
+				"encourage": false,
+				"surge": false,
+				"dash": false,
+				"endure": false,
+				"fistPump": false,
+				"systemicPressure": 0
+			},
+			"movement": {
+				"base": 5,
+				"gear": 0
+			},
+			"accuracy": {
+				"base": 0,
+				"gear": 0
+			},
+			"strength": {
+				"base": 0,
+				"gear": 0
+			},
+			"evasion": {
+				"base": 0,
+				"gear": 0
+			},
+			"luck": {
+				"base": 5,
+				"gear": 1
+			},
+			"speed": {
+				"base": 0,
+				"gear": 0
+			},
+			"brain": {
+				"insanity": 0,
+				"injury": {
+					"light": false
+				},
+				"torment": "1"
+			},
+			"head": {
+				"armor": 0,
+				"injury": {
+					"light": false,
+					"heavy": false,
+					"severe": [
+						{
+							"text": "Intracranial Hemmorhage",
+							"description": "Cannot use or gain survival",
+							"value": [
+								false
+							]
+						},
+						{
+							"text": "Deaf",
+							"description": "-1 permanent Evasion",
+							"value": [
+								false
+							]
+						},
+						{
+							"text": "Blind",
+							"description": "[X] -1 permanent Accuracy<br>[X][X] -4 permanent Accuracy",
+							"value": [
+								false,
+								true
+							]
+						},
+						{
+							"text": "Shattered Jaw",
+							"description": "Cannot consume or Encourage",
+							"value": [
+								false
+							]
+						}
+					]
+				}
+			},
+			"arms": {
+				"armor": 0,
+				"injury": {
+					"light": false,
+					"heavy": false,
+					"severe": [
+						{
+							"text": "Dismembered Arm",
+							"description": "[X] Cannot activate two-handed weapons<br>[X][X] Cannot activate weapons",
+							"value": [
+								false,
+								false
+							]
+						},
+						{
+							"text": "Ruptured Muscle",
+							"description": "Cannot activate Fighting Arts",
+							"value": [
+								false
+							]
+						},
+						{
+							"text": "Contracture",
+							"description": "-1 permanent Accuracy",
+							"value": [
+								false
+							]
+						},
+						{
+							"text": "Broken Arm",
+							"description": "[X] -1 permanent Accuracy<br>[X][X] -1 permanent Strength",
+							"value": [
+								false,
+								false
+							]
+						}
+					]
+				}
+			},
+			"body": {
+				"armor": 0,
+				"injury": {
+					"light": false,
+					"heavy": false,
+					"severe": [
+						{
+							"text": "Gaping Chest Wound",
+							"description": "-1 permanent Strength",
+							"value": [
+								true,
+								false,
+								false,
+								false,
+								false
+							]
+						},
+						{
+							"text": "Destroyed Back",
+							"description": "-2 permanent Movement. Cannot activate gear with 2+ Strength",
+							"value": [
+								false
+							]
+						},
+						{
+							"text": "Broken Rib",
+							"description": "-1 permanent Speed",
+							"value": [
+								false,
+								false,
+								false,
+								false,
+								false
+							]
+						}
+					]
+				}
+			},
+			"waist": {
+				"armor": "99",
+				"injury": {
+					"light": false,
+					"heavy": false,
+					"severe": [
+						{
+							"text": "Intestinal Prolapse",
+							"description": "Cannot wear waist armor",
+							"value": [
+								false
+							]
+						},
+						{
+							"text": "Warped Pelvis",
+							"description": "-1 permanent Luck",
+							"value": [
+								false,
+								false,
+								false,
+								false,
+								false
+							]
+						},
+						{
+							"text": "Destroyed Genitals",
+							"description": "Cannot be chosen for Intimacy",
+							"value": [
+								false
+							]
+						},
+						{
+							"text": "Broken Hip",
+							"description": "-1 permanent Movement. Cannot Dodge",
+							"value": [
+								false
+							]
+						}
+					]
+				}
+			},
+			"legs": {
+				"armor": 0,
+				"injury": {
+					"light": false,
+					"heavy": false,
+					"severe": [
+						{
+							"text": "Dismembered Leg",
+							"description": "[X] -2 permanent Movement<br>[X][X] Retire at the end of the next showdown or settlement phase.",
+							"value": [
+								false,
+								false
+							]
+						},
+						{
+							"text": "Hamstrung",
+							"description": "Cannot use Fighting Arts or Abilities",
+							"value": [
+								false
+							]
+						},
+						{
+							"text": "Broken Leg",
+							"description": "-1 permanent Movement",
+							"value": [
+								false,
+								false
+							]
+						}
+					]
+				}
+			},
+			"weaponProficiency": {
+				"type": "",
+				"level": [
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 2,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 2,
+						"value": false
+					}
+				]
+			},
+			"courage": {
+				"level": [
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 2,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 2,
+						"value": false
+					}
+				],
+				"stalwart": false,
+				"prepared": false,
+				"matchmaker": false
+			},
+			"understanding": {
+				"level": [
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 2,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 2,
+						"value": false
+					}
+				],
+				"analyze": false,
+				"explore": false,
+				"tinker": false
+			},
+			"fightingArts": {
+				"locked": false,
+				"values": [
+					""
+				]
+			},
+			"disorders": {
+				"values": [
+					""
+				]
+			},
+			"abilitiesNImpairments": {
+				"locked": true,
+				"values": [
+					""
+				]
+			},
+			"oncePerLifetime": {
+				"locked": false,
+				"values": [
+					""
+				]
+			},
+			"family": {
+				"parents": [
+					""
+				],
+				"childs": [
+					""
+				]
+			},
+			"notes": "",
+			"nextDeparture": "",
+			"lumi": {
+				"base": 0,
+				"gear": 0
+			},
+			"philosophy": {
+				"text": "",
+				"rank": 0,
+				"ponder": "",
+				"neurosis": "",
+				"tenetKnowledge": {
+					"text": "",
+					"values": [
+						true,
+						true,
+						false,
+						false,
+						false,
+						false,
+						false,
+						false,
+						false,
+						false,
+						false
+					]
+				},
+				"rules": "",
+				"observationConditions": ""
+			},
+			"knowledge": {
+				"text": "",
+				"locked": false,
+				"knowledges": [
+					{
+						"knowledgeName": {
+							"text": "",
+							"values": [
+								false,
+								false,
+								false,
+								false,
+								false,
+								false,
+								false,
+								false,
+								false
+							]
+						},
+						"rules": "",
+						"observationConditions": ""
+					}
+				]
+			}
+		},
+		{
+			"v": 2,
+			"id": "667a66f9adc453217908d4e2",
+			"type": "character",
+			"name": "Zac",
+			"dead": false,
+			"gender": {
+				"m": true,
+				"f": false
+			},
+			"huntExp": [
+				{
+					"type": 1,
+					"value": false
+				},
+				{
+					"type": 2,
+					"value": false
+				},
+				{
+					"type": 1,
+					"value": false
+				},
+				{
+					"type": 1,
+					"value": false
+				},
+				{
+					"type": 1,
+					"value": false
+				},
+				{
+					"type": 2,
+					"value": false
+				},
+				{
+					"type": 1,
+					"value": false
+				},
+				{
+					"type": 1,
+					"value": false
+				},
+				{
+					"type": 1,
+					"value": false
+				},
+				{
+					"type": 2,
+					"value": false
+				},
+				{
+					"type": 1,
+					"value": false
+				},
+				{
+					"type": 1,
+					"value": false
+				},
+				{
+					"type": 1,
+					"value": false
+				},
+				{
+					"type": 2,
+					"value": false
+				},
+				{
+					"type": 3,
+					"value": false
+				}
+			],
+			"chronicles": {
+				"age": "",
+				"born": "",
+				"death": "",
+				"cause": ""
+			},
+			"survival": {
+				"value": 1,
+				"locked": false,
+				"dodge": true,
+				"encourage": false,
+				"surge": false,
+				"dash": false,
+				"endure": false,
+				"fistPump": false,
+				"systemicPressure": 0
+			},
+			"movement": {
+				"base": 5,
+				"gear": 0
+			},
+			"accuracy": {
+				"base": 0,
+				"gear": 0
+			},
+			"strength": {
+				"base": 1,
+				"gear": 2
+			},
+			"evasion": {
+				"base": 0,
+				"gear": 0
+			},
+			"luck": {
+				"base": 0,
+				"gear": 0
+			},
+			"speed": {
+				"base": 0,
+				"gear": 0
+			},
+			"brain": {
+				"insanity": "3",
+				"injury": {
+					"light": false
+				},
+				"torment": 0
+			},
+			"head": {
+				"armor": 0,
+				"injury": {
+					"light": false,
+					"heavy": true,
+					"severe": [
+						{
+							"text": "Intracranial Hemmorhage",
+							"description": "Cannot use or gain survival",
+							"value": [
+								false
+							]
+						},
+						{
+							"text": "Deaf",
+							"description": "-1 permanent Evasion",
+							"value": [
+								false
+							]
+						},
+						{
+							"text": "Blind",
+							"description": "[X] -1 permanent Accuracy<br>[X][X] -4 permanent Accuracy",
+							"value": [
+								false,
+								false
+							]
+						},
+						{
+							"text": "Shattered Jaw",
+							"description": "Cannot consume or Encourage",
+							"value": [
+								false
+							]
+						}
+					]
+				}
+			},
+			"arms": {
+				"armor": "1",
+				"injury": {
+					"light": false,
+					"heavy": false,
+					"severe": [
+						{
+							"text": "Dismembered Arm",
+							"description": "[X] Cannot activate two-handed weapons<br>[X][X] Cannot activate weapons",
+							"value": [
+								false,
+								false
+							]
+						},
+						{
+							"text": "Ruptured Muscle",
+							"description": "Cannot activate Fighting Arts",
+							"value": [
+								false
+							]
+						},
+						{
+							"text": "Contracture",
+							"description": "-1 permanent Accuracy",
+							"value": [
+								false
+							]
+						},
+						{
+							"text": "Broken Arm",
+							"description": "[X] -1 permanent Accuracy<br>[X][X] -1 permanent Strength",
+							"value": [
+								false,
+								false
+							]
+						}
+					]
+				}
+			},
+			"body": {
+				"armor": 0,
+				"injury": {
+					"light": true,
+					"heavy": true,
+					"severe": [
+						{
+							"text": "Gaping Chest Wound",
+							"description": "-1 permanent Strength",
+							"value": [
+								false,
+								false,
+								false,
+								false,
+								false
+							]
+						},
+						{
+							"text": "Destroyed Back",
+							"description": "-2 permanent Movement. Cannot activate gear with 2+ Strength",
+							"value": [
+								false
+							]
+						},
+						{
+							"text": "Broken Rib",
+							"description": "-1 permanent Speed",
+							"value": [
+								false,
+								false,
+								false,
+								false,
+								false
+							]
+						}
+					]
+				}
+			},
+			"waist": {
+				"armor": 1,
+				"injury": {
+					"light": false,
+					"heavy": false,
+					"severe": [
+						{
+							"text": "Intestinal Prolapse",
+							"description": "Cannot wear waist armor",
+							"value": [
+								false
+							]
+						},
+						{
+							"text": "Warped Pelvis",
+							"description": "-1 permanent Luck",
+							"value": [
+								false,
+								false,
+								false,
+								false,
+								false
+							]
+						},
+						{
+							"text": "Destroyed Genitals",
+							"description": "Cannot be chosen for Intimacy",
+							"value": [
+								false
+							]
+						},
+						{
+							"text": "Broken Hip",
+							"description": "-1 permanent Movement. Cannot Dodge",
+							"value": [
+								false
+							]
+						}
+					]
+				}
+			},
+			"legs": {
+				"armor": 0,
+				"injury": {
+					"light": false,
+					"heavy": false,
+					"severe": [
+						{
+							"text": "Dismembered Leg",
+							"description": "[X] -2 permanent Movement<br>[X][X] Retire at the end of the next showdown or settlement phase.",
+							"value": [
+								false,
+								false
+							]
+						},
+						{
+							"text": "Hamstrung",
+							"description": "Cannot use Fighting Arts or Abilities",
+							"value": [
+								false
+							]
+						},
+						{
+							"text": "Broken Leg",
+							"description": "-1 permanent Movement",
+							"value": [
+								false,
+								false
+							]
+						}
+					]
+				}
+			},
+			"weaponProficiency": {
+				"type": "",
+				"level": [
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 2,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 2,
+						"value": false
+					}
+				]
+			},
+			"courage": {
+				"level": [
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 2,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 2,
+						"value": false
+					}
+				],
+				"stalwart": false,
+				"prepared": false,
+				"matchmaker": false
+			},
+			"understanding": {
+				"level": [
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 2,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 2,
+						"value": false
+					}
+				],
+				"analyze": false,
+				"explore": false,
+				"tinker": false
+			},
+			"fightingArts": {
+				"locked": false,
+				"values": [
+					""
+				]
+			},
+			"disorders": {
+				"values": [
+					""
+				]
+			},
+			"abilitiesNImpairments": {
+				"locked": false,
+				"values": [
+					""
+				]
+			},
+			"oncePerLifetime": {
+				"locked": false,
+				"values": [
+					""
+				]
+			},
+			"family": {
+				"parents": [
+					""
+				],
+				"childs": [
+					""
+				]
+			},
+			"notes": "",
+			"nextDeparture": "",
+			"lumi": {
+				"base": 0,
+				"gear": 0
+			},
+			"philosophy": {
+				"text": "",
+				"rank": 0,
+				"ponder": "",
+				"neurosis": "",
+				"tenetKnowledge": {
+					"text": "",
+					"values": [
+						false
+					]
+				},
+				"rules": "",
+				"observationConditions": ""
+			},
+			"knowledge": {
+				"text": "",
+				"locked": false,
+				"knowledges": [
+					{
+						"knowledgeName": {
+							"text": "",
+							"values": [
+								false
+							]
+						},
+						"rules": "",
+						"observationConditions": ""
+					}
+				]
+			}
+		},
+		{
+			"v": 2,
+			"id": "667a66f55d7c58fcbb8b7fa3",
+			"type": "character",
+			"name": "Unnamed Survivor",
+			"dead": true,
+			"gender": {
+				"m": false,
+				"f": true
+			},
+			"huntExp": [
+				{
+					"type": 1,
+					"value": false
+				},
+				{
+					"type": 2,
+					"value": false
+				},
+				{
+					"type": 1,
+					"value": false
+				},
+				{
+					"type": 1,
+					"value": false
+				},
+				{
+					"type": 1,
+					"value": false
+				},
+				{
+					"type": 2,
+					"value": false
+				},
+				{
+					"type": 1,
+					"value": false
+				},
+				{
+					"type": 1,
+					"value": false
+				},
+				{
+					"type": 1,
+					"value": false
+				},
+				{
+					"type": 2,
+					"value": false
+				},
+				{
+					"type": 1,
+					"value": false
+				},
+				{
+					"type": 1,
+					"value": false
+				},
+				{
+					"type": 1,
+					"value": false
+				},
+				{
+					"type": 2,
+					"value": false
+				},
+				{
+					"type": 3,
+					"value": false
+				}
+			],
+			"chronicles": {
+				"age": "",
+				"born": "",
+				"death": "",
+				"cause": ""
+			},
+			"survival": {
+				"value": 1,
+				"locked": false,
+				"dodge": true,
+				"encourage": false,
+				"surge": false,
+				"dash": false,
+				"endure": false,
+				"fistPump": false,
+				"systemicPressure": 0
+			},
+			"movement": {
+				"base": 5,
+				"gear": 0
+			},
+			"accuracy": {
+				"base": 0,
+				"gear": 0
+			},
+			"strength": {
+				"base": 0,
+				"gear": 0
+			},
+			"evasion": {
+				"base": 0,
+				"gear": 0
+			},
+			"luck": {
+				"base": 0,
+				"gear": 0
+			},
+			"speed": {
+				"base": 0,
+				"gear": 0
+			},
+			"brain": {
+				"insanity": 0,
+				"injury": {
+					"light": false
+				},
+				"torment": 0
+			},
+			"head": {
+				"armor": 0,
+				"injury": {
+					"light": false,
+					"heavy": false,
+					"severe": [
+						{
+							"text": "Intracranial Hemmorhage",
+							"description": "Cannot use or gain survival",
+							"value": [
+								false
+							]
+						},
+						{
+							"text": "Deaf",
+							"description": "-1 permanent Evasion",
+							"value": [
+								false
+							]
+						},
+						{
+							"text": "Blind",
+							"description": "[X] -1 permanent Accuracy<br>[X][X] -4 permanent Accuracy",
+							"value": [
+								false,
+								false
+							]
+						},
+						{
+							"text": "Shattered Jaw",
+							"description": "Cannot consume or Encourage",
+							"value": [
+								false
+							]
+						}
+					]
+				}
+			},
+			"arms": {
+				"armor": 0,
+				"injury": {
+					"light": false,
+					"heavy": false,
+					"severe": [
+						{
+							"text": "Dismembered Arm",
+							"description": "[X] Cannot activate two-handed weapons<br>[X][X] Cannot activate weapons",
+							"value": [
+								false,
+								false
+							]
+						},
+						{
+							"text": "Ruptured Muscle",
+							"description": "Cannot activate Fighting Arts",
+							"value": [
+								false
+							]
+						},
+						{
+							"text": "Contracture",
+							"description": "-1 permanent Accuracy",
+							"value": [
+								false
+							]
+						},
+						{
+							"text": "Broken Arm",
+							"description": "[X] -1 permanent Accuracy<br>[X][X] -1 permanent Strength",
+							"value": [
+								false,
+								false
+							]
+						}
+					]
+				}
+			},
+			"body": {
+				"armor": 0,
+				"injury": {
+					"light": false,
+					"heavy": false,
+					"severe": [
+						{
+							"text": "Gaping Chest Wound",
+							"description": "-1 permanent Strength",
+							"value": [
+								false,
+								false,
+								false,
+								false,
+								false
+							]
+						},
+						{
+							"text": "Destroyed Back",
+							"description": "-2 permanent Movement. Cannot activate gear with 2+ Strength",
+							"value": [
+								false
+							]
+						},
+						{
+							"text": "Broken Rib",
+							"description": "-1 permanent Speed",
+							"value": [
+								false,
+								false,
+								false,
+								false,
+								false
+							]
+						}
+					]
+				}
+			},
+			"waist": {
+				"armor": 1,
+				"injury": {
+					"light": false,
+					"heavy": false,
+					"severe": [
+						{
+							"text": "Intestinal Prolapse",
+							"description": "Cannot wear waist armor",
+							"value": [
+								false
+							]
+						},
+						{
+							"text": "Warped Pelvis",
+							"description": "-1 permanent Luck",
+							"value": [
+								false,
+								false,
+								false,
+								false,
+								false
+							]
+						},
+						{
+							"text": "Destroyed Genitals",
+							"description": "Cannot be chosen for Intimacy",
+							"value": [
+								false
+							]
+						},
+						{
+							"text": "Broken Hip",
+							"description": "-1 permanent Movement. Cannot Dodge",
+							"value": [
+								false
+							]
+						}
+					]
+				}
+			},
+			"legs": {
+				"armor": 0,
+				"injury": {
+					"light": false,
+					"heavy": false,
+					"severe": [
+						{
+							"text": "Dismembered Leg",
+							"description": "[X] -2 permanent Movement<br>[X][X] Retire at the end of the next showdown or settlement phase.",
+							"value": [
+								false,
+								false
+							]
+						},
+						{
+							"text": "Hamstrung",
+							"description": "Cannot use Fighting Arts or Abilities",
+							"value": [
+								false
+							]
+						},
+						{
+							"text": "Broken Leg",
+							"description": "-1 permanent Movement",
+							"value": [
+								false,
+								false
+							]
+						}
+					]
+				}
+			},
+			"weaponProficiency": {
+				"type": "",
+				"level": [
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 2,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 2,
+						"value": false
+					}
+				]
+			},
+			"courage": {
+				"level": [
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 2,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 2,
+						"value": false
+					}
+				],
+				"stalwart": false,
+				"prepared": false,
+				"matchmaker": false
+			},
+			"understanding": {
+				"level": [
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 2,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 2,
+						"value": false
+					}
+				],
+				"analyze": false,
+				"explore": false,
+				"tinker": false
+			},
+			"fightingArts": {
+				"locked": false,
+				"values": [
+					""
+				]
+			},
+			"disorders": {
+				"values": [
+					""
+				]
+			},
+			"abilitiesNImpairments": {
+				"locked": false,
+				"values": [
+					""
+				]
+			},
+			"oncePerLifetime": {
+				"locked": false,
+				"values": [
+					""
+				]
+			},
+			"family": {
+				"parents": [
+					""
+				],
+				"childs": [
+					""
+				]
+			},
+			"notes": "",
+			"nextDeparture": "",
+			"lumi": {
+				"base": 0,
+				"gear": 0
+			},
+			"philosophy": {
+				"text": "",
+				"rank": 0,
+				"ponder": "",
+				"neurosis": "",
+				"tenetKnowledge": {
+					"text": "",
+					"values": [
+						false
+					]
+				},
+				"rules": "",
+				"observationConditions": ""
+			},
+			"knowledge": {
+				"text": "",
+				"locked": false,
+				"knowledges": [
+					{
+						"knowledgeName": {
+							"text": "",
+							"values": [
+								false
+							]
+						},
+						"rules": "",
+						"observationConditions": ""
+					}
+				]
+			}
+		},
+		{
+			"v": 2,
+			"id": "667a5d29865aa3089ce0f0fb",
+			"type": "character",
+			"name": "Unnamed Survivor",
+			"dead": false,
+			"gender": {
+				"m": false,
+				"f": false
+			},
+			"huntExp": [
+				{
+					"type": 1,
+					"value": false
+				},
+				{
+					"type": 2,
+					"value": false
+				},
+				{
+					"type": 1,
+					"value": false
+				},
+				{
+					"type": 1,
+					"value": false
+				},
+				{
+					"type": 1,
+					"value": false
+				},
+				{
+					"type": 2,
+					"value": false
+				},
+				{
+					"type": 1,
+					"value": false
+				},
+				{
+					"type": 1,
+					"value": false
+				},
+				{
+					"type": 1,
+					"value": false
+				},
+				{
+					"type": 2,
+					"value": false
+				},
+				{
+					"type": 1,
+					"value": false
+				},
+				{
+					"type": 1,
+					"value": false
+				},
+				{
+					"type": 1,
+					"value": false
+				},
+				{
+					"type": 2,
+					"value": false
+				},
+				{
+					"type": 3,
+					"value": false
+				}
+			],
+			"chronicles": {
+				"age": "",
+				"born": "",
+				"death": "",
+				"cause": ""
+			},
+			"survival": {
+				"value": 1,
+				"locked": false,
+				"dodge": true,
+				"encourage": false,
+				"surge": false,
+				"dash": false,
+				"endure": false,
+				"fistPump": false,
+				"systemicPressure": 0
+			},
+			"movement": {
+				"base": 5,
+				"gear": 0
+			},
+			"accuracy": {
+				"base": 0,
+				"gear": 0
+			},
+			"strength": {
+				"base": 0,
+				"gear": 0
+			},
+			"evasion": {
+				"base": 0,
+				"gear": 0
+			},
+			"luck": {
+				"base": 0,
+				"gear": 0
+			},
+			"speed": {
+				"base": 0,
+				"gear": 0
+			},
+			"brain": {
+				"insanity": 0,
+				"injury": {
+					"light": false
+				},
+				"torment": 0
+			},
+			"head": {
+				"armor": 0,
+				"injury": {
+					"light": false,
+					"heavy": false,
+					"severe": [
+						{
+							"text": "Intracranial Hemmorhage",
+							"description": "Cannot use or gain survival",
+							"value": [
+								false
+							]
+						},
+						{
+							"text": "Deaf",
+							"description": "-1 permanent Evasion",
+							"value": [
+								false
+							]
+						},
+						{
+							"text": "Blind",
+							"description": "[X] -1 permanent Accuracy<br>[X][X] -4 permanent Accuracy",
+							"value": [
+								false,
+								false
+							]
+						},
+						{
+							"text": "Shattered Jaw",
+							"description": "Cannot consume or Encourage",
+							"value": [
+								false
+							]
+						}
+					]
+				}
+			},
+			"arms": {
+				"armor": 0,
+				"injury": {
+					"light": false,
+					"heavy": false,
+					"severe": [
+						{
+							"text": "Dismembered Arm",
+							"description": "[X] Cannot activate two-handed weapons<br>[X][X] Cannot activate weapons",
+							"value": [
+								false,
+								false
+							]
+						},
+						{
+							"text": "Ruptured Muscle",
+							"description": "Cannot activate Fighting Arts",
+							"value": [
+								false
+							]
+						},
+						{
+							"text": "Contracture",
+							"description": "-1 permanent Accuracy",
+							"value": [
+								false
+							]
+						},
+						{
+							"text": "Broken Arm",
+							"description": "[X] -1 permanent Accuracy<br>[X][X] -1 permanent Strength",
+							"value": [
+								false,
+								false
+							]
+						}
+					]
+				}
+			},
+			"body": {
+				"armor": 0,
+				"injury": {
+					"light": false,
+					"heavy": false,
+					"severe": [
+						{
+							"text": "Gaping Chest Wound",
+							"description": "-1 permanent Strength",
+							"value": [
+								false,
+								false,
+								false,
+								false,
+								false
+							]
+						},
+						{
+							"text": "Destroyed Back",
+							"description": "-2 permanent Movement. Cannot activate gear with 2+ Strength",
+							"value": [
+								false
+							]
+						},
+						{
+							"text": "Broken Rib",
+							"description": "-1 permanent Speed",
+							"value": [
+								false,
+								false,
+								false,
+								false,
+								false
+							]
+						}
+					]
+				}
+			},
+			"waist": {
+				"armor": 1,
+				"injury": {
+					"light": false,
+					"heavy": false,
+					"severe": [
+						{
+							"text": "Intestinal Prolapse",
+							"description": "Cannot wear waist armor",
+							"value": [
+								false
+							]
+						},
+						{
+							"text": "Warped Pelvis",
+							"description": "-1 permanent Luck",
+							"value": [
+								false,
+								false,
+								false,
+								false,
+								false
+							]
+						},
+						{
+							"text": "Destroyed Genitals",
+							"description": "Cannot be chosen for Intimacy",
+							"value": [
+								false
+							]
+						},
+						{
+							"text": "Broken Hip",
+							"description": "-1 permanent Movement. Cannot Dodge",
+							"value": [
+								false
+							]
+						}
+					]
+				}
+			},
+			"legs": {
+				"armor": 0,
+				"injury": {
+					"light": false,
+					"heavy": false,
+					"severe": [
+						{
+							"text": "Dismembered Leg",
+							"description": "[X] -2 permanent Movement<br>[X][X] Retire at the end of the next showdown or settlement phase.",
+							"value": [
+								false,
+								false
+							]
+						},
+						{
+							"text": "Hamstrung",
+							"description": "Cannot use Fighting Arts or Abilities",
+							"value": [
+								false
+							]
+						},
+						{
+							"text": "Broken Leg",
+							"description": "-1 permanent Movement",
+							"value": [
+								false,
+								false
+							]
+						}
+					]
+				}
+			},
+			"weaponProficiency": {
+				"type": "",
+				"level": [
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 2,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 2,
+						"value": false
+					}
+				]
+			},
+			"courage": {
+				"level": [
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 2,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 2,
+						"value": false
+					}
+				],
+				"stalwart": false,
+				"prepared": false,
+				"matchmaker": false
+			},
+			"understanding": {
+				"level": [
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 2,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 2,
+						"value": false
+					}
+				],
+				"analyze": false,
+				"explore": false,
+				"tinker": false
+			},
+			"fightingArts": {
+				"locked": false,
+				"values": [
+					""
+				]
+			},
+			"disorders": {
+				"values": [
+					""
+				]
+			},
+			"abilitiesNImpairments": {
+				"locked": false,
+				"values": [
+					""
+				]
+			},
+			"oncePerLifetime": {
+				"locked": false,
+				"values": [
+					""
+				]
+			},
+			"family": {
+				"parents": [
+					""
+				],
+				"childs": [
+					""
+				]
+			},
+			"notes": "",
+			"nextDeparture": "",
+			"lumi": {
+				"base": 0,
+				"gear": 0
+			},
+			"philosophy": {
+				"text": "",
+				"rank": 0,
+				"ponder": "",
+				"neurosis": "",
+				"tenetKnowledge": {
+					"text": "",
+					"values": [
+						false
+					]
+				},
+				"rules": "",
+				"observationConditions": ""
+			},
+			"knowledge": {
+				"text": "",
+				"locked": false,
+				"knowledges": [
+					{
+						"knowledgeName": {
+							"text": "",
+							"values": [
+								false
+							]
+						},
+						"rules": "",
+						"observationConditions": ""
+					},
+					{
+						"knowledgeName": {
+							"text": "",
+							"values": [
+								false,
+								false,
+								false,
+								false,
+								false,
+								false,
+								false,
+								false,
+								false
+							]
+						},
+						"rules": "",
+						"observationConditions": ""
+					}
+				]
+			}
+		},
+		{
+			"v": 2,
+			"id": "667a66f5c1bc1e9dc28475f9",
+			"type": "character",
+			"name": "Someone with very long mame asdasdpppokasdasd",
+			"dead": false,
+			"gender": {
+				"m": false,
+				"f": false
+			},
+			"huntExp": [
+				{
+					"type": 1,
+					"value": false
+				},
+				{
+					"type": 2,
+					"value": false
+				},
+				{
+					"type": 1,
+					"value": false
+				},
+				{
+					"type": 1,
+					"value": false
+				},
+				{
+					"type": 1,
+					"value": false
+				},
+				{
+					"type": 2,
+					"value": false
+				},
+				{
+					"type": 1,
+					"value": false
+				},
+				{
+					"type": 1,
+					"value": false
+				},
+				{
+					"type": 1,
+					"value": false
+				},
+				{
+					"type": 2,
+					"value": false
+				},
+				{
+					"type": 1,
+					"value": false
+				},
+				{
+					"type": 1,
+					"value": false
+				},
+				{
+					"type": 1,
+					"value": false
+				},
+				{
+					"type": 2,
+					"value": false
+				},
+				{
+					"type": 3,
+					"value": false
+				}
+			],
+			"chronicles": {
+				"age": "",
+				"born": "",
+				"death": "",
+				"cause": ""
+			},
+			"survival": {
+				"value": 1,
+				"locked": false,
+				"dodge": true,
+				"encourage": false,
+				"surge": false,
+				"dash": false,
+				"endure": false,
+				"fistPump": false,
+				"systemicPressure": 0
+			},
+			"movement": {
+				"base": 5,
+				"gear": 0
+			},
+			"accuracy": {
+				"base": 0,
+				"gear": 0
+			},
+			"strength": {
+				"base": 0,
+				"gear": 0
+			},
+			"evasion": {
+				"base": 0,
+				"gear": 0
+			},
+			"luck": {
+				"base": 0,
+				"gear": 0
+			},
+			"speed": {
+				"base": 0,
+				"gear": 0
+			},
+			"brain": {
+				"insanity": 0,
+				"injury": {
+					"light": false
+				},
+				"torment": 0
+			},
+			"head": {
+				"armor": 0,
+				"injury": {
+					"light": false,
+					"heavy": false,
+					"severe": [
+						{
+							"text": "Intracranial Hemmorhage",
+							"description": "Cannot use or gain survival",
+							"value": [
+								false
+							]
+						},
+						{
+							"text": "Deaf",
+							"description": "-1 permanent Evasion",
+							"value": [
+								false
+							]
+						},
+						{
+							"text": "Blind",
+							"description": "[X] -1 permanent Accuracy<br>[X][X] -4 permanent Accuracy",
+							"value": [
+								false,
+								false
+							]
+						},
+						{
+							"text": "Shattered Jaw",
+							"description": "Cannot consume or Encourage",
+							"value": [
+								false
+							]
+						}
+					]
+				}
+			},
+			"arms": {
+				"armor": 0,
+				"injury": {
+					"light": false,
+					"heavy": false,
+					"severe": [
+						{
+							"text": "Dismembered Arm",
+							"description": "[X] Cannot activate two-handed weapons<br>[X][X] Cannot activate weapons",
+							"value": [
+								false,
+								false
+							]
+						},
+						{
+							"text": "Ruptured Muscle",
+							"description": "Cannot activate Fighting Arts",
+							"value": [
+								false
+							]
+						},
+						{
+							"text": "Contracture",
+							"description": "-1 permanent Accuracy",
+							"value": [
+								false
+							]
+						},
+						{
+							"text": "Broken Arm",
+							"description": "[X] -1 permanent Accuracy<br>[X][X] -1 permanent Strength",
+							"value": [
+								false,
+								false
+							]
+						}
+					]
+				}
+			},
+			"body": {
+				"armor": 0,
+				"injury": {
+					"light": false,
+					"heavy": false,
+					"severe": [
+						{
+							"text": "Gaping Chest Wound",
+							"description": "-1 permanent Strength",
+							"value": [
+								false,
+								false,
+								false,
+								false,
+								false
+							]
+						},
+						{
+							"text": "Destroyed Back",
+							"description": "-2 permanent Movement. Cannot activate gear with 2+ Strength",
+							"value": [
+								false
+							]
+						},
+						{
+							"text": "Broken Rib",
+							"description": "-1 permanent Speed",
+							"value": [
+								false,
+								false,
+								false,
+								false,
+								false
+							]
+						}
+					]
+				}
+			},
+			"waist": {
+				"armor": 1,
+				"injury": {
+					"light": false,
+					"heavy": false,
+					"severe": [
+						{
+							"text": "Intestinal Prolapse",
+							"description": "Cannot wear waist armor",
+							"value": [
+								false
+							]
+						},
+						{
+							"text": "Warped Pelvis",
+							"description": "-1 permanent Luck",
+							"value": [
+								false,
+								false,
+								false,
+								false,
+								false
+							]
+						},
+						{
+							"text": "Destroyed Genitals",
+							"description": "Cannot be chosen for Intimacy",
+							"value": [
+								false
+							]
+						},
+						{
+							"text": "Broken Hip",
+							"description": "-1 permanent Movement. Cannot Dodge",
+							"value": [
+								false
+							]
+						}
+					]
+				}
+			},
+			"legs": {
+				"armor": 0,
+				"injury": {
+					"light": false,
+					"heavy": false,
+					"severe": [
+						{
+							"text": "Dismembered Leg",
+							"description": "[X] -2 permanent Movement<br>[X][X] Retire at the end of the next showdown or settlement phase.",
+							"value": [
+								false,
+								false
+							]
+						},
+						{
+							"text": "Hamstrung",
+							"description": "Cannot use Fighting Arts or Abilities",
+							"value": [
+								false
+							]
+						},
+						{
+							"text": "Broken Leg",
+							"description": "-1 permanent Movement",
+							"value": [
+								false,
+								false
+							]
+						}
+					]
+				}
+			},
+			"weaponProficiency": {
+				"type": "",
+				"level": [
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 2,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 2,
+						"value": false
+					}
+				]
+			},
+			"courage": {
+				"level": [
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 2,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 2,
+						"value": false
+					}
+				],
+				"stalwart": false,
+				"prepared": false,
+				"matchmaker": false
+			},
+			"understanding": {
+				"level": [
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 2,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 2,
+						"value": false
+					}
+				],
+				"analyze": false,
+				"explore": false,
+				"tinker": false
+			},
+			"fightingArts": {
+				"locked": false,
+				"values": [
+					""
+				]
+			},
+			"disorders": {
+				"values": [
+					""
+				]
+			},
+			"abilitiesNImpairments": {
+				"locked": false,
+				"values": [
+					""
+				]
+			},
+			"oncePerLifetime": {
+				"locked": false,
+				"values": [
+					""
+				]
+			},
+			"family": {
+				"parents": [
+					""
+				],
+				"childs": [
+					""
+				]
+			},
+			"notes": "",
+			"nextDeparture": "",
+			"lumi": {
+				"base": 0,
+				"gear": 0
+			},
+			"philosophy": {
+				"text": "",
+				"rank": 0,
+				"ponder": "",
+				"neurosis": "",
+				"tenetKnowledge": {
+					"text": "",
+					"values": [
+						false
+					]
+				},
+				"rules": "",
+				"observationConditions": ""
+			},
+			"knowledge": {
+				"text": "",
+				"locked": false,
+				"knowledges": [
+					{
+						"knowledgeName": {
+							"text": "",
+							"values": [
+								false
+							]
+						},
+						"rules": "",
+						"observationConditions": ""
+					}
+				]
+			}
+		},
+		{
+			"v": 2,
+			"id": "667b8f04f25545f8b85483b7",
+			"type": "character",
+			"name": "Unnamed Survivor 5",
+			"dead": false,
+			"gender": {
+				"m": false,
+				"f": false
+			},
+			"huntExp": [
+				{
+					"type": 1,
+					"value": false
+				},
+				{
+					"type": 2,
+					"value": false
+				},
+				{
+					"type": 1,
+					"value": false
+				},
+				{
+					"type": 1,
+					"value": false
+				},
+				{
+					"type": 1,
+					"value": false
+				},
+				{
+					"type": 2,
+					"value": false
+				},
+				{
+					"type": 1,
+					"value": false
+				},
+				{
+					"type": 1,
+					"value": false
+				},
+				{
+					"type": 1,
+					"value": false
+				},
+				{
+					"type": 2,
+					"value": false
+				},
+				{
+					"type": 1,
+					"value": false
+				},
+				{
+					"type": 1,
+					"value": false
+				},
+				{
+					"type": 1,
+					"value": false
+				},
+				{
+					"type": 2,
+					"value": false
+				},
+				{
+					"type": 3,
+					"value": false
+				}
+			],
+			"chronicles": {
+				"age": "",
+				"born": "",
+				"death": "",
+				"cause": ""
+			},
+			"survival": {
+				"value": 1,
+				"locked": false,
+				"dodge": true,
+				"encourage": false,
+				"surge": false,
+				"dash": false,
+				"endure": false,
+				"fistPump": false,
+				"systemicPressure": 0
+			},
+			"movement": {
+				"base": 5,
+				"gear": 0
+			},
+			"accuracy": {
+				"base": 0,
+				"gear": 0
+			},
+			"strength": {
+				"base": 0,
+				"gear": 0
+			},
+			"evasion": {
+				"base": 0,
+				"gear": 0
+			},
+			"luck": {
+				"base": 0,
+				"gear": 0
+			},
+			"speed": {
+				"base": 0,
+				"gear": 0
+			},
+			"brain": {
+				"insanity": 0,
+				"injury": {
+					"light": false
+				},
+				"torment": 0
+			},
+			"head": {
+				"armor": 0,
+				"injury": {
+					"light": false,
+					"heavy": false,
+					"severe": [
+						{
+							"text": "Intracranial Hemmorhage",
+							"description": "Cannot use or gain survival",
+							"value": [
+								false
+							]
+						},
+						{
+							"text": "Deaf",
+							"description": "-1 permanent Evasion",
+							"value": [
+								false
+							]
+						},
+						{
+							"text": "Blind",
+							"description": "[X] -1 permanent Accuracy<br>[X][X] -4 permanent Accuracy",
+							"value": [
+								false,
+								false
+							]
+						},
+						{
+							"text": "Shattered Jaw",
+							"description": "Cannot consume or Encourage",
+							"value": [
+								false
+							]
+						}
+					]
+				}
+			},
+			"arms": {
+				"armor": 0,
+				"injury": {
+					"light": false,
+					"heavy": false,
+					"severe": [
+						{
+							"text": "Dismembered Arm",
+							"description": "[X] Cannot activate two-handed weapons<br>[X][X] Cannot activate weapons",
+							"value": [
+								false,
+								false
+							]
+						},
+						{
+							"text": "Ruptured Muscle",
+							"description": "Cannot activate Fighting Arts",
+							"value": [
+								false
+							]
+						},
+						{
+							"text": "Contracture",
+							"description": "-1 permanent Accuracy",
+							"value": [
+								false
+							]
+						},
+						{
+							"text": "Broken Arm",
+							"description": "[X] -1 permanent Accuracy<br>[X][X] -1 permanent Strength",
+							"value": [
+								false,
+								false
+							]
+						}
+					]
+				}
+			},
+			"body": {
+				"armor": 0,
+				"injury": {
+					"light": false,
+					"heavy": false,
+					"severe": [
+						{
+							"text": "Gaping Chest Wound",
+							"description": "-1 permanent Strength",
+							"value": [
+								false,
+								false,
+								false,
+								false,
+								false
+							]
+						},
+						{
+							"text": "Destroyed Back",
+							"description": "-2 permanent Movement. Cannot activate gear with 2+ Strength",
+							"value": [
+								false
+							]
+						},
+						{
+							"text": "Broken Rib",
+							"description": "-1 permanent Speed",
+							"value": [
+								false,
+								false,
+								false,
+								false,
+								false
+							]
+						}
+					]
+				}
+			},
+			"waist": {
+				"armor": 1,
+				"injury": {
+					"light": false,
+					"heavy": false,
+					"severe": [
+						{
+							"text": "Intestinal Prolapse",
+							"description": "Cannot wear waist armor",
+							"value": [
+								false
+							]
+						},
+						{
+							"text": "Warped Pelvis",
+							"description": "-1 permanent Luck",
+							"value": [
+								false,
+								false,
+								false,
+								false,
+								false
+							]
+						},
+						{
+							"text": "Destroyed Genitals",
+							"description": "Cannot be chosen for Intimacy",
+							"value": [
+								false
+							]
+						},
+						{
+							"text": "Broken Hip",
+							"description": "-1 permanent Movement. Cannot Dodge",
+							"value": [
+								false
+							]
+						}
+					]
+				}
+			},
+			"legs": {
+				"armor": 0,
+				"injury": {
+					"light": false,
+					"heavy": false,
+					"severe": [
+						{
+							"text": "Dismembered Leg",
+							"description": "[X] -2 permanent Movement<br>[X][X] Retire at the end of the next showdown or settlement phase.",
+							"value": [
+								false,
+								false
+							]
+						},
+						{
+							"text": "Hamstrung",
+							"description": "Cannot use Fighting Arts or Abilities",
+							"value": [
+								false
+							]
+						},
+						{
+							"text": "Broken Leg",
+							"description": "-1 permanent Movement",
+							"value": [
+								false,
+								false
+							]
+						}
+					]
+				}
+			},
+			"weaponProficiency": {
+				"type": "",
+				"level": [
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 2,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 2,
+						"value": false
+					}
+				]
+			},
+			"courage": {
+				"level": [
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 2,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 2,
+						"value": false
+					}
+				],
+				"stalwart": false,
+				"prepared": false,
+				"matchmaker": false
+			},
+			"understanding": {
+				"level": [
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 2,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 2,
+						"value": false
+					}
+				],
+				"analyze": false,
+				"explore": false,
+				"tinker": false
+			},
+			"fightingArts": {
+				"locked": false,
+				"values": [
+					""
+				]
+			},
+			"disorders": {
+				"values": [
+					""
+				]
+			},
+			"abilitiesNImpairments": {
+				"locked": false,
+				"values": [
+					""
+				]
+			},
+			"oncePerLifetime": {
+				"locked": false,
+				"values": [
+					""
+				]
+			},
+			"family": {
+				"parents": [
+					""
+				],
+				"childs": [
+					""
+				]
+			},
+			"notes": "",
+			"nextDeparture": "",
+			"lumi": {
+				"base": 0,
+				"gear": 0
+			},
+			"philosophy": {
+				"text": "",
+				"rank": 0,
+				"ponder": "",
+				"neurosis": "",
+				"tenetKnowledge": {
+					"text": "",
+					"values": [
+						false
+					]
+				},
+				"rules": "",
+				"observationConditions": ""
+			},
+			"knowledge": {
+				"text": "",
+				"locked": false,
+				"knowledges": [
+					{
+						"knowledgeName": {
+							"text": "",
+							"values": [
+								false
+							]
+						},
+						"rules": "",
+						"observationConditions": ""
+					}
+				]
+			}
+		}
+	],
+	"archive": [
+		{
+			"id": "667a32314016b65118be6e04",
+			"type": "character",
+			"name": "Unnamed Survivor",
+			"gender": {
+				"m": false,
+				"f": false
+			},
+			"huntExp": [
+				{
+					"type": 1,
+					"value": false
+				},
+				{
+					"type": 2,
+					"value": false
+				},
+				{
+					"type": 1,
+					"value": false
+				},
+				{
+					"type": 1,
+					"value": false
+				},
+				{
+					"type": 1,
+					"value": false
+				},
+				{
+					"type": 2,
+					"value": false
+				},
+				{
+					"type": 1,
+					"value": false
+				},
+				{
+					"type": 1,
+					"value": false
+				},
+				{
+					"type": 1,
+					"value": false
+				},
+				{
+					"type": 2,
+					"value": false
+				},
+				{
+					"type": 1,
+					"value": false
+				},
+				{
+					"type": 1,
+					"value": false
+				},
+				{
+					"type": 1,
+					"value": false
+				},
+				{
+					"type": 2,
+					"value": false
+				},
+				{
+					"type": 3,
+					"value": false
+				}
+			],
+			"chronicles": {
+				"age": "",
+				"born": "",
+				"death": "",
+				"cause": ""
+			},
+			"survival": {
+				"value": 1,
+				"locked": true,
+				"dodge": true,
+				"encourage": false,
+				"surge": false,
+				"dash": false,
+				"endure": false,
+				"fistPump": false,
+				"systemicPressure": 0
+			},
+			"movement": {
+				"base": 5,
+				"gear": 0
+			},
+			"accuracy": {
+				"base": 0,
+				"gear": 0
+			},
+			"strength": {
+				"base": 0,
+				"gear": 0
+			},
+			"evasion": {
+				"base": 0,
+				"gear": 0
+			},
+			"luck": {
+				"base": 0,
+				"gear": 0
+			},
+			"speed": {
+				"base": 0,
+				"gear": 0
+			},
+			"brain": {
+				"insanity": 0,
+				"injury": {
+					"light": false
+				},
+				"torment": 0
+			},
+			"head": {
+				"armor": 0,
+				"injury": {
+					"light": false,
+					"heavy": false,
+					"severe": [
+						{
+							"text": "Intracranial Hemmorhage",
+							"description": "Cannot use or gain survival",
+							"value": [
+								false
+							]
+						},
+						{
+							"text": "Deaf",
+							"description": "-1 permanent Evasion",
+							"value": [
+								false
+							]
+						},
+						{
+							"text": "Blind",
+							"description": "[X] -1 permanent Accuracy<br>[X][X] -4 permanent Accuracy",
+							"value": [
+								false,
+								false
+							]
+						},
+						{
+							"text": "Shattered Jaw",
+							"description": "Cannot consume or Encourage",
+							"value": [
+								false
+							]
+						}
+					]
+				}
+			},
+			"arms": {
+				"armor": 0,
+				"injury": {
+					"light": false,
+					"heavy": false,
+					"severe": [
+						{
+							"text": "Dismembered Arm",
+							"description": "[X] Cannot activate two-handed weapons<br>[X][X] Cannot activate weapons",
+							"value": [
+								false,
+								false
+							]
+						},
+						{
+							"text": "Ruptured Muscle",
+							"description": "Cannot activate Fighting Arts",
+							"value": [
+								false
+							]
+						},
+						{
+							"text": "Contracture",
+							"description": "-1 permanent Accuracy",
+							"value": [
+								false
+							]
+						},
+						{
+							"text": "Broken Arm",
+							"description": "[X] -1 permanent Accuracy<br>[X][X] -1 permanent Strength",
+							"value": [
+								false,
+								false
+							]
+						}
+					]
+				}
+			},
+			"body": {
+				"armor": 0,
+				"injury": {
+					"light": false,
+					"heavy": false,
+					"severe": [
+						{
+							"text": "Gaping Chest Wound",
+							"description": "-1 permanent Strength",
+							"value": [
+								false,
+								false,
+								false,
+								false,
+								false
+							]
+						},
+						{
+							"text": "Destroyed Back",
+							"description": "-2 permanent Movement. Cannot activate gear with 2+ Strength",
+							"value": [
+								false
+							]
+						},
+						{
+							"text": "Broken Rib",
+							"description": "-1 permanent Speed",
+							"value": [
+								false,
+								false,
+								false,
+								false,
+								false
+							]
+						}
+					]
+				}
+			},
+			"waist": {
+				"armor": 1,
+				"injury": {
+					"light": false,
+					"heavy": false,
+					"severe": [
+						{
+							"text": "Intestinal Prolapse",
+							"description": "Cannot wear waist armor",
+							"value": [
+								false
+							]
+						},
+						{
+							"text": "Warped Pelvis",
+							"description": "-1 permanent Luck",
+							"value": [
+								false,
+								false,
+								false,
+								false,
+								false
+							]
+						},
+						{
+							"text": "Destroyed Genitals",
+							"description": "Cannot be chosen for Intimacy",
+							"value": [
+								false
+							]
+						},
+						{
+							"text": "Broken Hip",
+							"description": "-1 permanent Movement. Cannot Dodge",
+							"value": [
+								false
+							]
+						}
+					]
+				}
+			},
+			"legs": {
+				"armor": 0,
+				"injury": {
+					"light": false,
+					"heavy": false,
+					"severe": [
+						{
+							"text": "Dismembered Leg",
+							"description": "[X] -2 permanent Movement<br>[X][X] Retire at the end of the next showdown or settlement phase.",
+							"value": [
+								false,
+								false
+							]
+						},
+						{
+							"text": "Hamstrung",
+							"description": "Cannot use Fighting Arts or Abilities",
+							"value": [
+								false
+							]
+						},
+						{
+							"text": "Broken Leg",
+							"description": "-1 permanent Movement",
+							"value": [
+								false,
+								false
+							]
+						}
+					]
+				}
+			},
+			"weaponProficiency": {
+				"type": "",
+				"level": [
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 2,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 2,
+						"value": false
+					}
+				]
+			},
+			"courage": {
+				"level": [
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 2,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 2,
+						"value": false
+					}
+				],
+				"stalwart": false,
+				"prepared": false,
+				"matchmaker": false
+			},
+			"understanding": {
+				"level": [
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 2,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 1,
+						"value": false
+					},
+					{
+						"type": 2,
+						"value": false
+					}
+				],
+				"analyze": false,
+				"explore": false,
+				"tinker": false
+			},
+			"fightingArts": {
+				"locked": false,
+				"values": [
+					""
+				]
+			},
+			"disorders": {
+				"values": [
+					""
+				]
+			},
+			"abilitiesNImpairments": {
+				"locked": false,
+				"values": [
+					""
+				]
+			},
+			"oncePerLifetime": {
+				"locked": false,
+				"values": [
+					""
+				]
+			},
+			"family": {
+				"parents": [
+					""
+				],
+				"childs": [
+					""
+				]
+			},
+			"notes": "",
+			"v": 2,
+			"dead": true,
+			"nextDeparture": "",
+			"lumi": {
+				"base": 0,
+				"gear": 0
+			},
+			"philosophy": {
+				"text": "",
+				"rank": 0,
+				"ponder": "",
+				"neurosis": "",
+				"tenetKnowledge": {
+					"text": "",
+					"values": [
+						false
+					]
+				},
+				"rules": "",
+				"observationConditions": ""
+			},
+			"knowledge": {
+				"text": "",
+				"locked": false,
+				"knowledges": [
+					{
+						"knowledgeName": {
+							"text": "",
+							"values": [
+								false
+							]
+						},
+						"rules": "",
+						"observationConditions": ""
+					}
+				]
+			}
+		},
+		{
+			"id": "667a559c5c809b25ccaf2153",
+			"type": "settlement",
+			"settlementName": "Eternal",
+			"survivalLimit": 1,
+			"population": 0,
+			"deathCount": 0,
+			"timeline": [
+				{
+					"year": 1,
+					"value": false,
+					"text": "[SE] First Day, Returning Survivors"
+				},
+				{
+					"year": 2,
+					"value": false,
+					"text": "[SE] Endless Screams"
+				},
+				{
+					"year": 3,
+					"value": true,
+					"text": ""
+				},
+				{
+					"year": 4,
+					"value": true,
+					"text": "Namesis Encounter - Butcher Lvl 1"
+				},
+				{
+					"year": 5,
+					"value": true,
+					"text": "[SE] Hands of Heat"
+				},
+				{
+					"year": 6,
+					"value": false,
+					"text": "[SE] Armored Strangers"
+				},
+				{
+					"year": 7,
+					"value": false,
+					"text": "[SE] Phoenix Feather"
+				},
+				{
+					"year": 8,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 9,
+					"value": false,
+					"text": "Namesis Encounter - King's Man Lvl 1"
+				},
+				{
+					"year": 10,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 11,
+					"value": false,
+					"text": "[SE] Regal Visit"
+				},
+				{
+					"year": 12,
+					"value": false,
+					"text": "[SE] Principle: Conviction"
+				},
+				{
+					"year": 13,
+					"value": false,
+					"text": "Namesis Encounter - The Hand Lvl 1"
+				},
+				{
+					"year": 14,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 15,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 16,
+					"value": false,
+					"text": "Namesis Encounter - Butcher Lvl 2"
+				},
+				{
+					"year": 17,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 18,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 19,
+					"value": false,
+					"text": "Namesis Encounter - King's Man Lvl 2"
+				},
+				{
+					"year": 20,
+					"value": false,
+					"text": "[SE] Watched"
+				},
+				{
+					"year": 21,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 22,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 23,
+					"value": false,
+					"text": "Namesis Encounter - Butcher Lvl 3"
+				},
+				{
+					"year": 24,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 25,
+					"value": false,
+					"text": "Namesis Encounter - Watcher"
+				},
+				{
+					"year": 26,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 27,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 28,
+					"value": false,
+					"text": "Namesis Encounter - King's Man Lvl 3"
+				},
+				{
+					"year": 29,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 30,
+					"value": false,
+					"text": "Namesis Encounter - Gold Smoke Knight"
+				},
+				{
+					"year": 31,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 32,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 33,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 34,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 35,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 36,
+					"value": false,
+					"text": ""
+				}
+			],
+			"milestones": [
+				{
+					"text": "First child is born",
+					"se": "Principle: New Life",
+					"value": false
+				},
+				{
+					"text": "Population reaches 15",
+					"se": "Principle: Society",
+					"value": false
+				},
+				{
+					"text": "Population reaches 0",
+					"se": "Game Over",
+					"value": false
+				},
+				{
+					"text": "First time death count is updated",
+					"se": "Principle: Death",
+					"value": false
+				},
+				{
+					"text": "Settlement has 5 innovations",
+					"se": "Hooded Knight",
+					"value": false
+				}
+			],
+			"innovations": [
+				"Language"
+			],
+			"settlementLocations": [
+				{
+					"text": "Lantern Hoard",
+					"value": true
+				},
+				{
+					"text": "Bone Smith",
+					"value": false
+				},
+				{
+					"text": "Skinnery",
+					"value": false
+				},
+				{
+					"text": "Organ Grinder",
+					"value": false
+				},
+				{
+					"text": "Catarium",
+					"value": false
+				},
+				{
+					"text": "Weapon Crafter",
+					"value": false
+				},
+				{
+					"text": "Leather Worker",
+					"value": false
+				},
+				{
+					"text": "Stone Circle",
+					"value": false
+				},
+				{
+					"text": "Barber Surgeon",
+					"value": false
+				},
+				{
+					"text": "Plumery",
+					"value": false
+				},
+				{
+					"text": "Blacksmith",
+					"value": false
+				},
+				{
+					"text": "Mask Maker",
+					"value": false
+				}
+			],
+			"principles": [
+				[
+					"New Life",
+					{
+						"text": "Protect the Young",
+						"value": false
+					},
+					{
+						"text": "Survival of the Fittest",
+						"value": false
+					}
+				],
+				[
+					"Death",
+					{
+						"text": "Cannibalize",
+						"value": false
+					},
+					{
+						"text": "Graves",
+						"value": false
+					}
+				],
+				[
+					"Society",
+					{
+						"text": "Collective Toil",
+						"value": false
+					},
+					{
+						"text": "Accept Darkness",
+						"value": false
+					}
+				],
+				[
+					"Conviction",
+					{
+						"text": "Barbaric",
+						"value": false
+					},
+					{
+						"text": "Romantic",
+						"value": false
+					}
+				]
+			],
+			"quarries": [
+				{
+					"text": "White Lion",
+					"value": true
+				},
+				{
+					"text": "Screaming Antelope",
+					"value": false
+				},
+				{
+					"text": "Phoenix",
+					"value": false
+				}
+			],
+			"namesis": [
+				{
+					"text": "Butcher",
+					"value": true,
+					"level": [
+						false,
+						false,
+						false
+					]
+				},
+				{
+					"text": "King's Man",
+					"value": false,
+					"level": [
+						false,
+						false,
+						false
+					]
+				},
+				{
+					"text": "The Hand",
+					"value": false,
+					"level": [
+						false,
+						false,
+						false
+					]
+				}
+			],
+			"resourceStorage": [
+				{
+					"text": "",
+					"count": 0
+				}
+			],
+			"gearStorage": [
+				{
+					"text": "",
+					"count": 0
+				}
+			],
+			"lanternResearchLevel": 0,
+			"monsterVolumes": [
+				""
+			],
+			"notes": "",
+			"lostSettlements": 0
+		},
+		{
+			"v": 1,
+			"id": "667a6a5ed7500288451d3799",
+			"type": "settlement",
+			"settlementName": "Unnamed Settlement",
+			"survivalLimit": 1,
+			"population": 0,
+			"deathCount": 0,
+			"timeline": [
+				{
+					"year": 1,
+					"value": false,
+					"text": "[SE] First Day, Returning Survivors"
+				},
+				{
+					"year": 2,
+					"value": false,
+					"text": "[SE] Endless Screams"
+				},
+				{
+					"year": 3,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 4,
+					"value": false,
+					"text": "Namesis Encounter - Butcher Lvl 1"
+				},
+				{
+					"year": 5,
+					"value": false,
+					"text": "[SE] Hands of Heat"
+				},
+				{
+					"year": 6,
+					"value": false,
+					"text": "[SE] Armored Strangers"
+				},
+				{
+					"year": 7,
+					"value": false,
+					"text": "[SE] Phoenix Feather"
+				},
+				{
+					"year": 8,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 9,
+					"value": false,
+					"text": "Namesis Encounter - King's Man Lvl 1"
+				},
+				{
+					"year": 10,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 11,
+					"value": false,
+					"text": "[SE] Regal Visit"
+				},
+				{
+					"year": 12,
+					"value": false,
+					"text": "[SE] Principle: Conviction"
+				},
+				{
+					"year": 13,
+					"value": false,
+					"text": "Namesis Encounter - The Hand Lvl 1"
+				},
+				{
+					"year": 14,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 15,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 16,
+					"value": false,
+					"text": "Namesis Encounter - Butcher Lvl 2"
+				},
+				{
+					"year": 17,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 18,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 19,
+					"value": false,
+					"text": "Namesis Encounter - King's Man Lvl 2"
+				},
+				{
+					"year": 20,
+					"value": false,
+					"text": "[SE] Watched"
+				},
+				{
+					"year": 21,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 22,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 23,
+					"value": false,
+					"text": "Namesis Encounter - Butcher Lvl 3"
+				},
+				{
+					"year": 24,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 25,
+					"value": false,
+					"text": "Namesis Encounter - Watcher"
+				},
+				{
+					"year": 26,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 27,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 28,
+					"value": false,
+					"text": "Namesis Encounter - King's Man Lvl 3"
+				},
+				{
+					"year": 29,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 30,
+					"value": false,
+					"text": "Namesis Encounter - Gold Smoke Knight"
+				},
+				{
+					"year": 31,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 32,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 33,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 34,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 35,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 36,
+					"value": false,
+					"text": ""
+				}
+			],
+			"milestones": [
+				{
+					"text": "First child is born",
+					"se": "Principle: New Life",
+					"value": false
+				},
+				{
+					"text": "Population reaches 15",
+					"se": "Principle: Society",
+					"value": false
+				},
+				{
+					"text": "Population reaches 0",
+					"se": "Game Over",
+					"value": false
+				},
+				{
+					"text": "First time death count is updated",
+					"se": "Principle: Death",
+					"value": false
+				},
+				{
+					"text": "Settlement has 5 innovations",
+					"se": "Hooded Knight",
+					"value": false
+				}
+			],
+			"innovations": [
+				"Language"
+			],
+			"settlementLocations": [
+				{
+					"text": "Lantern Hoard",
+					"value": true
+				},
+				{
+					"text": "Bone Smith",
+					"value": false
+				},
+				{
+					"text": "Skinnery",
+					"value": false
+				},
+				{
+					"text": "Organ Grinder",
+					"value": false
+				},
+				{
+					"text": "Catarium",
+					"value": false
+				},
+				{
+					"text": "Weapon Crafter",
+					"value": false
+				},
+				{
+					"text": "Leather Worker",
+					"value": false
+				},
+				{
+					"text": "Stone Circle",
+					"value": false
+				},
+				{
+					"text": "Barber Surgeon",
+					"value": false
+				},
+				{
+					"text": "Plumery",
+					"value": false
+				},
+				{
+					"text": "Blacksmith",
+					"value": false
+				},
+				{
+					"text": "Mask Maker",
+					"value": false
+				}
+			],
+			"principles": [
+				[
+					"New Life",
+					{
+						"text": "Protect the Young",
+						"value": false
+					},
+					{
+						"text": "Survival of the Fittest",
+						"value": false
+					}
+				],
+				[
+					"Death",
+					{
+						"text": "Cannibalize",
+						"value": false
+					},
+					{
+						"text": "Graves",
+						"value": false
+					}
+				],
+				[
+					"Society",
+					{
+						"text": "Collective Toil",
+						"value": false
+					},
+					{
+						"text": "Accept Darkness",
+						"value": false
+					}
+				],
+				[
+					"Conviction",
+					{
+						"text": "Barbaric",
+						"value": false
+					},
+					{
+						"text": "Romantic",
+						"value": false
+					}
+				]
+			],
+			"quarries": [
+				{
+					"text": "White Lion",
+					"value": true
+				},
+				{
+					"text": "Screaming Antelope",
+					"value": false
+				},
+				{
+					"text": "Phoenix",
+					"value": false
+				}
+			],
+			"namesis": [
+				{
+					"text": "Butcher",
+					"value": true,
+					"level": [
+						false,
+						false,
+						false
+					]
+				},
+				{
+					"text": "King's Man",
+					"value": false,
+					"level": [
+						false,
+						false,
+						false
+					]
+				},
+				{
+					"text": "The Hand",
+					"value": false,
+					"level": [
+						false,
+						false,
+						false
+					]
+				}
+			],
+			"resourceStorage": [
+				{
+					"text": "",
+					"count": 0
+				}
+			],
+			"gearStorage": [
+				{
+					"text": "",
+					"count": 0
+				}
+			],
+			"lanternResearchLevel": 0,
+			"monsterVolumes": [
+				""
+			],
+			"notes": "",
+			"lostSettlements": 0
+		},
+		{
+			"v": 1,
+			"id": "667a6a5ed58219e0a21a6910",
+			"type": "settlement",
+			"settlementName": "Unnamed Settlement",
+			"survivalLimit": 1,
+			"population": 0,
+			"deathCount": 0,
+			"timeline": [
+				{
+					"year": 1,
+					"value": false,
+					"text": "[SE] First Day, Returning Survivors"
+				},
+				{
+					"year": 2,
+					"value": false,
+					"text": "[SE] Endless Screams"
+				},
+				{
+					"year": 3,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 4,
+					"value": false,
+					"text": "Namesis Encounter - Butcher Lvl 1"
+				},
+				{
+					"year": 5,
+					"value": false,
+					"text": "[SE] Hands of Heat"
+				},
+				{
+					"year": 6,
+					"value": false,
+					"text": "[SE] Armored Strangers"
+				},
+				{
+					"year": 7,
+					"value": false,
+					"text": "[SE] Phoenix Feather"
+				},
+				{
+					"year": 8,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 9,
+					"value": false,
+					"text": "Namesis Encounter - King's Man Lvl 1"
+				},
+				{
+					"year": 10,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 11,
+					"value": false,
+					"text": "[SE] Regal Visit"
+				},
+				{
+					"year": 12,
+					"value": false,
+					"text": "[SE] Principle: Conviction"
+				},
+				{
+					"year": 13,
+					"value": false,
+					"text": "Namesis Encounter - The Hand Lvl 1"
+				},
+				{
+					"year": 14,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 15,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 16,
+					"value": false,
+					"text": "Namesis Encounter - Butcher Lvl 2"
+				},
+				{
+					"year": 17,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 18,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 19,
+					"value": false,
+					"text": "Namesis Encounter - King's Man Lvl 2"
+				},
+				{
+					"year": 20,
+					"value": false,
+					"text": "[SE] Watched"
+				},
+				{
+					"year": 21,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 22,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 23,
+					"value": false,
+					"text": "Namesis Encounter - Butcher Lvl 3"
+				},
+				{
+					"year": 24,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 25,
+					"value": false,
+					"text": "Namesis Encounter - Watcher"
+				},
+				{
+					"year": 26,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 27,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 28,
+					"value": false,
+					"text": "Namesis Encounter - King's Man Lvl 3"
+				},
+				{
+					"year": 29,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 30,
+					"value": false,
+					"text": "Namesis Encounter - Gold Smoke Knight"
+				},
+				{
+					"year": 31,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 32,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 33,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 34,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 35,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 36,
+					"value": false,
+					"text": ""
+				}
+			],
+			"milestones": [
+				{
+					"text": "First child is born",
+					"se": "Principle: New Life",
+					"value": false
+				},
+				{
+					"text": "Population reaches 15",
+					"se": "Principle: Society",
+					"value": false
+				},
+				{
+					"text": "Population reaches 0",
+					"se": "Game Over",
+					"value": false
+				},
+				{
+					"text": "First time death count is updated",
+					"se": "Principle: Death",
+					"value": false
+				},
+				{
+					"text": "Settlement has 5 innovations",
+					"se": "Hooded Knight",
+					"value": false
+				}
+			],
+			"innovations": [
+				"Language"
+			],
+			"settlementLocations": [
+				{
+					"text": "Lantern Hoard",
+					"value": true
+				},
+				{
+					"text": "Bone Smith",
+					"value": false
+				},
+				{
+					"text": "Skinnery",
+					"value": false
+				},
+				{
+					"text": "Organ Grinder",
+					"value": false
+				},
+				{
+					"text": "Catarium",
+					"value": false
+				},
+				{
+					"text": "Weapon Crafter",
+					"value": false
+				},
+				{
+					"text": "Leather Worker",
+					"value": false
+				},
+				{
+					"text": "Stone Circle",
+					"value": false
+				},
+				{
+					"text": "Barber Surgeon",
+					"value": false
+				},
+				{
+					"text": "Plumery",
+					"value": false
+				},
+				{
+					"text": "Blacksmith",
+					"value": false
+				},
+				{
+					"text": "Mask Maker",
+					"value": false
+				}
+			],
+			"principles": [
+				[
+					"New Life",
+					{
+						"text": "Protect the Young",
+						"value": false
+					},
+					{
+						"text": "Survival of the Fittest",
+						"value": false
+					}
+				],
+				[
+					"Death",
+					{
+						"text": "Cannibalize",
+						"value": false
+					},
+					{
+						"text": "Graves",
+						"value": false
+					}
+				],
+				[
+					"Society",
+					{
+						"text": "Collective Toil",
+						"value": false
+					},
+					{
+						"text": "Accept Darkness",
+						"value": false
+					}
+				],
+				[
+					"Conviction",
+					{
+						"text": "Barbaric",
+						"value": false
+					},
+					{
+						"text": "Romantic",
+						"value": false
+					}
+				]
+			],
+			"quarries": [
+				{
+					"text": "White Lion",
+					"value": true
+				},
+				{
+					"text": "Screaming Antelope",
+					"value": false
+				},
+				{
+					"text": "Phoenix",
+					"value": false
+				}
+			],
+			"namesis": [
+				{
+					"text": "Butcher",
+					"value": true,
+					"level": [
+						false,
+						false,
+						false
+					]
+				},
+				{
+					"text": "King's Man",
+					"value": false,
+					"level": [
+						false,
+						false,
+						false
+					]
+				},
+				{
+					"text": "The Hand",
+					"value": false,
+					"level": [
+						false,
+						false,
+						false
+					]
+				}
+			],
+			"resourceStorage": [
+				{
+					"text": "",
+					"count": 0
+				}
+			],
+			"gearStorage": [
+				{
+					"text": "",
+					"count": 0
+				}
+			],
+			"lanternResearchLevel": 0,
+			"monsterVolumes": [
+				""
+			],
+			"notes": "",
+			"lostSettlements": 0
+		},
+		{
+			"v": 1,
+			"id": "667a6a5efac7971c55c3ef57",
+			"type": "settlement",
+			"settlementName": "Unnamed Settlement",
+			"survivalLimit": 1,
+			"population": 0,
+			"deathCount": 0,
+			"timeline": [
+				{
+					"year": 1,
+					"value": false,
+					"text": "[SE] First Day, Returning Survivors"
+				},
+				{
+					"year": 2,
+					"value": false,
+					"text": "[SE] Endless Screams"
+				},
+				{
+					"year": 3,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 4,
+					"value": false,
+					"text": "Namesis Encounter - Butcher Lvl 1"
+				},
+				{
+					"year": 5,
+					"value": false,
+					"text": "[SE] Hands of Heat"
+				},
+				{
+					"year": 6,
+					"value": false,
+					"text": "[SE] Armored Strangers"
+				},
+				{
+					"year": 7,
+					"value": false,
+					"text": "[SE] Phoenix Feather"
+				},
+				{
+					"year": 8,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 9,
+					"value": false,
+					"text": "Namesis Encounter - King's Man Lvl 1"
+				},
+				{
+					"year": 10,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 11,
+					"value": false,
+					"text": "[SE] Regal Visit"
+				},
+				{
+					"year": 12,
+					"value": false,
+					"text": "[SE] Principle: Conviction"
+				},
+				{
+					"year": 13,
+					"value": false,
+					"text": "Namesis Encounter - The Hand Lvl 1"
+				},
+				{
+					"year": 14,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 15,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 16,
+					"value": false,
+					"text": "Namesis Encounter - Butcher Lvl 2"
+				},
+				{
+					"year": 17,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 18,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 19,
+					"value": false,
+					"text": "Namesis Encounter - King's Man Lvl 2"
+				},
+				{
+					"year": 20,
+					"value": false,
+					"text": "[SE] Watched"
+				},
+				{
+					"year": 21,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 22,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 23,
+					"value": false,
+					"text": "Namesis Encounter - Butcher Lvl 3"
+				},
+				{
+					"year": 24,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 25,
+					"value": false,
+					"text": "Namesis Encounter - Watcher"
+				},
+				{
+					"year": 26,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 27,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 28,
+					"value": false,
+					"text": "Namesis Encounter - King's Man Lvl 3"
+				},
+				{
+					"year": 29,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 30,
+					"value": false,
+					"text": "Namesis Encounter - Gold Smoke Knight"
+				},
+				{
+					"year": 31,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 32,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 33,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 34,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 35,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 36,
+					"value": false,
+					"text": ""
+				}
+			],
+			"milestones": [
+				{
+					"text": "First child is born",
+					"se": "Principle: New Life",
+					"value": false
+				},
+				{
+					"text": "Population reaches 15",
+					"se": "Principle: Society",
+					"value": false
+				},
+				{
+					"text": "Population reaches 0",
+					"se": "Game Over",
+					"value": false
+				},
+				{
+					"text": "First time death count is updated",
+					"se": "Principle: Death",
+					"value": false
+				},
+				{
+					"text": "Settlement has 5 innovations",
+					"se": "Hooded Knight",
+					"value": false
+				}
+			],
+			"innovations": [
+				"Language"
+			],
+			"settlementLocations": [
+				{
+					"text": "Lantern Hoard",
+					"value": true
+				},
+				{
+					"text": "Bone Smith",
+					"value": false
+				},
+				{
+					"text": "Skinnery",
+					"value": false
+				},
+				{
+					"text": "Organ Grinder",
+					"value": false
+				},
+				{
+					"text": "Catarium",
+					"value": false
+				},
+				{
+					"text": "Weapon Crafter",
+					"value": false
+				},
+				{
+					"text": "Leather Worker",
+					"value": false
+				},
+				{
+					"text": "Stone Circle",
+					"value": false
+				},
+				{
+					"text": "Barber Surgeon",
+					"value": false
+				},
+				{
+					"text": "Plumery",
+					"value": false
+				},
+				{
+					"text": "Blacksmith",
+					"value": false
+				},
+				{
+					"text": "Mask Maker",
+					"value": false
+				}
+			],
+			"principles": [
+				[
+					"New Life",
+					{
+						"text": "Protect the Young",
+						"value": false
+					},
+					{
+						"text": "Survival of the Fittest",
+						"value": false
+					}
+				],
+				[
+					"Death",
+					{
+						"text": "Cannibalize",
+						"value": false
+					},
+					{
+						"text": "Graves",
+						"value": false
+					}
+				],
+				[
+					"Society",
+					{
+						"text": "Collective Toil",
+						"value": false
+					},
+					{
+						"text": "Accept Darkness",
+						"value": false
+					}
+				],
+				[
+					"Conviction",
+					{
+						"text": "Barbaric",
+						"value": false
+					},
+					{
+						"text": "Romantic",
+						"value": false
+					}
+				]
+			],
+			"quarries": [
+				{
+					"text": "White Lion",
+					"value": true
+				},
+				{
+					"text": "Screaming Antelope",
+					"value": false
+				},
+				{
+					"text": "Phoenix",
+					"value": false
+				}
+			],
+			"namesis": [
+				{
+					"text": "Butcher",
+					"value": true,
+					"level": [
+						false,
+						false,
+						false
+					]
+				},
+				{
+					"text": "King's Man",
+					"value": false,
+					"level": [
+						false,
+						false,
+						false
+					]
+				},
+				{
+					"text": "The Hand",
+					"value": false,
+					"level": [
+						false,
+						false,
+						false
+					]
+				}
+			],
+			"resourceStorage": [
+				{
+					"text": "",
+					"count": 0
+				}
+			],
+			"gearStorage": [
+				{
+					"text": "",
+					"count": 0
+				}
+			],
+			"lanternResearchLevel": 0,
+			"monsterVolumes": [
+				""
+			],
+			"notes": "",
+			"lostSettlements": 0
+		},
+		{
+			"v": 1,
+			"id": "667a6a5eeed8e409345d97cb",
+			"type": "settlement",
+			"settlementName": "Unnamed Settlement",
+			"survivalLimit": 1,
+			"population": 0,
+			"deathCount": 0,
+			"timeline": [
+				{
+					"year": 1,
+					"value": false,
+					"text": "[SE] First Day, Returning Survivors"
+				},
+				{
+					"year": 2,
+					"value": false,
+					"text": "[SE] Endless Screams"
+				},
+				{
+					"year": 3,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 4,
+					"value": false,
+					"text": "Namesis Encounter - Butcher Lvl 1"
+				},
+				{
+					"year": 5,
+					"value": false,
+					"text": "[SE] Hands of Heat"
+				},
+				{
+					"year": 6,
+					"value": false,
+					"text": "[SE] Armored Strangers"
+				},
+				{
+					"year": 7,
+					"value": false,
+					"text": "[SE] Phoenix Feather"
+				},
+				{
+					"year": 8,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 9,
+					"value": false,
+					"text": "Namesis Encounter - King's Man Lvl 1"
+				},
+				{
+					"year": 10,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 11,
+					"value": false,
+					"text": "[SE] Regal Visit"
+				},
+				{
+					"year": 12,
+					"value": false,
+					"text": "[SE] Principle: Conviction"
+				},
+				{
+					"year": 13,
+					"value": false,
+					"text": "Namesis Encounter - The Hand Lvl 1"
+				},
+				{
+					"year": 14,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 15,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 16,
+					"value": false,
+					"text": "Namesis Encounter - Butcher Lvl 2"
+				},
+				{
+					"year": 17,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 18,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 19,
+					"value": false,
+					"text": "Namesis Encounter - King's Man Lvl 2"
+				},
+				{
+					"year": 20,
+					"value": false,
+					"text": "[SE] Watched"
+				},
+				{
+					"year": 21,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 22,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 23,
+					"value": false,
+					"text": "Namesis Encounter - Butcher Lvl 3"
+				},
+				{
+					"year": 24,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 25,
+					"value": false,
+					"text": "Namesis Encounter - Watcher"
+				},
+				{
+					"year": 26,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 27,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 28,
+					"value": false,
+					"text": "Namesis Encounter - King's Man Lvl 3"
+				},
+				{
+					"year": 29,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 30,
+					"value": false,
+					"text": "Namesis Encounter - Gold Smoke Knight"
+				},
+				{
+					"year": 31,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 32,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 33,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 34,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 35,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 36,
+					"value": false,
+					"text": ""
+				}
+			],
+			"milestones": [
+				{
+					"text": "First child is born",
+					"se": "Principle: New Life",
+					"value": false
+				},
+				{
+					"text": "Population reaches 15",
+					"se": "Principle: Society",
+					"value": false
+				},
+				{
+					"text": "Population reaches 0",
+					"se": "Game Over",
+					"value": false
+				},
+				{
+					"text": "First time death count is updated",
+					"se": "Principle: Death",
+					"value": false
+				},
+				{
+					"text": "Settlement has 5 innovations",
+					"se": "Hooded Knight",
+					"value": false
+				}
+			],
+			"innovations": [
+				"Language"
+			],
+			"settlementLocations": [
+				{
+					"text": "Lantern Hoard",
+					"value": true
+				},
+				{
+					"text": "Bone Smith",
+					"value": false
+				},
+				{
+					"text": "Skinnery",
+					"value": false
+				},
+				{
+					"text": "Organ Grinder",
+					"value": false
+				},
+				{
+					"text": "Catarium",
+					"value": false
+				},
+				{
+					"text": "Weapon Crafter",
+					"value": false
+				},
+				{
+					"text": "Leather Worker",
+					"value": false
+				},
+				{
+					"text": "Stone Circle",
+					"value": false
+				},
+				{
+					"text": "Barber Surgeon",
+					"value": false
+				},
+				{
+					"text": "Plumery",
+					"value": false
+				},
+				{
+					"text": "Blacksmith",
+					"value": false
+				},
+				{
+					"text": "Mask Maker",
+					"value": false
+				}
+			],
+			"principles": [
+				[
+					"New Life",
+					{
+						"text": "Protect the Young",
+						"value": false
+					},
+					{
+						"text": "Survival of the Fittest",
+						"value": false
+					}
+				],
+				[
+					"Death",
+					{
+						"text": "Cannibalize",
+						"value": false
+					},
+					{
+						"text": "Graves",
+						"value": false
+					}
+				],
+				[
+					"Society",
+					{
+						"text": "Collective Toil",
+						"value": false
+					},
+					{
+						"text": "Accept Darkness",
+						"value": false
+					}
+				],
+				[
+					"Conviction",
+					{
+						"text": "Barbaric",
+						"value": false
+					},
+					{
+						"text": "Romantic",
+						"value": false
+					}
+				]
+			],
+			"quarries": [
+				{
+					"text": "White Lion",
+					"value": true
+				},
+				{
+					"text": "Screaming Antelope",
+					"value": false
+				},
+				{
+					"text": "Phoenix",
+					"value": false
+				}
+			],
+			"namesis": [
+				{
+					"text": "Butcher",
+					"value": true,
+					"level": [
+						false,
+						false,
+						false
+					]
+				},
+				{
+					"text": "King's Man",
+					"value": false,
+					"level": [
+						false,
+						false,
+						false
+					]
+				},
+				{
+					"text": "The Hand",
+					"value": false,
+					"level": [
+						false,
+						false,
+						false
+					]
+				}
+			],
+			"resourceStorage": [
+				{
+					"text": "",
+					"count": 0
+				}
+			],
+			"gearStorage": [
+				{
+					"text": "",
+					"count": 0
+				}
+			],
+			"lanternResearchLevel": 0,
+			"monsterVolumes": [
+				""
+			],
+			"notes": "",
+			"lostSettlements": 0
+		},
+		{
+			"v": 1,
+			"id": "667a6a5eba267f0dcbefaa6a",
+			"type": "settlement",
+			"settlementName": "Unnamed Settlement",
+			"survivalLimit": 1,
+			"population": 0,
+			"deathCount": 0,
+			"timeline": [
+				{
+					"year": 1,
+					"value": false,
+					"text": "[SE] First Day, Returning Survivors"
+				},
+				{
+					"year": 2,
+					"value": false,
+					"text": "[SE] Endless Screams"
+				},
+				{
+					"year": 3,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 4,
+					"value": false,
+					"text": "Namesis Encounter - Butcher Lvl 1"
+				},
+				{
+					"year": 5,
+					"value": false,
+					"text": "[SE] Hands of Heat"
+				},
+				{
+					"year": 6,
+					"value": false,
+					"text": "[SE] Armored Strangers"
+				},
+				{
+					"year": 7,
+					"value": false,
+					"text": "[SE] Phoenix Feather"
+				},
+				{
+					"year": 8,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 9,
+					"value": false,
+					"text": "Namesis Encounter - King's Man Lvl 1"
+				},
+				{
+					"year": 10,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 11,
+					"value": false,
+					"text": "[SE] Regal Visit"
+				},
+				{
+					"year": 12,
+					"value": false,
+					"text": "[SE] Principle: Conviction"
+				},
+				{
+					"year": 13,
+					"value": false,
+					"text": "Namesis Encounter - The Hand Lvl 1"
+				},
+				{
+					"year": 14,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 15,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 16,
+					"value": false,
+					"text": "Namesis Encounter - Butcher Lvl 2"
+				},
+				{
+					"year": 17,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 18,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 19,
+					"value": false,
+					"text": "Namesis Encounter - King's Man Lvl 2"
+				},
+				{
+					"year": 20,
+					"value": false,
+					"text": "[SE] Watched"
+				},
+				{
+					"year": 21,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 22,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 23,
+					"value": false,
+					"text": "Namesis Encounter - Butcher Lvl 3"
+				},
+				{
+					"year": 24,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 25,
+					"value": false,
+					"text": "Namesis Encounter - Watcher"
+				},
+				{
+					"year": 26,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 27,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 28,
+					"value": false,
+					"text": "Namesis Encounter - King's Man Lvl 3"
+				},
+				{
+					"year": 29,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 30,
+					"value": false,
+					"text": "Namesis Encounter - Gold Smoke Knight"
+				},
+				{
+					"year": 31,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 32,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 33,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 34,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 35,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 36,
+					"value": false,
+					"text": ""
+				}
+			],
+			"milestones": [
+				{
+					"text": "First child is born",
+					"se": "Principle: New Life",
+					"value": false
+				},
+				{
+					"text": "Population reaches 15",
+					"se": "Principle: Society",
+					"value": false
+				},
+				{
+					"text": "Population reaches 0",
+					"se": "Game Over",
+					"value": false
+				},
+				{
+					"text": "First time death count is updated",
+					"se": "Principle: Death",
+					"value": false
+				},
+				{
+					"text": "Settlement has 5 innovations",
+					"se": "Hooded Knight",
+					"value": false
+				}
+			],
+			"innovations": [
+				"Language"
+			],
+			"settlementLocations": [
+				{
+					"text": "Lantern Hoard",
+					"value": true
+				},
+				{
+					"text": "Bone Smith",
+					"value": false
+				},
+				{
+					"text": "Skinnery",
+					"value": false
+				},
+				{
+					"text": "Organ Grinder",
+					"value": false
+				},
+				{
+					"text": "Catarium",
+					"value": false
+				},
+				{
+					"text": "Weapon Crafter",
+					"value": false
+				},
+				{
+					"text": "Leather Worker",
+					"value": false
+				},
+				{
+					"text": "Stone Circle",
+					"value": false
+				},
+				{
+					"text": "Barber Surgeon",
+					"value": false
+				},
+				{
+					"text": "Plumery",
+					"value": false
+				},
+				{
+					"text": "Blacksmith",
+					"value": false
+				},
+				{
+					"text": "Mask Maker",
+					"value": false
+				}
+			],
+			"principles": [
+				[
+					"New Life",
+					{
+						"text": "Protect the Young",
+						"value": false
+					},
+					{
+						"text": "Survival of the Fittest",
+						"value": false
+					}
+				],
+				[
+					"Death",
+					{
+						"text": "Cannibalize",
+						"value": false
+					},
+					{
+						"text": "Graves",
+						"value": false
+					}
+				],
+				[
+					"Society",
+					{
+						"text": "Collective Toil",
+						"value": false
+					},
+					{
+						"text": "Accept Darkness",
+						"value": false
+					}
+				],
+				[
+					"Conviction",
+					{
+						"text": "Barbaric",
+						"value": false
+					},
+					{
+						"text": "Romantic",
+						"value": false
+					}
+				]
+			],
+			"quarries": [
+				{
+					"text": "White Lion",
+					"value": true
+				},
+				{
+					"text": "Screaming Antelope",
+					"value": false
+				},
+				{
+					"text": "Phoenix",
+					"value": false
+				}
+			],
+			"namesis": [
+				{
+					"text": "Butcher",
+					"value": true,
+					"level": [
+						false,
+						false,
+						false
+					]
+				},
+				{
+					"text": "King's Man",
+					"value": false,
+					"level": [
+						false,
+						false,
+						false
+					]
+				},
+				{
+					"text": "The Hand",
+					"value": false,
+					"level": [
+						false,
+						false,
+						false
+					]
+				}
+			],
+			"resourceStorage": [
+				{
+					"text": "",
+					"count": 0
+				}
+			],
+			"gearStorage": [
+				{
+					"text": "",
+					"count": 0
+				}
+			],
+			"lanternResearchLevel": 0,
+			"monsterVolumes": [
+				""
+			],
+			"notes": "",
+			"lostSettlements": 0
+		},
+		{
+			"v": 1,
+			"id": "667a6a5ea7ff60742c67cde7",
+			"type": "settlement",
+			"settlementName": "Unnamed Settlement",
+			"survivalLimit": 1,
+			"population": 0,
+			"deathCount": 0,
+			"timeline": [
+				{
+					"year": 1,
+					"value": false,
+					"text": "[SE] First Day, Returning Survivors"
+				},
+				{
+					"year": 2,
+					"value": false,
+					"text": "[SE] Endless Screams"
+				},
+				{
+					"year": 3,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 4,
+					"value": false,
+					"text": "Namesis Encounter - Butcher Lvl 1"
+				},
+				{
+					"year": 5,
+					"value": false,
+					"text": "[SE] Hands of Heat"
+				},
+				{
+					"year": 6,
+					"value": false,
+					"text": "[SE] Armored Strangers"
+				},
+				{
+					"year": 7,
+					"value": false,
+					"text": "[SE] Phoenix Feather"
+				},
+				{
+					"year": 8,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 9,
+					"value": false,
+					"text": "Namesis Encounter - King's Man Lvl 1"
+				},
+				{
+					"year": 10,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 11,
+					"value": false,
+					"text": "[SE] Regal Visit"
+				},
+				{
+					"year": 12,
+					"value": false,
+					"text": "[SE] Principle: Conviction"
+				},
+				{
+					"year": 13,
+					"value": false,
+					"text": "Namesis Encounter - The Hand Lvl 1"
+				},
+				{
+					"year": 14,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 15,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 16,
+					"value": false,
+					"text": "Namesis Encounter - Butcher Lvl 2"
+				},
+				{
+					"year": 17,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 18,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 19,
+					"value": false,
+					"text": "Namesis Encounter - King's Man Lvl 2"
+				},
+				{
+					"year": 20,
+					"value": false,
+					"text": "[SE] Watched"
+				},
+				{
+					"year": 21,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 22,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 23,
+					"value": false,
+					"text": "Namesis Encounter - Butcher Lvl 3"
+				},
+				{
+					"year": 24,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 25,
+					"value": false,
+					"text": "Namesis Encounter - Watcher"
+				},
+				{
+					"year": 26,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 27,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 28,
+					"value": false,
+					"text": "Namesis Encounter - King's Man Lvl 3"
+				},
+				{
+					"year": 29,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 30,
+					"value": false,
+					"text": "Namesis Encounter - Gold Smoke Knight"
+				},
+				{
+					"year": 31,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 32,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 33,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 34,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 35,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 36,
+					"value": false,
+					"text": ""
+				}
+			],
+			"milestones": [
+				{
+					"text": "First child is born",
+					"se": "Principle: New Life",
+					"value": false
+				},
+				{
+					"text": "Population reaches 15",
+					"se": "Principle: Society",
+					"value": false
+				},
+				{
+					"text": "Population reaches 0",
+					"se": "Game Over",
+					"value": false
+				},
+				{
+					"text": "First time death count is updated",
+					"se": "Principle: Death",
+					"value": false
+				},
+				{
+					"text": "Settlement has 5 innovations",
+					"se": "Hooded Knight",
+					"value": false
+				}
+			],
+			"innovations": [
+				"Language"
+			],
+			"settlementLocations": [
+				{
+					"text": "Lantern Hoard",
+					"value": true
+				},
+				{
+					"text": "Bone Smith",
+					"value": false
+				},
+				{
+					"text": "Skinnery",
+					"value": false
+				},
+				{
+					"text": "Organ Grinder",
+					"value": false
+				},
+				{
+					"text": "Catarium",
+					"value": false
+				},
+				{
+					"text": "Weapon Crafter",
+					"value": false
+				},
+				{
+					"text": "Leather Worker",
+					"value": false
+				},
+				{
+					"text": "Stone Circle",
+					"value": false
+				},
+				{
+					"text": "Barber Surgeon",
+					"value": false
+				},
+				{
+					"text": "Plumery",
+					"value": false
+				},
+				{
+					"text": "Blacksmith",
+					"value": false
+				},
+				{
+					"text": "Mask Maker",
+					"value": false
+				}
+			],
+			"principles": [
+				[
+					"New Life",
+					{
+						"text": "Protect the Young",
+						"value": false
+					},
+					{
+						"text": "Survival of the Fittest",
+						"value": false
+					}
+				],
+				[
+					"Death",
+					{
+						"text": "Cannibalize",
+						"value": false
+					},
+					{
+						"text": "Graves",
+						"value": false
+					}
+				],
+				[
+					"Society",
+					{
+						"text": "Collective Toil",
+						"value": false
+					},
+					{
+						"text": "Accept Darkness",
+						"value": false
+					}
+				],
+				[
+					"Conviction",
+					{
+						"text": "Barbaric",
+						"value": false
+					},
+					{
+						"text": "Romantic",
+						"value": false
+					}
+				]
+			],
+			"quarries": [
+				{
+					"text": "White Lion",
+					"value": true
+				},
+				{
+					"text": "Screaming Antelope",
+					"value": false
+				},
+				{
+					"text": "Phoenix",
+					"value": false
+				}
+			],
+			"namesis": [
+				{
+					"text": "Butcher",
+					"value": true,
+					"level": [
+						false,
+						false,
+						false
+					]
+				},
+				{
+					"text": "King's Man",
+					"value": false,
+					"level": [
+						false,
+						false,
+						false
+					]
+				},
+				{
+					"text": "The Hand",
+					"value": false,
+					"level": [
+						false,
+						false,
+						false
+					]
+				}
+			],
+			"resourceStorage": [
+				{
+					"text": "",
+					"count": 0
+				}
+			],
+			"gearStorage": [
+				{
+					"text": "",
+					"count": 0
+				}
+			],
+			"lanternResearchLevel": 0,
+			"monsterVolumes": [
+				""
+			],
+			"notes": "",
+			"lostSettlements": 0
+		},
+		{
+			"v": 1,
+			"id": "667a6a5e7f35f4b71abc0fbb",
+			"type": "settlement",
+			"settlementName": "Unnamed Settlement",
+			"survivalLimit": 1,
+			"population": 0,
+			"deathCount": 0,
+			"timeline": [
+				{
+					"year": 1,
+					"value": false,
+					"text": "[SE] First Day, Returning Survivors"
+				},
+				{
+					"year": 2,
+					"value": false,
+					"text": "[SE] Endless Screams"
+				},
+				{
+					"year": 3,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 4,
+					"value": false,
+					"text": "Namesis Encounter - Butcher Lvl 1"
+				},
+				{
+					"year": 5,
+					"value": false,
+					"text": "[SE] Hands of Heat"
+				},
+				{
+					"year": 6,
+					"value": false,
+					"text": "[SE] Armored Strangers"
+				},
+				{
+					"year": 7,
+					"value": false,
+					"text": "[SE] Phoenix Feather"
+				},
+				{
+					"year": 8,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 9,
+					"value": false,
+					"text": "Namesis Encounter - King's Man Lvl 1"
+				},
+				{
+					"year": 10,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 11,
+					"value": false,
+					"text": "[SE] Regal Visit"
+				},
+				{
+					"year": 12,
+					"value": false,
+					"text": "[SE] Principle: Conviction"
+				},
+				{
+					"year": 13,
+					"value": false,
+					"text": "Namesis Encounter - The Hand Lvl 1"
+				},
+				{
+					"year": 14,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 15,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 16,
+					"value": false,
+					"text": "Namesis Encounter - Butcher Lvl 2"
+				},
+				{
+					"year": 17,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 18,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 19,
+					"value": false,
+					"text": "Namesis Encounter - King's Man Lvl 2"
+				},
+				{
+					"year": 20,
+					"value": false,
+					"text": "[SE] Watched"
+				},
+				{
+					"year": 21,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 22,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 23,
+					"value": false,
+					"text": "Namesis Encounter - Butcher Lvl 3"
+				},
+				{
+					"year": 24,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 25,
+					"value": false,
+					"text": "Namesis Encounter - Watcher"
+				},
+				{
+					"year": 26,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 27,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 28,
+					"value": false,
+					"text": "Namesis Encounter - King's Man Lvl 3"
+				},
+				{
+					"year": 29,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 30,
+					"value": false,
+					"text": "Namesis Encounter - Gold Smoke Knight"
+				},
+				{
+					"year": 31,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 32,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 33,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 34,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 35,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 36,
+					"value": false,
+					"text": ""
+				}
+			],
+			"milestones": [
+				{
+					"text": "First child is born",
+					"se": "Principle: New Life",
+					"value": false
+				},
+				{
+					"text": "Population reaches 15",
+					"se": "Principle: Society",
+					"value": false
+				},
+				{
+					"text": "Population reaches 0",
+					"se": "Game Over",
+					"value": false
+				},
+				{
+					"text": "First time death count is updated",
+					"se": "Principle: Death",
+					"value": false
+				},
+				{
+					"text": "Settlement has 5 innovations",
+					"se": "Hooded Knight",
+					"value": false
+				}
+			],
+			"innovations": [
+				"Language"
+			],
+			"settlementLocations": [
+				{
+					"text": "Lantern Hoard",
+					"value": true
+				},
+				{
+					"text": "Bone Smith",
+					"value": false
+				},
+				{
+					"text": "Skinnery",
+					"value": false
+				},
+				{
+					"text": "Organ Grinder",
+					"value": false
+				},
+				{
+					"text": "Catarium",
+					"value": false
+				},
+				{
+					"text": "Weapon Crafter",
+					"value": false
+				},
+				{
+					"text": "Leather Worker",
+					"value": false
+				},
+				{
+					"text": "Stone Circle",
+					"value": false
+				},
+				{
+					"text": "Barber Surgeon",
+					"value": false
+				},
+				{
+					"text": "Plumery",
+					"value": false
+				},
+				{
+					"text": "Blacksmith",
+					"value": false
+				},
+				{
+					"text": "Mask Maker",
+					"value": false
+				}
+			],
+			"principles": [
+				[
+					"New Life",
+					{
+						"text": "Protect the Young",
+						"value": false
+					},
+					{
+						"text": "Survival of the Fittest",
+						"value": false
+					}
+				],
+				[
+					"Death",
+					{
+						"text": "Cannibalize",
+						"value": false
+					},
+					{
+						"text": "Graves",
+						"value": false
+					}
+				],
+				[
+					"Society",
+					{
+						"text": "Collective Toil",
+						"value": false
+					},
+					{
+						"text": "Accept Darkness",
+						"value": false
+					}
+				],
+				[
+					"Conviction",
+					{
+						"text": "Barbaric",
+						"value": false
+					},
+					{
+						"text": "Romantic",
+						"value": false
+					}
+				]
+			],
+			"quarries": [
+				{
+					"text": "White Lion",
+					"value": true
+				},
+				{
+					"text": "Screaming Antelope",
+					"value": false
+				},
+				{
+					"text": "Phoenix",
+					"value": false
+				}
+			],
+			"namesis": [
+				{
+					"text": "Butcher",
+					"value": true,
+					"level": [
+						false,
+						false,
+						false
+					]
+				},
+				{
+					"text": "King's Man",
+					"value": false,
+					"level": [
+						false,
+						false,
+						false
+					]
+				},
+				{
+					"text": "The Hand",
+					"value": false,
+					"level": [
+						false,
+						false,
+						false
+					]
+				}
+			],
+			"resourceStorage": [
+				{
+					"text": "",
+					"count": 0
+				}
+			],
+			"gearStorage": [
+				{
+					"text": "",
+					"count": 0
+				}
+			],
+			"lanternResearchLevel": 0,
+			"monsterVolumes": [
+				""
+			],
+			"notes": "",
+			"lostSettlements": 0
+		},
+		{
+			"v": 1,
+			"id": "667a6a5f174bcf503ef42ad3",
+			"type": "settlement",
+			"settlementName": "Unnamed Settlement",
+			"survivalLimit": 1,
+			"population": 0,
+			"deathCount": 0,
+			"timeline": [
+				{
+					"year": 1,
+					"value": false,
+					"text": "[SE] First Day, Returning Survivors"
+				},
+				{
+					"year": 2,
+					"value": false,
+					"text": "[SE] Endless Screams"
+				},
+				{
+					"year": 3,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 4,
+					"value": false,
+					"text": "Namesis Encounter - Butcher Lvl 1"
+				},
+				{
+					"year": 5,
+					"value": false,
+					"text": "[SE] Hands of Heat"
+				},
+				{
+					"year": 6,
+					"value": false,
+					"text": "[SE] Armored Strangers"
+				},
+				{
+					"year": 7,
+					"value": false,
+					"text": "[SE] Phoenix Feather"
+				},
+				{
+					"year": 8,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 9,
+					"value": false,
+					"text": "Namesis Encounter - King's Man Lvl 1"
+				},
+				{
+					"year": 10,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 11,
+					"value": false,
+					"text": "[SE] Regal Visit"
+				},
+				{
+					"year": 12,
+					"value": false,
+					"text": "[SE] Principle: Conviction"
+				},
+				{
+					"year": 13,
+					"value": false,
+					"text": "Namesis Encounter - The Hand Lvl 1"
+				},
+				{
+					"year": 14,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 15,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 16,
+					"value": false,
+					"text": "Namesis Encounter - Butcher Lvl 2"
+				},
+				{
+					"year": 17,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 18,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 19,
+					"value": false,
+					"text": "Namesis Encounter - King's Man Lvl 2"
+				},
+				{
+					"year": 20,
+					"value": false,
+					"text": "[SE] Watched"
+				},
+				{
+					"year": 21,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 22,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 23,
+					"value": false,
+					"text": "Namesis Encounter - Butcher Lvl 3"
+				},
+				{
+					"year": 24,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 25,
+					"value": false,
+					"text": "Namesis Encounter - Watcher"
+				},
+				{
+					"year": 26,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 27,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 28,
+					"value": false,
+					"text": "Namesis Encounter - King's Man Lvl 3"
+				},
+				{
+					"year": 29,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 30,
+					"value": false,
+					"text": "Namesis Encounter - Gold Smoke Knight"
+				},
+				{
+					"year": 31,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 32,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 33,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 34,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 35,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 36,
+					"value": false,
+					"text": ""
+				}
+			],
+			"milestones": [
+				{
+					"text": "First child is born",
+					"se": "Principle: New Life",
+					"value": false
+				},
+				{
+					"text": "Population reaches 15",
+					"se": "Principle: Society",
+					"value": false
+				},
+				{
+					"text": "Population reaches 0",
+					"se": "Game Over",
+					"value": false
+				},
+				{
+					"text": "First time death count is updated",
+					"se": "Principle: Death",
+					"value": false
+				},
+				{
+					"text": "Settlement has 5 innovations",
+					"se": "Hooded Knight",
+					"value": false
+				}
+			],
+			"innovations": [
+				"Language"
+			],
+			"settlementLocations": [
+				{
+					"text": "Lantern Hoard",
+					"value": true
+				},
+				{
+					"text": "Bone Smith",
+					"value": false
+				},
+				{
+					"text": "Skinnery",
+					"value": false
+				},
+				{
+					"text": "Organ Grinder",
+					"value": false
+				},
+				{
+					"text": "Catarium",
+					"value": false
+				},
+				{
+					"text": "Weapon Crafter",
+					"value": false
+				},
+				{
+					"text": "Leather Worker",
+					"value": false
+				},
+				{
+					"text": "Stone Circle",
+					"value": false
+				},
+				{
+					"text": "Barber Surgeon",
+					"value": false
+				},
+				{
+					"text": "Plumery",
+					"value": false
+				},
+				{
+					"text": "Blacksmith",
+					"value": false
+				},
+				{
+					"text": "Mask Maker",
+					"value": false
+				}
+			],
+			"principles": [
+				[
+					"New Life",
+					{
+						"text": "Protect the Young",
+						"value": false
+					},
+					{
+						"text": "Survival of the Fittest",
+						"value": false
+					}
+				],
+				[
+					"Death",
+					{
+						"text": "Cannibalize",
+						"value": false
+					},
+					{
+						"text": "Graves",
+						"value": false
+					}
+				],
+				[
+					"Society",
+					{
+						"text": "Collective Toil",
+						"value": false
+					},
+					{
+						"text": "Accept Darkness",
+						"value": false
+					}
+				],
+				[
+					"Conviction",
+					{
+						"text": "Barbaric",
+						"value": false
+					},
+					{
+						"text": "Romantic",
+						"value": false
+					}
+				]
+			],
+			"quarries": [
+				{
+					"text": "White Lion",
+					"value": true
+				},
+				{
+					"text": "Screaming Antelope",
+					"value": false
+				},
+				{
+					"text": "Phoenix",
+					"value": false
+				}
+			],
+			"namesis": [
+				{
+					"text": "Butcher",
+					"value": true,
+					"level": [
+						false,
+						false,
+						false
+					]
+				},
+				{
+					"text": "King's Man",
+					"value": false,
+					"level": [
+						false,
+						false,
+						false
+					]
+				},
+				{
+					"text": "The Hand",
+					"value": false,
+					"level": [
+						false,
+						false,
+						false
+					]
+				}
+			],
+			"resourceStorage": [
+				{
+					"text": "",
+					"count": 0
+				}
+			],
+			"gearStorage": [
+				{
+					"text": "",
+					"count": 0
+				}
+			],
+			"lanternResearchLevel": 0,
+			"monsterVolumes": [
+				""
+			],
+			"notes": "",
+			"lostSettlements": 0
+		},
+		{
+			"v": 1,
+			"id": "667a6a5f8dcb956c0dcfc43c",
+			"type": "settlement",
+			"settlementName": "Unnamed Settlement",
+			"survivalLimit": 1,
+			"population": 0,
+			"deathCount": 0,
+			"timeline": [
+				{
+					"year": 1,
+					"value": false,
+					"text": "[SE] First Day, Returning Survivors"
+				},
+				{
+					"year": 2,
+					"value": false,
+					"text": "[SE] Endless Screams"
+				},
+				{
+					"year": 3,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 4,
+					"value": false,
+					"text": "Namesis Encounter - Butcher Lvl 1"
+				},
+				{
+					"year": 5,
+					"value": false,
+					"text": "[SE] Hands of Heat"
+				},
+				{
+					"year": 6,
+					"value": false,
+					"text": "[SE] Armored Strangers"
+				},
+				{
+					"year": 7,
+					"value": false,
+					"text": "[SE] Phoenix Feather"
+				},
+				{
+					"year": 8,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 9,
+					"value": false,
+					"text": "Namesis Encounter - King's Man Lvl 1"
+				},
+				{
+					"year": 10,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 11,
+					"value": false,
+					"text": "[SE] Regal Visit"
+				},
+				{
+					"year": 12,
+					"value": false,
+					"text": "[SE] Principle: Conviction"
+				},
+				{
+					"year": 13,
+					"value": false,
+					"text": "Namesis Encounter - The Hand Lvl 1"
+				},
+				{
+					"year": 14,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 15,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 16,
+					"value": false,
+					"text": "Namesis Encounter - Butcher Lvl 2"
+				},
+				{
+					"year": 17,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 18,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 19,
+					"value": false,
+					"text": "Namesis Encounter - King's Man Lvl 2"
+				},
+				{
+					"year": 20,
+					"value": false,
+					"text": "[SE] Watched"
+				},
+				{
+					"year": 21,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 22,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 23,
+					"value": false,
+					"text": "Namesis Encounter - Butcher Lvl 3"
+				},
+				{
+					"year": 24,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 25,
+					"value": false,
+					"text": "Namesis Encounter - Watcher"
+				},
+				{
+					"year": 26,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 27,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 28,
+					"value": false,
+					"text": "Namesis Encounter - King's Man Lvl 3"
+				},
+				{
+					"year": 29,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 30,
+					"value": false,
+					"text": "Namesis Encounter - Gold Smoke Knight"
+				},
+				{
+					"year": 31,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 32,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 33,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 34,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 35,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 36,
+					"value": false,
+					"text": ""
+				}
+			],
+			"milestones": [
+				{
+					"text": "First child is born",
+					"se": "Principle: New Life",
+					"value": false
+				},
+				{
+					"text": "Population reaches 15",
+					"se": "Principle: Society",
+					"value": false
+				},
+				{
+					"text": "Population reaches 0",
+					"se": "Game Over",
+					"value": false
+				},
+				{
+					"text": "First time death count is updated",
+					"se": "Principle: Death",
+					"value": false
+				},
+				{
+					"text": "Settlement has 5 innovations",
+					"se": "Hooded Knight",
+					"value": false
+				}
+			],
+			"innovations": [
+				"Language"
+			],
+			"settlementLocations": [
+				{
+					"text": "Lantern Hoard",
+					"value": true
+				},
+				{
+					"text": "Bone Smith",
+					"value": false
+				},
+				{
+					"text": "Skinnery",
+					"value": false
+				},
+				{
+					"text": "Organ Grinder",
+					"value": false
+				},
+				{
+					"text": "Catarium",
+					"value": false
+				},
+				{
+					"text": "Weapon Crafter",
+					"value": false
+				},
+				{
+					"text": "Leather Worker",
+					"value": false
+				},
+				{
+					"text": "Stone Circle",
+					"value": false
+				},
+				{
+					"text": "Barber Surgeon",
+					"value": false
+				},
+				{
+					"text": "Plumery",
+					"value": false
+				},
+				{
+					"text": "Blacksmith",
+					"value": false
+				},
+				{
+					"text": "Mask Maker",
+					"value": false
+				}
+			],
+			"principles": [
+				[
+					"New Life",
+					{
+						"text": "Protect the Young",
+						"value": false
+					},
+					{
+						"text": "Survival of the Fittest",
+						"value": false
+					}
+				],
+				[
+					"Death",
+					{
+						"text": "Cannibalize",
+						"value": false
+					},
+					{
+						"text": "Graves",
+						"value": false
+					}
+				],
+				[
+					"Society",
+					{
+						"text": "Collective Toil",
+						"value": false
+					},
+					{
+						"text": "Accept Darkness",
+						"value": false
+					}
+				],
+				[
+					"Conviction",
+					{
+						"text": "Barbaric",
+						"value": false
+					},
+					{
+						"text": "Romantic",
+						"value": false
+					}
+				]
+			],
+			"quarries": [
+				{
+					"text": "White Lion",
+					"value": true
+				},
+				{
+					"text": "Screaming Antelope",
+					"value": false
+				},
+				{
+					"text": "Phoenix",
+					"value": false
+				}
+			],
+			"namesis": [
+				{
+					"text": "Butcher",
+					"value": true,
+					"level": [
+						false,
+						false,
+						false
+					]
+				},
+				{
+					"text": "King's Man",
+					"value": false,
+					"level": [
+						false,
+						false,
+						false
+					]
+				},
+				{
+					"text": "The Hand",
+					"value": false,
+					"level": [
+						false,
+						false,
+						false
+					]
+				}
+			],
+			"resourceStorage": [
+				{
+					"text": "",
+					"count": 0
+				}
+			],
+			"gearStorage": [
+				{
+					"text": "",
+					"count": 0
+				}
+			],
+			"lanternResearchLevel": 0,
+			"monsterVolumes": [
+				""
+			],
+			"notes": "",
+			"lostSettlements": 0
+		},
+		{
+			"v": 1,
+			"id": "667a6a5f8fc9fe3d55988092",
+			"type": "settlement",
+			"settlementName": "Unnamed Settlement",
+			"survivalLimit": 1,
+			"population": 0,
+			"deathCount": 0,
+			"timeline": [
+				{
+					"year": 1,
+					"value": false,
+					"text": "[SE] First Day, Returning Survivors"
+				},
+				{
+					"year": 2,
+					"value": false,
+					"text": "[SE] Endless Screams"
+				},
+				{
+					"year": 3,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 4,
+					"value": false,
+					"text": "Namesis Encounter - Butcher Lvl 1"
+				},
+				{
+					"year": 5,
+					"value": false,
+					"text": "[SE] Hands of Heat"
+				},
+				{
+					"year": 6,
+					"value": false,
+					"text": "[SE] Armored Strangers"
+				},
+				{
+					"year": 7,
+					"value": false,
+					"text": "[SE] Phoenix Feather"
+				},
+				{
+					"year": 8,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 9,
+					"value": false,
+					"text": "Namesis Encounter - King's Man Lvl 1"
+				},
+				{
+					"year": 10,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 11,
+					"value": false,
+					"text": "[SE] Regal Visit"
+				},
+				{
+					"year": 12,
+					"value": false,
+					"text": "[SE] Principle: Conviction"
+				},
+				{
+					"year": 13,
+					"value": false,
+					"text": "Namesis Encounter - The Hand Lvl 1"
+				},
+				{
+					"year": 14,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 15,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 16,
+					"value": false,
+					"text": "Namesis Encounter - Butcher Lvl 2"
+				},
+				{
+					"year": 17,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 18,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 19,
+					"value": false,
+					"text": "Namesis Encounter - King's Man Lvl 2"
+				},
+				{
+					"year": 20,
+					"value": false,
+					"text": "[SE] Watched"
+				},
+				{
+					"year": 21,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 22,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 23,
+					"value": false,
+					"text": "Namesis Encounter - Butcher Lvl 3"
+				},
+				{
+					"year": 24,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 25,
+					"value": false,
+					"text": "Namesis Encounter - Watcher"
+				},
+				{
+					"year": 26,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 27,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 28,
+					"value": false,
+					"text": "Namesis Encounter - King's Man Lvl 3"
+				},
+				{
+					"year": 29,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 30,
+					"value": false,
+					"text": "Namesis Encounter - Gold Smoke Knight"
+				},
+				{
+					"year": 31,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 32,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 33,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 34,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 35,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 36,
+					"value": false,
+					"text": ""
+				}
+			],
+			"milestones": [
+				{
+					"text": "First child is born",
+					"se": "Principle: New Life",
+					"value": false
+				},
+				{
+					"text": "Population reaches 15",
+					"se": "Principle: Society",
+					"value": false
+				},
+				{
+					"text": "Population reaches 0",
+					"se": "Game Over",
+					"value": false
+				},
+				{
+					"text": "First time death count is updated",
+					"se": "Principle: Death",
+					"value": false
+				},
+				{
+					"text": "Settlement has 5 innovations",
+					"se": "Hooded Knight",
+					"value": false
+				}
+			],
+			"innovations": [
+				"Language"
+			],
+			"settlementLocations": [
+				{
+					"text": "Lantern Hoard",
+					"value": true
+				},
+				{
+					"text": "Bone Smith",
+					"value": false
+				},
+				{
+					"text": "Skinnery",
+					"value": false
+				},
+				{
+					"text": "Organ Grinder",
+					"value": false
+				},
+				{
+					"text": "Catarium",
+					"value": false
+				},
+				{
+					"text": "Weapon Crafter",
+					"value": false
+				},
+				{
+					"text": "Leather Worker",
+					"value": false
+				},
+				{
+					"text": "Stone Circle",
+					"value": false
+				},
+				{
+					"text": "Barber Surgeon",
+					"value": false
+				},
+				{
+					"text": "Plumery",
+					"value": false
+				},
+				{
+					"text": "Blacksmith",
+					"value": false
+				},
+				{
+					"text": "Mask Maker",
+					"value": false
+				}
+			],
+			"principles": [
+				[
+					"New Life",
+					{
+						"text": "Protect the Young",
+						"value": false
+					},
+					{
+						"text": "Survival of the Fittest",
+						"value": false
+					}
+				],
+				[
+					"Death",
+					{
+						"text": "Cannibalize",
+						"value": false
+					},
+					{
+						"text": "Graves",
+						"value": false
+					}
+				],
+				[
+					"Society",
+					{
+						"text": "Collective Toil",
+						"value": false
+					},
+					{
+						"text": "Accept Darkness",
+						"value": false
+					}
+				],
+				[
+					"Conviction",
+					{
+						"text": "Barbaric",
+						"value": false
+					},
+					{
+						"text": "Romantic",
+						"value": false
+					}
+				]
+			],
+			"quarries": [
+				{
+					"text": "White Lion",
+					"value": true
+				},
+				{
+					"text": "Screaming Antelope",
+					"value": false
+				},
+				{
+					"text": "Phoenix",
+					"value": false
+				}
+			],
+			"namesis": [
+				{
+					"text": "Butcher",
+					"value": true,
+					"level": [
+						false,
+						false,
+						false
+					]
+				},
+				{
+					"text": "King's Man",
+					"value": false,
+					"level": [
+						false,
+						false,
+						false
+					]
+				},
+				{
+					"text": "The Hand",
+					"value": false,
+					"level": [
+						false,
+						false,
+						false
+					]
+				}
+			],
+			"resourceStorage": [
+				{
+					"text": "",
+					"count": 0
+				}
+			],
+			"gearStorage": [
+				{
+					"text": "",
+					"count": 0
+				}
+			],
+			"lanternResearchLevel": 0,
+			"monsterVolumes": [
+				""
+			],
+			"notes": "",
+			"lostSettlements": 0
+		},
+		{
+			"v": 1,
+			"id": "667a6a5f3413b7f4dfd458cc",
+			"type": "settlement",
+			"settlementName": "Unnamed Settlement",
+			"survivalLimit": 1,
+			"population": 0,
+			"deathCount": 0,
+			"timeline": [
+				{
+					"year": 1,
+					"value": false,
+					"text": "[SE] First Day, Returning Survivors"
+				},
+				{
+					"year": 2,
+					"value": false,
+					"text": "[SE] Endless Screams"
+				},
+				{
+					"year": 3,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 4,
+					"value": false,
+					"text": "Namesis Encounter - Butcher Lvl 1"
+				},
+				{
+					"year": 5,
+					"value": false,
+					"text": "[SE] Hands of Heat"
+				},
+				{
+					"year": 6,
+					"value": false,
+					"text": "[SE] Armored Strangers"
+				},
+				{
+					"year": 7,
+					"value": false,
+					"text": "[SE] Phoenix Feather"
+				},
+				{
+					"year": 8,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 9,
+					"value": false,
+					"text": "Namesis Encounter - King's Man Lvl 1"
+				},
+				{
+					"year": 10,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 11,
+					"value": false,
+					"text": "[SE] Regal Visit"
+				},
+				{
+					"year": 12,
+					"value": false,
+					"text": "[SE] Principle: Conviction"
+				},
+				{
+					"year": 13,
+					"value": false,
+					"text": "Namesis Encounter - The Hand Lvl 1"
+				},
+				{
+					"year": 14,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 15,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 16,
+					"value": false,
+					"text": "Namesis Encounter - Butcher Lvl 2"
+				},
+				{
+					"year": 17,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 18,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 19,
+					"value": false,
+					"text": "Namesis Encounter - King's Man Lvl 2"
+				},
+				{
+					"year": 20,
+					"value": false,
+					"text": "[SE] Watched"
+				},
+				{
+					"year": 21,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 22,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 23,
+					"value": false,
+					"text": "Namesis Encounter - Butcher Lvl 3"
+				},
+				{
+					"year": 24,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 25,
+					"value": false,
+					"text": "Namesis Encounter - Watcher"
+				},
+				{
+					"year": 26,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 27,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 28,
+					"value": false,
+					"text": "Namesis Encounter - King's Man Lvl 3"
+				},
+				{
+					"year": 29,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 30,
+					"value": false,
+					"text": "Namesis Encounter - Gold Smoke Knight"
+				},
+				{
+					"year": 31,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 32,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 33,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 34,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 35,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 36,
+					"value": false,
+					"text": ""
+				}
+			],
+			"milestones": [
+				{
+					"text": "First child is born",
+					"se": "Principle: New Life",
+					"value": false
+				},
+				{
+					"text": "Population reaches 15",
+					"se": "Principle: Society",
+					"value": false
+				},
+				{
+					"text": "Population reaches 0",
+					"se": "Game Over",
+					"value": false
+				},
+				{
+					"text": "First time death count is updated",
+					"se": "Principle: Death",
+					"value": false
+				},
+				{
+					"text": "Settlement has 5 innovations",
+					"se": "Hooded Knight",
+					"value": false
+				}
+			],
+			"innovations": [
+				"Language"
+			],
+			"settlementLocations": [
+				{
+					"text": "Lantern Hoard",
+					"value": true
+				},
+				{
+					"text": "Bone Smith",
+					"value": false
+				},
+				{
+					"text": "Skinnery",
+					"value": false
+				},
+				{
+					"text": "Organ Grinder",
+					"value": false
+				},
+				{
+					"text": "Catarium",
+					"value": false
+				},
+				{
+					"text": "Weapon Crafter",
+					"value": false
+				},
+				{
+					"text": "Leather Worker",
+					"value": false
+				},
+				{
+					"text": "Stone Circle",
+					"value": false
+				},
+				{
+					"text": "Barber Surgeon",
+					"value": false
+				},
+				{
+					"text": "Plumery",
+					"value": false
+				},
+				{
+					"text": "Blacksmith",
+					"value": false
+				},
+				{
+					"text": "Mask Maker",
+					"value": false
+				}
+			],
+			"principles": [
+				[
+					"New Life",
+					{
+						"text": "Protect the Young",
+						"value": false
+					},
+					{
+						"text": "Survival of the Fittest",
+						"value": false
+					}
+				],
+				[
+					"Death",
+					{
+						"text": "Cannibalize",
+						"value": false
+					},
+					{
+						"text": "Graves",
+						"value": false
+					}
+				],
+				[
+					"Society",
+					{
+						"text": "Collective Toil",
+						"value": false
+					},
+					{
+						"text": "Accept Darkness",
+						"value": false
+					}
+				],
+				[
+					"Conviction",
+					{
+						"text": "Barbaric",
+						"value": false
+					},
+					{
+						"text": "Romantic",
+						"value": false
+					}
+				]
+			],
+			"quarries": [
+				{
+					"text": "White Lion",
+					"value": true
+				},
+				{
+					"text": "Screaming Antelope",
+					"value": false
+				},
+				{
+					"text": "Phoenix",
+					"value": false
+				}
+			],
+			"namesis": [
+				{
+					"text": "Butcher",
+					"value": true,
+					"level": [
+						false,
+						false,
+						false
+					]
+				},
+				{
+					"text": "King's Man",
+					"value": false,
+					"level": [
+						false,
+						false,
+						false
+					]
+				},
+				{
+					"text": "The Hand",
+					"value": false,
+					"level": [
+						false,
+						false,
+						false
+					]
+				}
+			],
+			"resourceStorage": [
+				{
+					"text": "",
+					"count": 0
+				}
+			],
+			"gearStorage": [
+				{
+					"text": "",
+					"count": 0
+				}
+			],
+			"lanternResearchLevel": 0,
+			"monsterVolumes": [
+				""
+			],
+			"notes": "",
+			"lostSettlements": 0
+		},
+		{
+			"v": 1,
+			"id": "667a6a5f43006e366f0d7743",
+			"type": "settlement",
+			"settlementName": "Unnamed Settlement",
+			"survivalLimit": 1,
+			"population": 0,
+			"deathCount": 0,
+			"timeline": [
+				{
+					"year": 1,
+					"value": false,
+					"text": "[SE] First Day, Returning Survivors"
+				},
+				{
+					"year": 2,
+					"value": false,
+					"text": "[SE] Endless Screams"
+				},
+				{
+					"year": 3,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 4,
+					"value": false,
+					"text": "Namesis Encounter - Butcher Lvl 1"
+				},
+				{
+					"year": 5,
+					"value": false,
+					"text": "[SE] Hands of Heat"
+				},
+				{
+					"year": 6,
+					"value": false,
+					"text": "[SE] Armored Strangers"
+				},
+				{
+					"year": 7,
+					"value": false,
+					"text": "[SE] Phoenix Feather"
+				},
+				{
+					"year": 8,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 9,
+					"value": false,
+					"text": "Namesis Encounter - King's Man Lvl 1"
+				},
+				{
+					"year": 10,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 11,
+					"value": false,
+					"text": "[SE] Regal Visit"
+				},
+				{
+					"year": 12,
+					"value": false,
+					"text": "[SE] Principle: Conviction"
+				},
+				{
+					"year": 13,
+					"value": false,
+					"text": "Namesis Encounter - The Hand Lvl 1"
+				},
+				{
+					"year": 14,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 15,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 16,
+					"value": false,
+					"text": "Namesis Encounter - Butcher Lvl 2"
+				},
+				{
+					"year": 17,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 18,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 19,
+					"value": false,
+					"text": "Namesis Encounter - King's Man Lvl 2"
+				},
+				{
+					"year": 20,
+					"value": false,
+					"text": "[SE] Watched"
+				},
+				{
+					"year": 21,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 22,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 23,
+					"value": false,
+					"text": "Namesis Encounter - Butcher Lvl 3"
+				},
+				{
+					"year": 24,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 25,
+					"value": false,
+					"text": "Namesis Encounter - Watcher"
+				},
+				{
+					"year": 26,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 27,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 28,
+					"value": false,
+					"text": "Namesis Encounter - King's Man Lvl 3"
+				},
+				{
+					"year": 29,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 30,
+					"value": false,
+					"text": "Namesis Encounter - Gold Smoke Knight"
+				},
+				{
+					"year": 31,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 32,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 33,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 34,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 35,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 36,
+					"value": false,
+					"text": ""
+				}
+			],
+			"milestones": [
+				{
+					"text": "First child is born",
+					"se": "Principle: New Life",
+					"value": false
+				},
+				{
+					"text": "Population reaches 15",
+					"se": "Principle: Society",
+					"value": false
+				},
+				{
+					"text": "Population reaches 0",
+					"se": "Game Over",
+					"value": false
+				},
+				{
+					"text": "First time death count is updated",
+					"se": "Principle: Death",
+					"value": false
+				},
+				{
+					"text": "Settlement has 5 innovations",
+					"se": "Hooded Knight",
+					"value": false
+				}
+			],
+			"innovations": [
+				"Language"
+			],
+			"settlementLocations": [
+				{
+					"text": "Lantern Hoard",
+					"value": true
+				},
+				{
+					"text": "Bone Smith",
+					"value": false
+				},
+				{
+					"text": "Skinnery",
+					"value": false
+				},
+				{
+					"text": "Organ Grinder",
+					"value": false
+				},
+				{
+					"text": "Catarium",
+					"value": false
+				},
+				{
+					"text": "Weapon Crafter",
+					"value": false
+				},
+				{
+					"text": "Leather Worker",
+					"value": false
+				},
+				{
+					"text": "Stone Circle",
+					"value": false
+				},
+				{
+					"text": "Barber Surgeon",
+					"value": false
+				},
+				{
+					"text": "Plumery",
+					"value": false
+				},
+				{
+					"text": "Blacksmith",
+					"value": false
+				},
+				{
+					"text": "Mask Maker",
+					"value": false
+				}
+			],
+			"principles": [
+				[
+					"New Life",
+					{
+						"text": "Protect the Young",
+						"value": false
+					},
+					{
+						"text": "Survival of the Fittest",
+						"value": false
+					}
+				],
+				[
+					"Death",
+					{
+						"text": "Cannibalize",
+						"value": false
+					},
+					{
+						"text": "Graves",
+						"value": false
+					}
+				],
+				[
+					"Society",
+					{
+						"text": "Collective Toil",
+						"value": false
+					},
+					{
+						"text": "Accept Darkness",
+						"value": false
+					}
+				],
+				[
+					"Conviction",
+					{
+						"text": "Barbaric",
+						"value": false
+					},
+					{
+						"text": "Romantic",
+						"value": false
+					}
+				]
+			],
+			"quarries": [
+				{
+					"text": "White Lion",
+					"value": true
+				},
+				{
+					"text": "Screaming Antelope",
+					"value": false
+				},
+				{
+					"text": "Phoenix",
+					"value": false
+				}
+			],
+			"namesis": [
+				{
+					"text": "Butcher",
+					"value": true,
+					"level": [
+						false,
+						false,
+						false
+					]
+				},
+				{
+					"text": "King's Man",
+					"value": false,
+					"level": [
+						false,
+						false,
+						false
+					]
+				},
+				{
+					"text": "The Hand",
+					"value": false,
+					"level": [
+						false,
+						false,
+						false
+					]
+				}
+			],
+			"resourceStorage": [
+				{
+					"text": "",
+					"count": 0
+				}
+			],
+			"gearStorage": [
+				{
+					"text": "",
+					"count": 0
+				}
+			],
+			"lanternResearchLevel": 0,
+			"monsterVolumes": [
+				""
+			],
+			"notes": "",
+			"lostSettlements": 0
+		},
+		{
+			"v": 1,
+			"id": "667a6a5f1e3ac3f7e8e26076",
+			"type": "settlement",
+			"settlementName": "Unnamed Settlement",
+			"survivalLimit": 1,
+			"population": 0,
+			"deathCount": 0,
+			"timeline": [
+				{
+					"year": 1,
+					"value": false,
+					"text": "[SE] First Day, Returning Survivors"
+				},
+				{
+					"year": 2,
+					"value": false,
+					"text": "[SE] Endless Screams"
+				},
+				{
+					"year": 3,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 4,
+					"value": false,
+					"text": "Namesis Encounter - Butcher Lvl 1"
+				},
+				{
+					"year": 5,
+					"value": false,
+					"text": "[SE] Hands of Heat"
+				},
+				{
+					"year": 6,
+					"value": false,
+					"text": "[SE] Armored Strangers"
+				},
+				{
+					"year": 7,
+					"value": false,
+					"text": "[SE] Phoenix Feather"
+				},
+				{
+					"year": 8,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 9,
+					"value": false,
+					"text": "Namesis Encounter - King's Man Lvl 1"
+				},
+				{
+					"year": 10,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 11,
+					"value": false,
+					"text": "[SE] Regal Visit"
+				},
+				{
+					"year": 12,
+					"value": false,
+					"text": "[SE] Principle: Conviction"
+				},
+				{
+					"year": 13,
+					"value": false,
+					"text": "Namesis Encounter - The Hand Lvl 1"
+				},
+				{
+					"year": 14,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 15,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 16,
+					"value": false,
+					"text": "Namesis Encounter - Butcher Lvl 2"
+				},
+				{
+					"year": 17,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 18,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 19,
+					"value": false,
+					"text": "Namesis Encounter - King's Man Lvl 2"
+				},
+				{
+					"year": 20,
+					"value": false,
+					"text": "[SE] Watched"
+				},
+				{
+					"year": 21,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 22,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 23,
+					"value": false,
+					"text": "Namesis Encounter - Butcher Lvl 3"
+				},
+				{
+					"year": 24,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 25,
+					"value": false,
+					"text": "Namesis Encounter - Watcher"
+				},
+				{
+					"year": 26,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 27,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 28,
+					"value": false,
+					"text": "Namesis Encounter - King's Man Lvl 3"
+				},
+				{
+					"year": 29,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 30,
+					"value": false,
+					"text": "Namesis Encounter - Gold Smoke Knight"
+				},
+				{
+					"year": 31,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 32,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 33,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 34,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 35,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 36,
+					"value": false,
+					"text": ""
+				}
+			],
+			"milestones": [
+				{
+					"text": "First child is born",
+					"se": "Principle: New Life",
+					"value": false
+				},
+				{
+					"text": "Population reaches 15",
+					"se": "Principle: Society",
+					"value": false
+				},
+				{
+					"text": "Population reaches 0",
+					"se": "Game Over",
+					"value": false
+				},
+				{
+					"text": "First time death count is updated",
+					"se": "Principle: Death",
+					"value": false
+				},
+				{
+					"text": "Settlement has 5 innovations",
+					"se": "Hooded Knight",
+					"value": false
+				}
+			],
+			"innovations": [
+				"Language"
+			],
+			"settlementLocations": [
+				{
+					"text": "Lantern Hoard",
+					"value": true
+				},
+				{
+					"text": "Bone Smith",
+					"value": false
+				},
+				{
+					"text": "Skinnery",
+					"value": false
+				},
+				{
+					"text": "Organ Grinder",
+					"value": false
+				},
+				{
+					"text": "Catarium",
+					"value": false
+				},
+				{
+					"text": "Weapon Crafter",
+					"value": false
+				},
+				{
+					"text": "Leather Worker",
+					"value": false
+				},
+				{
+					"text": "Stone Circle",
+					"value": false
+				},
+				{
+					"text": "Barber Surgeon",
+					"value": false
+				},
+				{
+					"text": "Plumery",
+					"value": false
+				},
+				{
+					"text": "Blacksmith",
+					"value": false
+				},
+				{
+					"text": "Mask Maker",
+					"value": false
+				}
+			],
+			"principles": [
+				[
+					"New Life",
+					{
+						"text": "Protect the Young",
+						"value": false
+					},
+					{
+						"text": "Survival of the Fittest",
+						"value": false
+					}
+				],
+				[
+					"Death",
+					{
+						"text": "Cannibalize",
+						"value": false
+					},
+					{
+						"text": "Graves",
+						"value": false
+					}
+				],
+				[
+					"Society",
+					{
+						"text": "Collective Toil",
+						"value": false
+					},
+					{
+						"text": "Accept Darkness",
+						"value": false
+					}
+				],
+				[
+					"Conviction",
+					{
+						"text": "Barbaric",
+						"value": false
+					},
+					{
+						"text": "Romantic",
+						"value": false
+					}
+				]
+			],
+			"quarries": [
+				{
+					"text": "White Lion",
+					"value": true
+				},
+				{
+					"text": "Screaming Antelope",
+					"value": false
+				},
+				{
+					"text": "Phoenix",
+					"value": false
+				}
+			],
+			"namesis": [
+				{
+					"text": "Butcher",
+					"value": true,
+					"level": [
+						false,
+						false,
+						false
+					]
+				},
+				{
+					"text": "King's Man",
+					"value": false,
+					"level": [
+						false,
+						false,
+						false
+					]
+				},
+				{
+					"text": "The Hand",
+					"value": false,
+					"level": [
+						false,
+						false,
+						false
+					]
+				}
+			],
+			"resourceStorage": [
+				{
+					"text": "",
+					"count": 0
+				}
+			],
+			"gearStorage": [
+				{
+					"text": "",
+					"count": 0
+				}
+			],
+			"lanternResearchLevel": 0,
+			"monsterVolumes": [
+				""
+			],
+			"notes": "",
+			"lostSettlements": 0
+		}
+	],
+	"settlements": [
+		{
+			"v": 1,
+			"id": "667bce7a2865261901452366",
+			"type": "settlement",
+			"settlementName": "Unnamed Settlement",
+			"survivalLimit": 1,
+			"population": 0,
+			"deathCount": 0,
+			"timeline": [
+				{
+					"year": 1,
+					"value": false,
+					"text": "[SE] First Day, Returning Survivors"
+				},
+				{
+					"year": 2,
+					"value": false,
+					"text": "[SE] Endless Screams"
+				},
+				{
+					"year": 3,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 4,
+					"value": false,
+					"text": "Namesis Encounter - Butcher Lvl 1"
+				},
+				{
+					"year": 5,
+					"value": false,
+					"text": "[SE] Hands of Heat"
+				},
+				{
+					"year": 6,
+					"value": false,
+					"text": "[SE] Armored Strangers"
+				},
+				{
+					"year": 7,
+					"value": false,
+					"text": "[SE] Phoenix Feather"
+				},
+				{
+					"year": 8,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 9,
+					"value": false,
+					"text": "Namesis Encounter - King's Man Lvl 1"
+				},
+				{
+					"year": 10,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 11,
+					"value": false,
+					"text": "[SE] Regal Visit"
+				},
+				{
+					"year": 12,
+					"value": false,
+					"text": "[SE] Principle: Conviction"
+				},
+				{
+					"year": 13,
+					"value": false,
+					"text": "Namesis Encounter - The Hand Lvl 1"
+				},
+				{
+					"year": 14,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 15,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 16,
+					"value": false,
+					"text": "Namesis Encounter - Butcher Lvl 2"
+				},
+				{
+					"year": 17,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 18,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 19,
+					"value": false,
+					"text": "Namesis Encounter - King's Man Lvl 2"
+				},
+				{
+					"year": 20,
+					"value": false,
+					"text": "[SE] Watched"
+				},
+				{
+					"year": 21,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 22,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 23,
+					"value": false,
+					"text": "Namesis Encounter - Butcher Lvl 3"
+				},
+				{
+					"year": 24,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 25,
+					"value": false,
+					"text": "Namesis Encounter - Watcher"
+				},
+				{
+					"year": 26,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 27,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 28,
+					"value": false,
+					"text": "Namesis Encounter - King's Man Lvl 3"
+				},
+				{
+					"year": 29,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 30,
+					"value": false,
+					"text": "Namesis Encounter - Gold Smoke Knight"
+				},
+				{
+					"year": 31,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 32,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 33,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 34,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 35,
+					"value": false,
+					"text": ""
+				},
+				{
+					"year": 36,
+					"value": false,
+					"text": ""
+				}
+			],
+			"milestones": [
+				{
+					"text": "First child is born",
+					"se": "Principle: New Life",
+					"value": false
+				},
+				{
+					"text": "Population reaches 15",
+					"se": "Principle: Society",
+					"value": false
+				},
+				{
+					"text": "Population reaches 0",
+					"se": "Game Over",
+					"value": false
+				},
+				{
+					"text": "First time death count is updated",
+					"se": "Principle: Death",
+					"value": false
+				},
+				{
+					"text": "Settlement has 5 innovations",
+					"se": "Hooded Knight",
+					"value": false
+				}
+			],
+			"innovations": [
+				"Language"
+			],
+			"settlementLocations": [
+				{
+					"text": "Lantern Hoard",
+					"value": true
+				},
+				{
+					"text": "Bone Smith",
+					"value": false
+				},
+				{
+					"text": "Skinnery",
+					"value": false
+				},
+				{
+					"text": "Organ Grinder",
+					"value": false
+				},
+				{
+					"text": "Catarium",
+					"value": false
+				},
+				{
+					"text": "Weapon Crafter",
+					"value": false
+				},
+				{
+					"text": "Leather Worker",
+					"value": false
+				},
+				{
+					"text": "Stone Circle",
+					"value": false
+				},
+				{
+					"text": "Barber Surgeon",
+					"value": false
+				},
+				{
+					"text": "Plumery",
+					"value": false
+				},
+				{
+					"text": "Blacksmith",
+					"value": false
+				},
+				{
+					"text": "Mask Maker",
+					"value": false
+				}
+			],
+			"principles": [
+				[
+					"New Life",
+					{
+						"text": "Protect the Young",
+						"value": false
+					},
+					{
+						"text": "Survival of the Fittest",
+						"value": false
+					}
+				],
+				[
+					"Death",
+					{
+						"text": "Cannibalize",
+						"value": false
+					},
+					{
+						"text": "Graves",
+						"value": false
+					}
+				],
+				[
+					"Society",
+					{
+						"text": "Collective Toil",
+						"value": false
+					},
+					{
+						"text": "Accept Darkness",
+						"value": false
+					}
+				],
+				[
+					"Conviction",
+					{
+						"text": "Barbaric",
+						"value": false
+					},
+					{
+						"text": "Romantic",
+						"value": false
+					}
+				]
+			],
+			"quarries": [
+				{
+					"text": "White Lion",
+					"value": true
+				},
+				{
+					"text": "Screaming Antelope",
+					"value": false
+				},
+				{
+					"text": "Phoenix",
+					"value": false
+				}
+			],
+			"namesis": [
+				{
+					"text": "Butcher",
+					"value": true,
+					"level": [
+						false,
+						false,
+						false
+					]
+				},
+				{
+					"text": "King's Man",
+					"value": false,
+					"level": [
+						false,
+						false,
+						false
+					]
+				},
+				{
+					"text": "The Hand",
+					"value": false,
+					"level": [
+						false,
+						false,
+						false
+					]
+				}
+			],
+			"resourceStorage": [
+				{
+					"text": "lol",
+					"count": 0
+				},
+				{
+					"text": "worked",
+					"count": 1
+				}
+			],
+			"gearStorage": [
+				{
+					"id": "667bce7abe7d79fa86c62ff7",
+					"text": "",
+					"count": 0
+				}
+			],
+			"lanternResearchLevel": 0,
+			"monsterVolumes": [
+				""
+			],
+			"notes": "",
+			"lostSettlements": 0
+		}
+	]
+}

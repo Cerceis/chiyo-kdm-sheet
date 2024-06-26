@@ -13,6 +13,8 @@ import KDMIcon from "./components/KDMIcon.vue";
 import KDMImage from "./components/KDMImage.vue";
 import Shield from "./components/Shield.vue";
 import BoxInput from './components/BoxInput.vue';
+import ToolTip from './components/ToolTip.vue';
+import HelpIcon from './components/HelpIcon.vue';
 
 // Composables
 import { createApp } from 'vue'
@@ -27,5 +29,7 @@ app.component("KDMIcon", KDMIcon);
 app.component("KDMImage", KDMImage);
 app.component("Shield", Shield);
 app.component("BoxInput", BoxInput);
+app.component("ToolTip", ToolTip);
+app.component("HelpIcon", HelpIcon);
 
 app.mount('#app')

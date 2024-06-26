@@ -1,5 +1,6 @@
 <template>
-	<div class="pa-2">
+	<div class="pa-1">
+		<div class="text-caption caption">Settlement sheet version: {{ s.v }}</div>
 		<div class="styledRow">
 			<div>
 				<input v-model="s.settlementName" type="text">
@@ -229,59 +230,73 @@
 			<table>
 				<tr>
 					<td>Resource Storage</td>
+				</tr>
+				<tr>
+					<td>
+						<input @keyup="filterResources" v-model="resourceKeyword" type="text" placeholder="Search keyword">
+					</td>
 					<td align="right">
 						<v-btn size="24" color="primary" @click="s.resourceStorage.sort((a,b) => a.text.localeCompare(b.text))">
 							<v-icon>mdi-sort-alphabetical-ascending</v-icon>
 						</v-btn>
 					</td>
 					<td>
-						<v-btn @click="s.resourceStorage.push({text:'', count:1})" color="success" size="24">
+						<v-btn @click="s.resourceStorage.push({id: Generate.objectId(), text:'', count:1, show: true})" color="success" size="24">
 							<v-icon>mdi-plus</v-icon>
 						</v-btn>	
 					</td>
 				</tr>
-				<tr v-for="(v, i) in s.resourceStorage">
-					<td>
-						<input @keyup="triggerNewLine($event, () => s.resourceStorage.push({text:'', count:1}) )" type="text" v-model="s.resourceStorage[i].text" />
-					</td>
-					<td>
-						<input type="number" v-model="s.resourceStorage[i].count" style="width:48px" />
-					</td>
-					<td>
-						<v-btn @click="s.resourceStorage.splice(i, 1)" color="error" size="24">
-							<v-icon>mdi-close</v-icon>
-						</v-btn>	
-					</td>
-				</tr>
+				<template v-for="(v, i) in s.resourceStorage">
+					<tr v-if="s.resourceStorage[i].show">
+						<td>
+							<input @keyup="triggerNewLine($event, () => s.resourceStorage.push({id: Generate.objectId(), text:'', count:1, show: true}) )" type="text" v-model="s.resourceStorage[i].text" />
+						</td>
+						<td>
+							<input type="number" v-model="s.resourceStorage[i].count" style="width:48px" />
+						</td>
+						<td>
+							<v-btn @click="s.resourceStorage.splice(i, 1)" color="error" size="24">
+								<v-icon>mdi-close</v-icon>
+							</v-btn>	
+						</td>
+					</tr>
+				</template>
 			</table>
 			<v-divider vertical />
 			<table>
 				<tr>
 					<td>Gear Storage</td>
+				</tr>
+				<tr>
+					<td>
+						<input @keyup="filterGears" v-model="gearKeyword" type="text" placeholder="Search keyword">
+					</td>
 					<td align="right">
 						<v-btn size="24" color="primary" @click="s.gearStorage.sort((a,b) => a.text.localeCompare(b.text))">
 							<v-icon>mdi-sort-alphabetical-ascending</v-icon>
 						</v-btn>
 					</td>
 					<td>
-						<v-btn @click="s.gearStorage.push({text:'', count:1})" color="success" size="24">
+						<v-btn @click="s.gearStorage.push({id: Generate.objectId(), text:'', count:1, show: true})" color="success" size="24">
 							<v-icon>mdi-plus</v-icon>
 						</v-btn>	
 					</td>
 				</tr>
-				<tr v-for="(v, i) in s.gearStorage">
-					<td>
-						<input @keyup="triggerNewLine($event, () => s.gearStorage.push({text:'', count:1}) )" type="text" v-model="s.gearStorage[i].text" />
-					</td>
-					<td>
-						<input type="number" v-model="s.gearStorage[i].count" style="width:48px" />
-					</td>
-					<td>
-						<v-btn @click="s.gearStorage.splice(i, 1)" color="error" size="24">
-							<v-icon>mdi-close</v-icon>
-						</v-btn>	
-					</td>
-				</tr>
+				<template v-for="(v, i) in s.gearStorage">				
+					<tr v-if="s.gearStorage[i].show">
+						<td>
+							<input @keyup="triggerNewLine($event, () => s.gearStorage.push({id: Generate.objectId(), text:'', count:1, show: true}) )" type="text" v-model="s.gearStorage[i].text" />
+						</td>
+						<td>
+							<input type="number" v-model="s.gearStorage[i].count" style="width:48px" />
+						</td>
+						<td>
+							<v-btn @click="s.gearStorage.splice(i, 1)" color="error" size="24">
+								<v-icon>mdi-close</v-icon>
+							</v-btn>	
+						</td>
+					</tr>
+				</template>
 			</table>
 		</div>
 		<v-divider class="mt-1" />
@@ -295,10 +310,12 @@
 </template>
  
 <script setup lang="ts">
+import { Generate } from "cerceis-lib";
 import { Settlement } from "@/logics/settlement";
-import { PropType } from "vue";
+import { PropType, ref, Ref } from "vue";
 
-defineProps({
+
+const props = defineProps({
 	s:{
 		type: Object as PropType<Settlement>,
 		required: true,
@@ -316,6 +333,45 @@ const triggerNewLine = (e: KeyboardEvent, func: Function) => {
 		}, 50);
 	}
 }
+
+const resourceKeyword: Ref<string> = ref("");
+const gearKeyword: Ref<string> = ref("");
+
+const filterResources = () => {
+	const fixedWord = resourceKeyword.value.toUpperCase();
+	if(fixedWord === ""){
+		for(let i = 0; i<props.s.resourceStorage.length; i++){
+			props.s.resourceStorage[i].show = true;
+		}	
+		return;
+	}
+	for(let i = 0; i<props.s.resourceStorage.length; i++){
+		if(props.s.resourceStorage[i].text.toUpperCase().includes(fixedWord)){
+			props.s.resourceStorage[i].show = true
+		}else{
+			props.s.resourceStorage[i].show = false
+		}
+	}
+}
+
+const filterGears = () => {
+	const fixedWord = gearKeyword.value.toUpperCase();
+	if(fixedWord === ""){
+		for(let i = 0; i<props.s.gearStorage.length; i++){
+			props.s.gearStorage[i].show = true;
+		}	
+		return;
+	}
+	for(let i = 0; i<props.s.gearStorage.length; i++){
+		if(props.s.gearStorage[i].text.toUpperCase().includes(fixedWord)){
+			props.s.gearStorage[i].show = true
+		}else{
+			props.s.gearStorage[i].show = false
+		}
+	}
+}
+
+
 
 </script>
  

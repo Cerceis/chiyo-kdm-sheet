@@ -8,12 +8,12 @@ import { Settlement } from "@/logics/settlement";
  * 1) Increase currentVersion by 1.
  * 2) Create versionUpdaterFunctions for the newly created version.
  * Done.
- * Smae goes for settlements
+ * Same goes for settlements
  */
 
 export const characters: Ref<Character[]> = ref([]);
 export const archive: Ref<(Character | Settlement)[]> = ref([]);
-const currentVersion = 1;
+const currentVersion = 2;
 
 export type KDMCheckbox = {
 	type: number,
@@ -21,13 +21,22 @@ export type KDMCheckbox = {
 }
 type BodyPart = {
 	armor: number,
-	injury: { light: boolean, heavy: boolean },
+	injury: { 
+		light: boolean,
+		heavy: boolean 
+		severe:{
+			text: string,
+			description: string,
+			value: boolean[],
+		}[]
+	},
 }
 export type Character = {
 	v: number,
 	id: string,
 	type: "character",
 	name: string,
+	nextDeparture: string,
 	dead: boolean,
 	gender: {
 		m: boolean, f: boolean,
@@ -47,6 +56,8 @@ export type Character = {
 		surge: boolean,
 		dash: boolean,
 		endure: boolean,
+		fistPump: boolean,
+		systemicPressure: number,
 	},
 	movement: { base: number, gear: number },
 	accuracy: { base: number, gear: number },
@@ -54,8 +65,10 @@ export type Character = {
 	evasion: { base: number, gear: number },
 	luck: { base: number, gear: number },
 	speed: { base: number, gear: number },
+	lumi: { base: number, gear: number },
 	brain: {
 		insanity: number,
+		torment: number,
 		injury: { light: boolean }
 	},
 	head: BodyPart,
@@ -99,6 +112,30 @@ export type Character = {
 		childs: string[],
 	},
 	notes: string,
+	philosophy:{
+		text: string,
+		rank: number,
+		ponder: string,
+		neurosis: string,
+		tenetKnowledge: {
+			text: string,
+			values: boolean[]
+		},
+		rules: string,
+		observationConditions: string,
+	},
+	knowledge:{
+		text: string,
+		locked: boolean,
+		knowledges: {
+			knowledgeName: {
+				text: string,
+				values: boolean[]
+			},
+			rules: string,
+			observationConditions: string,
+		}[]
+	}
 }
 
 export const usefulFuncs = {
@@ -107,28 +144,145 @@ export const usefulFuncs = {
 		types.forEach(t => tmp.push({type: t, value: false}))
 		return tmp;
 	},
-	generateBodyPart(armor: number = 0){
-		return {
+	generateBodyPart(armor: number = 0, part: string){
+		const tmp: BodyPart =  {
 			armor,
-			injury: { light: false, heavy: false }
+			injury: { 
+				light: false, heavy: false, severe: []
+			}
+		}
+		if(part === "head"){
+			tmp.injury.severe = [
+				{
+					text: "Intracranial Hemmorhage",
+					description: "Cannot use or gain survival",
+					value: [false]
+				},
+				{
+					text: "Deaf",
+					description: "-1 permanent Evasion",
+					value: [false]
+				},
+				{
+					text: "Blind",
+					description: "[X] -1 permanent Accuracy<br>[X][X] -4 permanent Accuracy",
+					value: [false, false]
+				},
+				{
+					text: "Shattered Jaw",
+					description: "Cannot consume or Encourage",
+					value: [false]
+				},
+			]
+		}
+		if(part === "arms"){
+			tmp.injury.severe = [
+				{
+					text: "Dismembered Arm",
+					description: "[X] Cannot activate two-handed weapons<br>[X][X] Cannot activate weapons",
+					value: [false, false]
+				},
+				{
+					text: "Ruptured Muscle",
+					description: "Cannot activate Fighting Arts",
+					value: [false]
+				},
+				{
+					text: "Contracture",
+					description: "-1 permanent Accuracy",
+					value: [false]
+				},
+				{
+					text: "Broken Arm",
+					description: "[X] -1 permanent Accuracy<br>[X][X] -1 permanent Strength",
+					value: [false, false]
+				},
+			]
+		}
+		if(part === "body"){
+			tmp.injury.severe = [
+				{
+					text: "Gaping Chest Wound",
+					description: "-1 permanent Strength",
+					value: [false, false, false, false, false]
+				},
+				{
+					text: "Destroyed Back",
+					description: "-2 permanent Movement. Cannot activate gear with 2+ Strength",
+					value: [false]
+				},
+				{
+					text: "Broken Rib",
+					description: "-1 permanent Speed",
+					value: [false, false, false, false, false]
+				},
+			]
+		}
+		if(part === "waist"){
+			tmp.injury.severe = [
+				{
+					text: "Intestinal Prolapse",
+					description: "Cannot wear waist armor",
+					value: [false]
+				},
+				{
+					text: "Warped Pelvis",
+					description: "-1 permanent Luck",
+					value: [false, false, false, false, false]
+				},
+				{
+					text: "Destroyed Genitals",
+					description: "Cannot be chosen for Intimacy",
+					value: [false]
+				},
+				{
+					text: "Broken Hip",
+					description: "-1 permanent Movement. Cannot Dodge",
+					value: [false]
+				},
+			]
+		}
+		if(part === "legs"){
+			tmp.injury.severe = [
+				{
+					text: "Dismembered Leg",
+					description: "[X] -2 permanent Movement<br>[X][X] Retire at the end of the next showdown or settlement phase.",
+					value: [false, false]
+				},
+				{
+					text: "Hamstrung",
+					description: "Cannot use Fighting Arts or Abilities",
+					value: [false]
+				},
+				{
+					text: "Broken Leg",
+					description: "-1 permanent Movement",
+					value: [false, false]
+				},
+			]
+		}
+		return tmp;
+	},
+	generateKnowledge(){
+		return{
+			knowledgeName: {
+				text: "",
+				values: [false, false, false, false, false, false, false, false, false]
+			},
+			rules: "",
+			observationConditions: "",
 		}
 	}
 }
 
-export const characterFunc: {
-	new: () => Character,
-	moveToArchive: (c: Character) => void,
-	eraseSurvivor: (c: Character) => Promise<void>,
-	restore: (c: Character) => void,
-	update: (c: Character) => void,
-	move: (id: string, state: 1 | -1) => void,
-} = {
+export const characterFunc = {
 	new(){
 		const tmpChar: Character = {
 			v: currentVersion,
 			id: Generate.objectId(),
 			type: "character",
-			name: "Unnamed Survivor",
+			name: `Unnamed Survivor ${characters.value.length}`,
+			nextDeparture: "",
 			dead: false,
 			gender: {
 				m: false, f: false,
@@ -148,6 +302,8 @@ export const characterFunc: {
 				surge: false,
 				dash: false,
 				endure: false,
+				fistPump: false,
+				systemicPressure: 0
 			},
 			movement: { base: 5, gear: 0 },
 			accuracy: { base: 0, gear: 0 },
@@ -155,15 +311,17 @@ export const characterFunc: {
 			evasion: { base: 0, gear: 0 },
 			luck: { base: 0, gear: 0 },
 			speed: { base: 0, gear: 0 },
+			lumi: { base: 0, gear: 0 },
 			brain: {
 				insanity: 0,
+				torment: 0,
 				injury: { light: false }
 			},
-			head: usefulFuncs.generateBodyPart(),
-			arms: usefulFuncs.generateBodyPart(),
-			body: usefulFuncs.generateBodyPart(),
-			waist: usefulFuncs.generateBodyPart(1),
-			legs: usefulFuncs.generateBodyPart(),
+			head: usefulFuncs.generateBodyPart(0, "head"),
+			arms: usefulFuncs.generateBodyPart(0, "arms"),
+			body: usefulFuncs.generateBodyPart(0, "body"),
+			waist: usefulFuncs.generateBodyPart(1, "waist"),
+			legs: usefulFuncs.generateBodyPart(0, "legs"),
 			weaponProficiency:{
 				type: "",
 				level: usefulFuncs.generateKDMCheckbox([1,1,2,1,1,1,1,2]),
@@ -200,6 +358,23 @@ export const characterFunc: {
 				childs: [""],
 			},
 			notes: "",
+			philosophy:{
+				text: "",
+				rank: 0,
+				ponder: "",
+				neurosis: "",
+				tenetKnowledge: {
+					text: "",
+					values: [false, false, false, false, false, false, false, false, false]
+				},
+				rules: "",
+				observationConditions: "",
+			},
+			knowledge:{
+				text: "",
+				locked: false,
+				knowledges: [usefulFuncs.generateKnowledge()]
+			}
 		};
 		characters.value.push(tmpChar);
 		return tmpChar;
@@ -247,7 +422,7 @@ export const characterFunc: {
 			versionUpdaterFunctions[upgradeTo](c)
 		}
 	},
-	move(cid, state: 1 | -1){
+	move(cid: string, state: 1 | -1 | 2 | 3){
 		for(let i = 0; i<characters.value.length; i++){
 			if(characters.value[i].id === cid){
 				// Invalid movement
@@ -255,6 +430,16 @@ export const characterFunc: {
 					(i === 0 && state === -1) ||
 					(i === characters.value.length - 1 && state === 1)
 				) return;
+				// Top
+				if(state === 2){
+					const char = characters.value.splice(i, 1)[0];
+					characters.value.unshift(char);
+				}
+				// End
+				if(state === 3){
+					const char = characters.value.splice(i, 1)[0];
+					characters.value.push(char);
+				}
 				// Move back
 				if(state === 1){
 					[characters.value[i], characters.value[i+1]] = [characters.value[i+1], characters.value[i]];
@@ -271,8 +456,57 @@ export const characterFunc: {
 }
 
 const versionUpdaterFunctions: any = {
+	/**
+	 * Added death trigger
+	 */
 	1:(c: Character) => {
 		c.dead = false;
+	},
+	/**
+	 * Added Survival - Fist Pump
+	 * Added Survival - Systemic Pressure
+	 * Added Lumi
+	 * Added Torment to brain section
+	 * Added Next Departure
+	 * Added severe injuries
+	 * Added Philosophy
+	 * Added Knowledge
+	 */
+	2:(c: Character) => {
+		c.survival.fistPump = false;
+		c.survival.systemicPressure = 0;
+		c.lumi = { base: 0, gear: 0 };
+		c.brain.torment = 0;
+		c.nextDeparture = "";
+		c.head.injury.severe = usefulFuncs.generateBodyPart(c.head.armor, "head").injury.severe;
+		c.arms.injury.severe = usefulFuncs.generateBodyPart(c.arms.armor, "arms").injury.severe;
+		c.body.injury.severe = usefulFuncs.generateBodyPart(c.body.armor, "body").injury.severe;
+		c.waist.injury.severe = usefulFuncs.generateBodyPart(c.waist.armor, "waist").injury.severe;
+		c.legs.injury.severe = usefulFuncs.generateBodyPart(c.legs.armor, "legs").injury.severe;
+		c.philosophy = {
+			text: "",
+			rank: 0,
+			ponder: "",
+			neurosis: "",
+			tenetKnowledge: {
+				text: "",
+				values: [false, false, false, false, false, false, false, false, false]
+			},
+			rules: "",
+			observationConditions: "",
+		},
+		c.knowledge = {
+			text: "",
+			locked: false,
+			knowledges: [{
+				knowledgeName: {
+					text: "",
+					values: [false, false, false, false, false, false, false, false, false]
+				},
+				rules: "",
+				observationConditions: "",
+			}]
+		}
 	}
 }
 

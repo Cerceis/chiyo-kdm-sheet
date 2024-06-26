@@ -12,23 +12,41 @@
 				v-for="survivor in filteredSurvivor" 
 				class="survivalCard"
 				@click="selectedCharacter = survivor;"
-				style="min-height: 200px;"
+				style="min-height: 224px;"
 			>
 				<div>
-					<v-icon 
-						v-if="survivor.id === monsterController" class="mr-1"
-						color="warning"
-					>mdi-brain</v-icon>
-					<v-icon 
-						v-if="survivor.dead" class="mr-1"
-						color="red"
-					>mdi-emoticon-dead-outline</v-icon>
 					<span>{{ survivor.name }}</span>
 					<v-divider class="my-1"/>
-					<CharacterSummary :c="survivor" />
+					<CharacterSummary :c="survivor" :monster-controller-id="monsterController" />
 				</div>
 				<v-divider class="my-1" />
 				<div class="d-flex justify-end gap-1">
+					<v-tooltip text="Move to start">
+						<template v-slot:activator="{ props }">
+							<v-btn
+								v-bind="props"
+								@click="$event.stopPropagation(); characterFunc.move(survivor.id, 2)"
+								color="primary"
+								size="32"
+								style="width: 18px;"
+							>
+								<v-icon>mdi-arrow-collapse-up</v-icon>
+							</v-btn>
+						</template>
+					</v-tooltip>
+					<v-tooltip text="Move to end">
+						<template v-slot:activator="{ props }">
+							<v-btn
+								v-bind="props"
+								@click="$event.stopPropagation(); characterFunc.move(survivor.id, 3)"
+								color="primary"
+								size="32"
+								style="width: 18px;"
+							>
+								<v-icon>mdi-arrow-collapse-down</v-icon>
+							</v-btn>
+						</template>
+					</v-tooltip>
 					<v-tooltip text="Move up">
 						<template v-slot:activator="{ props }">
 							<v-btn
@@ -36,8 +54,9 @@
 								@click="$event.stopPropagation(); characterFunc.move(survivor.id, -1)"
 								color="primary"
 								size="32"
+								style="width: 18px;"
 							>
-								<v-icon>mdi-arrow-up-bold</v-icon>
+								<v-icon>mdi-arrow-up</v-icon>
 							</v-btn>
 						</template>
 					</v-tooltip>
@@ -48,8 +67,9 @@
 								@click="$event.stopPropagation(); characterFunc.move(survivor.id, 1)"
 								color="primary"
 								size="32"
+								style="width: 18px;"
 							>
-								<v-icon>mdi-arrow-down-bold</v-icon>
+								<v-icon>mdi-arrow-down</v-icon>
 							</v-btn>
 						</template>
 					</v-tooltip>
@@ -112,6 +132,7 @@ const hotkeyListeners = (e: KeyboardEvent) => {
 }
 
 onMounted(() => {
+	if(characters.value[0]) selectedCharacter.value = characters.value[0];
 	window.addEventListener("keyup", hotkeyListeners)
 })
 onUnmounted(() => window.removeEventListener("keyup", hotkeyListeners))

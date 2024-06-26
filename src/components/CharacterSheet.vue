@@ -2,6 +2,7 @@
 	<div class="pa-2">
 		<div class="d-flex justify-center">
 			<div class="grid align-start">
+				<div class="text-caption caption">Character sheet version: {{ c.v }}</div>
 				<div class="styledRow w-100">
 					Name
 					<input v-model="c.name"/>
@@ -9,26 +10,52 @@
 					<v-checkbox v-model="c.gender.f" label="F" density="compact" hide-details/>
 					<v-checkbox v-model="c.dead" label="Dead" density="compact" hide-details/>
 				</div>
-				<v-divider class="mb-2" />
 				<div class="text-caption caption">When you name your survivor, gain +1 survival</div>
 				<div class="borderTable w-100">
 					<div class="styledRow">
-						<BoxInput v-model="c.survival.value" />
 						<div class="grid">
-							Survival
-							<div class="styledRowDense">
-								<v-checkbox v-model="c.survival.locked" density="compact" hide-details/>
-								<span class="text-caption styledRow">
-									<KDMIcon icon="Lock" :size="16" />Cannot spend survival
-								</span>
+							<div class="styledRow">
+								<BoxInput v-model="c.survival.value" />
+								<div class="grid">
+									Survival
+									<div class="styledRowDense">
+										<v-checkbox v-model="c.survival.locked" density="compact" hide-details/>
+										<span class="text-caption styledRow">
+											<KDMIcon icon="Lock" :size="16" />Cannot spend survival
+										</span>
+									</div>
+								</div>
+							</div>
+							<div class="styledRow">
+								<BoxInput v-model="c.survival.systemicPressure" />	
+								Systemic Pressure
 							</div>
 						</div>
 						<div>
-							<div class="styledRow"><input class="largeCheckbox" v-model="c.survival.dodge" type="checkbox"><div class=text-caption>Dodge</div></div>
-							<div class="styledRow"><input class="largeCheckbox" v-model="c.survival.encourage" type="checkbox"><div class=text-caption>Encourage</div></div>
-							<div class="styledRow"><input class="largeCheckbox" v-model="c.survival.surge" type="checkbox"><div class=text-caption>Surge</div></div>
-							<div class="styledRow"><input class="largeCheckbox" v-model="c.survival.dash" type="checkbox"><div class=text-caption>Dash</div></div>
-							<div class="styledRow"><input class="largeCheckbox" v-model="c.survival.endure" type="checkbox"><div class=text-caption>Endure</div></div>
+							<div class="styledRow"><input class="largeCheckbox" v-model="c.survival.dodge" type="checkbox">
+								<div class=text-caption>Dodge</div>
+								<HelpIcon :text="gameText.dodge" />
+							</div>
+							<div class="styledRow"><input class="largeCheckbox" v-model="c.survival.encourage" type="checkbox">
+								<div class=text-caption>Encourage</div>
+								<HelpIcon :text="gameText.dodge" />
+							</div>
+							<div class="styledRow"><input class="largeCheckbox" v-model="c.survival.surge" type="checkbox">
+								<div class=text-caption>Surge</div>
+								<HelpIcon :text="gameText.surge" />
+							</div>
+							<div class="styledRow"><input class="largeCheckbox" v-model="c.survival.dash" type="checkbox">
+								<div class=text-caption>Dash</div>
+								<HelpIcon :text="gameText.dash" />
+							</div>
+							<div class="styledRow"><input class="largeCheckbox" v-model="c.survival.endure" type="checkbox">
+								<div class=text-caption>Endure</div>
+								<HelpIcon :text="gameText.endure" />
+							</div>
+							<div class="styledRow"><input class="largeCheckbox" v-model="c.survival.fistPump" type="checkbox">
+								<div class=text-caption>Fist Pump</div>
+								<HelpIcon :text="gameText.fistPump" />
+							</div>
 						</div>
 					</div>
 				</div>
@@ -59,6 +86,10 @@
 							<BoxInput :v1="c.speed.base" :v2="c.speed.gear" @v1="c.speed.base = $event" @v2="c.speed.gear = $event" twin />
 							<div class="text-caption">Speed</div>
 						</div>
+						<div class="grid justify-center">
+							<BoxInput :v1="c.lumi.base" :v2="c.lumi.gear" @v1="c.lumi.base = $event" @v2="c.lumi.gear = $event" twin />
+							<div class="text-caption">Lumi</div>
+						</div>
 					</div>
 				</div>
 				<div class="borderTable w-100">
@@ -70,39 +101,69 @@
 								</div>
 							</td>
 							<td>
-								<div class="grid align-item-space-between">
-									Brain<div class="text-caption caption">If your insanity is 3+, you are insane.</div>							
+								<div class="grid align-item-space-between ml-1">
+									Brain<div class="text-caption caption">If your insanity is 3+,<br> you are insane.</div>							
 								</div>
 							</td>
 							<td>
 								<v-checkbox v-model="c.brain.injury.light" density="compact" hide-details/>
 							</td>
+							<td>
+								<div class="grid justify-center">
+									<BoxInput v-model="c.brain.torment"/> <div class="text-caption">Torment</div>
+								</div>
+								
+							</td>
 						</tr>
-						<tr>
+						<tr class="topBorder">
 							<td>
 								<div class="grid justify-center">
 									<Shield v-model="c.head.armor"/>
 								</div>
 							</td>
 							<td>
-								<div class="grid align-item-space-between">
-									<span class="styledRow"> <KDMIcon icon="Head" />Head</span><div class="text-caption caption">Heavy Injury: Knocked Down</div>							
+								<div class="grid align-item-space-between ml-1">
+									<span class="styledRow"><KDMIcon icon="Head" />Head</span><div class="text-caption caption">Heavy Injury:<br>Knocked Down</div>							
 								</div>
+							</td>
+							<td>
+								<table>
+									<tr v-for="sevInjuries in c.head.injury.severe">
+										<td class="grid">
+											<div class="text-caption styledRow">{{ sevInjuries.text }}<HelpIcon :text="sevInjuries.description" /></div>
+											<div class="styledRowDense">
+												<input v-for="(v,i) in sevInjuries.value" type="checkbox" v-model="sevInjuries.value[i]" />
+											</div>
+										</td>
+									</tr>
+								</table>
 							</td>
 							<td>
 								<v-checkbox v-model="c.head.injury.heavy" label="H" color="error" density="compact" hide-details/>
 							</td>
 						</tr>
-						<tr>
+						<tr class="topBorder">
 							<td>
 								<div class="grid justify-center">
 									<Shield v-model="c.arms.armor"/>
 								</div>
 							</td>
 							<td>
-								<div class="grid align-item-space-between">
-									<span class="styledRow"> <KDMIcon icon="Arms" />Arms</span><div class="text-caption caption">Heavy Injury: Knocked Down</div>							
+								<div class="grid align-item-space-between ml-1">
+									<span class="styledRow"> <KDMIcon icon="Arms" />Arms</span><div class="text-caption caption">Heavy Injury:<br>Knocked Down</div>							
 								</div>
+							</td>
+							<td>
+								<table>
+									<tr v-for="sevInjuries in c.arms.injury.severe">
+										<td class="grid">
+											<div class="text-caption styledRow">{{ sevInjuries.text }}<HelpIcon :text="sevInjuries.description" /></div>
+											<div class="styledRowDense">
+												<input v-for="(v,i) in sevInjuries.value" type="checkbox" v-model="sevInjuries.value[i]" />
+											</div>
+										</td>
+									</tr>
+								</table>
 							</td>
 							<td>
 								<div class="d-flex">
@@ -111,16 +172,28 @@
 								</div>
 							</td>
 						</tr>
-						<tr>
+						<tr class="topBorder">
 							<td>
 								<div class="grid justify-center">
 									<Shield v-model="c.body.armor"/>
 								</div>
 							</td>
 							<td>
-								<div class="grid align-item-space-between">
-									<span class="styledRow"> <KDMIcon icon="Body" />Body</span><div class="text-caption caption">Heavy Injury: Knocked Down</div>							
+								<div class="grid align-item-space-between ml-1">
+									<span class="styledRow"> <KDMIcon icon="Body" />Body</span><div class="text-caption caption">Heavy Injury:<br>Knocked Down</div>							
 								</div>
+							</td>
+							<td>
+								<table>
+									<tr v-for="sevInjuries in c.body.injury.severe">
+										<td class="grid">
+											<div class="text-caption styledRow">{{ sevInjuries.text }}<HelpIcon :text="sevInjuries.description" /></div>
+											<div class="styledRowDense">
+												<input v-for="(v,i) in sevInjuries.value" type="checkbox" v-model="sevInjuries.value[i]" />
+											</div>
+										</td>
+									</tr>
+								</table>
 							</td>
 							<td>
 								<div class="d-flex">
@@ -129,16 +202,28 @@
 								</div>
 							</td>
 						</tr>
-						<tr>
+						<tr class="topBorder">
 							<td>
 								<div class="grid justify-center">
 									<Shield v-model="c.waist.armor"/>
 								</div>
 							</td>
 							<td>
-								<div class="grid align-item-space-between">
-									<span class="styledRow"> <KDMIcon icon="Waist" />Waist</span><div class="text-caption caption">Heavy Injury: Knocked Down</div>							
+								<div class="grid align-item-space-between ml-1">
+									<span class="styledRow"> <KDMIcon icon="Waist" />Waist</span><div class="text-caption caption">Heavy Injury:<br>Knocked Down</div>							
 								</div>
+							</td>
+							<td>
+								<table>
+									<tr v-for="sevInjuries in c.waist.injury.severe">
+										<td class="grid">
+											<div class="text-caption styledRow">{{ sevInjuries.text }}<HelpIcon :text="sevInjuries.description" /></div>
+											<div class="styledRowDense">
+												<input v-for="(v,i) in sevInjuries.value" type="checkbox" v-model="sevInjuries.value[i]" />
+											</div>
+										</td>
+									</tr>
+								</table>
 							</td>
 							<td>
 								<div class="d-flex">
@@ -147,16 +232,28 @@
 								</div>
 							</td>
 						</tr>
-						<tr>
+						<tr class="topBorder">
 							<td>
 								<div class="grid justify-center">
 									<Shield v-model="c.legs.armor"/>
 								</div>
 							</td>
 							<td>
-								<div class="grid align-item-space-between">
-									<span class="styledRow"> <KDMIcon icon="Legs" />Legs</span><div class="text-caption caption">Heavy Injury: Knocked Down</div>							
+								<div class="grid align-item-space-between ml-1">
+									<span class="styledRow"> <KDMIcon icon="Legs" />Legs</span><div class="text-caption caption">Heavy Injury:<br>Knocked Down</div>							
 								</div>
+							</td>
+							<td>
+								<table>
+									<tr v-for="sevInjuries in c.legs.injury.severe">
+										<td class="grid">
+											<div class="text-caption styledRow">{{ sevInjuries.text }}<HelpIcon :text="sevInjuries.description" /></div>
+											<div class="styledRowDense">
+												<input v-for="(v,i) in sevInjuries.value" type="checkbox" v-model="sevInjuries.value[i]" />
+											</div>
+										</td>
+									</tr>
+								</table>
 							</td>
 							<td>
 								<div class="d-flex">
@@ -166,6 +263,52 @@
 							</td>
 						</tr>
 					</table>
+
+					<v-divider class="my-1" />
+
+					<div class="d-flex justify-center gap-1">
+
+						<table>
+							<tr>
+								<td>Parents</td><td>
+									<v-btn @click="c.family.parents.push('')" color="success" size="24">
+										<v-icon>mdi-plus</v-icon>
+									</v-btn>	
+								</td>
+							</tr>
+							<tr v-for="(v, i) in c.family.parents">
+								<td>
+									<input type="text" v-model="c.family.parents[i]" />
+								</td>
+								<td>
+									<v-btn @click="c.family.parents.splice(i, 1)" color="error" size="24">
+										<v-icon>mdi-close</v-icon>
+									</v-btn>	
+								</td>
+							</tr>
+						</table>
+
+						<table>
+							<tr>
+								<td>Children</td><td>
+									<v-btn @click="c.family.childs.push('')" color="success" size="24">
+										<v-icon>mdi-plus</v-icon>
+									</v-btn>	
+								</td>
+							</tr>
+							<tr v-for="(v, i) in c.family.childs">
+								<td>
+									<input type="text" v-model="c.family.childs[i]" />
+								</td>
+								<td>
+									<v-btn @click="c.family.childs.splice(i, 1)" color="error" size="24">
+										<v-icon>mdi-close</v-icon>
+									</v-btn>	
+								</td>
+							</tr>
+						</table>
+
+					</div>
 				</div>
 			</div>
 			<v-divider class="mx-1" vertical />
@@ -239,32 +382,29 @@
 						<table>
 							<tr>
 								<td><v-checkbox v-model="c.courage.stalwart" density="compact" hide-details/></td>
-								<td>									
-									<div style="font-size: 14px;">
-										<span class="font-weight-bold">Stalwart</span>:
-										Can't be knocked down<br>
-										by brain trauma or intimidate 
-									</div>
+								<td>	
+									<div class="styledRow">
+										Stalwart
+										<HelpIcon text="Can't be knocked downby brain trauma or intimidate" />
+									</div>							
 								</td>
 							</tr>
 							<tr>
 								<td><v-checkbox v-model="c.courage.prepared" density="compact" hide-details/></td>
-								<td>									
-									<div style="font-size: 14px;">
-										<span class="font-weight-bold">Prepared</span>:
-										Add Hunt XP to your<br>
-										roll when determining a stranggler
-									</div>
+								<td>		
+									<div class="styledRow">
+										Prepared
+										<HelpIcon text="Add Hunt XP to your roll when determining a stranggler" />
+									</div>								
 								</td>
 							</tr>
 							<tr>
 								<td><v-checkbox v-model="c.courage.matchmaker" density="compact" hide-details/></td>
-								<td>									
-									<div style="font-size: 14px;">
-										<span class="font-weight-bold">Matchmaker</span>:
-										Spend 1 endeavor<br>
-										to trigger intimacy story event
-									</div>
+								<td>		
+									<div class="styledRow">
+										Matchmaker
+										<HelpIcon text="Spend 1 endeavor to trigger intimacy story event" />
+									</div>								
 								</td>
 							</tr>
 						</table>
@@ -286,38 +426,38 @@
 						<table>
 							<tr>
 								<td><v-checkbox v-model="c.understanding.analyze" density="compact" hide-details/></td>
-								<td>									
-									<div style="font-size: 14px;">
-										<span class="font-weight-bold">Analyze</span>:
-										Look at top of AI card<br>
-										and return it to the top of the deck
-									</div>
+								<td>								
+									<div class="styledRow">
+										Analyze
+										<HelpIcon text="Look at top of AI card and return it to the top of the deck" />
+									</div>	
 								</td>
 							</tr>
 							<tr>
 								<td><v-checkbox v-model="c.understanding.explore" density="compact" hide-details/></td>
-								<td>									
-									<div style="font-size: 14px;">
-										<span class="font-weight-bold">Explore</span>:
-										Add +2 to your<br>
-										investigate roll results.
-									</div>
+								<td>			
+									<div class="styledRow">
+										Explore
+										<HelpIcon text="Add +2 to your investigate roll results." />
+									</div>							
 								</td>
 							</tr>
 							<tr>
 								<td><v-checkbox v-model="c.understanding.tinker" density="compact" hide-details/></td>
-								<td>									
-									<div style="font-size: 14px;">
-										<span class="font-weight-bold">Tinker</span>:
-										+1 endeavor when you<br>
-										are a returning survivor
-									</div>
+								<td>	
+									<div class="styledRow">
+										Tinker
+										<HelpIcon text="+1 endeavor when you are a returning survivor" />
+									</div>															
 								</td>
 							</tr>
 						</table>
 					</div>
 				</div>
 				<div>
+					<div class="w-100">
+						Next Departure <input v-model="c.nextDeparture" type="text" class="w-100">
+					</div>
 					<table>
 						<tr>
 							<td>Chronicles</td>
@@ -325,7 +465,7 @@
 							<td rowspan="4">
 								<div class="mx-1">
 									Cause
-									<textarea v-model="c.chronicles.cause" type="text" cols="37" rows="4" />
+									<textarea v-model="c.chronicles.cause" type="text" cols="27" rows="4" />
 								</div>
 							</td>
 						</tr>
@@ -333,52 +473,109 @@
 						<tr><td>Born</td><td><input v-model="c.chronicles.born" type="text" style="max-width: 130px;" /></td></tr>
 						<tr><td>Death</td><td><input v-model="c.chronicles.death" type="text" style="max-width: 130px;" /></td></tr>
 					</table>
-					<v-divider class="my-1" />
-
-					<div class="d-flex justify-center gap-1">
-
-						<table>
-							<tr>
-								<td>Parents</td><td>
-									<v-btn @click="c.family.parents.push('')" color="success" size="24">
-										<v-icon>mdi-plus</v-icon>
-									</v-btn>	
-								</td>
-							</tr>
-							<tr v-for="(v, i) in c.family.parents">
-								<td>
-									<input type="text" v-model="c.family.parents[i]" />
-								</td>
-								<td>
-									<v-btn @click="c.family.parents.splice(i, 1)" color="error" size="24">
-										<v-icon>mdi-close</v-icon>
-									</v-btn>	
-								</td>
-							</tr>
-						</table>
-
-						<table>
-							<tr>
-								<td>Children</td><td>
-									<v-btn @click="c.family.childs.push('')" color="success" size="24">
-										<v-icon>mdi-plus</v-icon>
-									</v-btn>	
-								</td>
-							</tr>
-							<tr v-for="(v, i) in c.family.childs">
-								<td>
-									<input type="text" v-model="c.family.childs[i]" />
-								</td>
-								<td>
-									<v-btn @click="c.family.childs.splice(i, 1)" color="error" size="24">
-										<v-icon>mdi-close</v-icon>
-									</v-btn>	
-								</td>
-							</tr>
-						</table>
-
+				</div>
+				<div class="grid  gap-1 borderTable mt-1 w-100">
+					<div class="d-flex justify-space-between">
+						<div>
+							Philosophy
+							<input type="text" v-model="c.philosophy.text" style="width: 300px">
+						</div>
+						<BoxInput v-model="c.philosophy.rank" />
 					</div>
-
+					<div>
+						<div class="styledRow">
+							Ponder (Trigger when gain Hunt XP)
+							<HelpIcon :text="gameText.ponder" />
+						</div> 
+						<input type="text" v-model="c.philosophy.ponder" style="width: 300px">
+					</div>
+					<div>
+						Neurosis
+						<input type="text" v-model="c.philosophy.neurosis" style="width: 300px">
+					</div>
+					<div>
+						<div class="styledRow">
+							Tenet Knowledge
+							<div class="styledRowDense">
+								<input v-for="(v,i) in c.philosophy.tenetKnowledge.values" type="checkbox" v-model="c.philosophy.tenetKnowledge.values[i]" />
+								<v-btn
+								@click="c.philosophy.tenetKnowledge.values.push(false)" 
+								color="success" size="13" class="ml-3"
+								>
+									<v-icon size="x-small">mdi-plus</v-icon>
+								</v-btn>
+								<v-btn
+								@click="c.philosophy.tenetKnowledge.values.pop()" 
+								color="error" size="13"
+								>
+									<v-icon size="x-small">mdi-close</v-icon>
+								</v-btn>
+							</div>
+						</div> 
+						<input type="text" v-model="c.philosophy.tenetKnowledge.text" style="width: 300px">
+					</div>
+					<div>
+						Rules
+						<input type="text" v-model="c.philosophy.rules" style="width: 300px">
+					</div>
+					<div>
+						Observation Conditions
+						<input type="text" v-model="c.philosophy.observationConditions" style="width: 300px">
+					</div>
+				</div>
+				<div class="grid  gap-1 borderTable mt-1 w-100">
+					<div>
+						<div class="styledRow">
+							Knowledges 
+							<v-btn @click="c.knowledge.knowledges.push(usefulFuncs.generateKnowledge())" color="success" size="18">
+								<v-icon>mdi-plus</v-icon>
+							</v-btn>	
+						</div>
+						
+						<div class="styledRow text-caption">
+							<input type="checkbox" v-model="c.knowledge.locked">
+							If you cannot use fighting arts, you cannot use knowledge
+						</div>
+						<input type="text" v-model="c.knowledge.text" style="width: 300px">
+					</div>
+					<v-divider />
+					<div v-for="(knowledge, ki) in c.knowledge.knowledges">
+						<div>
+							<div class="styledRow">
+								<div class="styledRow">
+									<v-btn @click="c.knowledge.knowledges.splice(ki, 1)" color="error" size="18">
+										<v-icon>mdi-close</v-icon>
+									</v-btn>	
+									Knowledges Name
+								</div>
+								<div class="styledRowDense">
+									<input v-for="(v,i) in knowledge.knowledgeName.values" type="checkbox" v-model="knowledge.knowledgeName.values[i]" />
+									<v-btn
+										@click="knowledge.knowledgeName.values.push(false)" 
+										color="success" size="13" class="ml-3"
+									>
+										<v-icon size="x-small">mdi-plus</v-icon>
+									</v-btn>
+									<v-btn
+										@click="knowledge.knowledgeName.values.pop()" 
+										color="error" size="13"
+									>
+										<v-icon size="x-small">mdi-close</v-icon>
+									</v-btn>
+								</div>
+							</div> 
+							<input type="text" v-model="knowledge.knowledgeName.text" style="width: 300px">
+						</div>
+						<div>
+							Rules
+							<input type="text" v-model="knowledge.rules" style="width: 300px">
+						</div>
+						<div>
+							Observation Conditions
+							<input type="text" v-model="knowledge.observationConditions" style="width: 300px">
+						</div>
+						<v-divider class="mt-2" />
+					</div>
 				</div>
 			</div>
 		</div>
@@ -397,7 +594,7 @@
 					</td>
 				</tr>
 				<tr>
-					<td>Fighting Arts (Max 3)</td><td>
+					<td>Fighting Arts</td><td>
 						<v-btn @click="c.fightingArts.values.push('')" color="success" size="24">
 							<v-icon>mdi-plus</v-icon>
 						</v-btn>	
@@ -506,9 +703,10 @@
 </template>
  
 <script setup lang="ts">
-import { Character } from "@/logics/character";
+import { Character, usefulFuncs } from "@/logics/character";
 import { PropType } from "vue";
 import KDMIcon from "./KDMIcon.vue"; 
+import { gameText } from "@/logics/text";
  
 defineProps({
 	c:{
@@ -539,4 +737,8 @@ defineProps({
 	border-radius: 1px;
 	border: 1px solid black;;
 }
+.topBorder > td{
+	border-top: 1px solid rgba(255,255,255,.3);
+}
+
 </style>

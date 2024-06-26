@@ -4,7 +4,7 @@ import { Popup } from "@/logics/popup";
 import { archive } from "@/logics/character";
 
 export const settlements: Ref<Settlement[]> = ref([]);
-const currentVersion = 1;
+const currentVersion = 3;
 
 export type SettlementTimeline = {
 	value: boolean,
@@ -35,8 +35,8 @@ export type Settlement = {
 	namesis: {
 		text: string, value: boolean, level: boolean[]
 	}[],
-	resourceStorage: {text: string, count: number}[],
-	gearStorage: {text: string, count: number}[],
+	resourceStorage: {id: string, text: string, count: number, show: boolean}[],
+	gearStorage: {id: string, text: string, count: number, show: boolean}[],
 	lanternResearchLevel: number,
 	monsterVolumes: string[]
 	notes: string,
@@ -132,8 +132,8 @@ export const settlementFunc = {
 				{ text: "King's Man", value: false, level: [false, false, false] },
 				{ text: "The Hand", value: false, level: [false, false, false] },
 			],
-			resourceStorage: [{text:'', count:0}],
-			gearStorage: [{text:'', count:0}],
+			resourceStorage: [{id: Generate.objectId(), text:'', count:0, show: true}],
+			gearStorage: [{id: Generate.objectId(), text:'', count:0, show: true}],
 			lanternResearchLevel: 0,
 			monsterVolumes: [""],
 			notes: "",
@@ -185,7 +185,7 @@ export const settlementFunc = {
 			versionUpdaterFunctions[upgradeTo](s)
 		}
 	},
-	move(sid: string, state: 1 | -1){
+	move(sid: string, state: 1 | -1 | 2 | 3){
 		for(let i = 0; i<settlements.value.length; i++){
 			if(settlements.value[i].id === sid){
 				// Invalid movement
@@ -193,6 +193,16 @@ export const settlementFunc = {
 					(i === 0 && state === -1) ||
 					(i === settlements.value.length - 1 && state === 1)
 				) return;
+				// Top
+				if(state === 2){
+					const sett = settlements.value.splice(i, 1)[0];
+					settlements.value.unshift(sett);
+				}
+				// End
+				if(state === 3){
+					const sett = settlements.value.splice(i, 1)[0];
+					settlements.value.push(sett);
+				}
 				// Move back
 				if(state === 1){
 					[settlements.value[i], settlements.value[i+1]] = [settlements.value[i+1], settlements.value[i]];
@@ -209,5 +219,24 @@ export const settlementFunc = {
 }
 
 const versionUpdaterFunctions: any = {
-	1:(s: Settlement) => {}
+	1:(s: Settlement) => {},
+	/**
+	 * Added id field to resource and gear
+	 */
+	2:(s: Settlement) => {
+		for(let i = 0; i<s.resourceStorage.length; i++){
+			s.resourceStorage[i].id = Generate.objectId();
+		}
+		for(let i = 0; i<s.gearStorage.length; i++){
+			s.gearStorage[i].id = Generate.objectId();
+		}
+	},
+	3:(s: Settlement) => {
+		for(let i = 0; i<s.resourceStorage.length; i++){
+			s.resourceStorage[i].show = true;
+		}
+		for(let i = 0; i<s.gearStorage.length; i++){
+			s.gearStorage[i].show = true;
+		}
+	},
 }

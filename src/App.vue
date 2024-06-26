@@ -18,9 +18,13 @@ import SettlementPanel from "@/components/SettlementPanel.vue";
 import { load } from "@/logics/system";
 import { survivorView, refreshKey } from "@/logics/global";
 import { onMounted } from "vue";
+import { useTheme } from "vuetify";
 
 onMounted(() => {
 	load();
+	// Load theme color
+	const savedColor = localStorage.getItem("chiyoKDMThemeColor");
+	if(savedColor) useTheme().themes.value.dark.colors.primary = savedColor;
 })
 
 </script>

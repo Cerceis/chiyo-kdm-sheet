@@ -1,6 +1,6 @@
 import { Ref, ref, watch } from "vue";
 import { characters, archive, characterFunc, Character } from "@/logics/character";
-import { settlements } from "@/logics/settlement";
+import { Settlement, settlementFunc, settlements } from "@/logics/settlement";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 import { refreshKey } from "@/logics/global";
@@ -45,7 +45,8 @@ export const load = (inputString?: string) => {
 	const parsedSaveString = JSON.parse(saveString);
 	characters.value = parsedSaveString.survivors.map( (c: Character) => {characterFunc.update(c); return c}) ?? [];
 	archive.value = parsedSaveString.archive.map( (c: Character) => {characterFunc.update(c); return c}) ?? [];
-	settlements.value = parsedSaveString.settlements ?? [];
+	settlements.value = parsedSaveString.settlements.map( (s: Settlement) => {settlementFunc.update(s); return s}) ?? [];
+
 	refreshKey.value ++;
 }
 
@@ -72,3 +73,7 @@ watch(
 	() => { watchedFunc	()},
 	{ deep: true }
 )
+
+export const saveThemeColor = (currentColor: string) => {
+	localStorage.setItem("chiyoKDMThemeColor", currentColor);
+}

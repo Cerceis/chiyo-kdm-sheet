@@ -2,7 +2,7 @@
 	<div class="ma-1 d-flex gap-1 align-center">
 		Chiyo KDM Sheet 
 		<div class="caption text-caption">
-			v1.02
+			v1.1
 		</div>
 		<v-btn  color="primary" size="small" @click="characterFunc.new()">
 			<v-icon>mdi-plus</v-icon>
@@ -12,21 +12,7 @@
 			<v-icon>mdi-plus</v-icon>
 			New Settlement
 		</v-btn>
-		<v-tooltip text="Export">
-			<template v-slot:activator="{ props }">
-				<v-btn  v-bind="props" color="primary" size="28" @click="initSavedString()">
-					<v-icon>mdi-export</v-icon>
-				</v-btn>
-			</template>
-		</v-tooltip>
-		<v-tooltip text="Import">
-			<template v-slot:activator="{ props }">
-				<v-btn  v-bind="props" color="primary" size="28" @click="initSavedString(false)">
-					<v-icon>mdi-import</v-icon>
-				</v-btn>
-			</template>
-		</v-tooltip>
-		
+
 		<v-tooltip text="Archive">
 			<template v-slot:activator="{ props }">
 				<v-btn
@@ -72,17 +58,7 @@
 			</template>
 		</v-tooltip>
 
-		<v-tooltip text="Github">
-			<template v-slot:activator="{ props }">
-				<v-btn
-					@click="openURL('https://github.com/Cerceis/chiyo-kdm-sheet')"
-					color="primary" size="32"
-					v-bind="props"
-				>
-					<v-icon>mdi-github</v-icon>
-				</v-btn>
-			</template>
-		</v-tooltip>
+		
 
 		<v-tooltip text="Support me on Ko-fi">
 			<template v-slot:activator="{ props }">
@@ -95,17 +71,78 @@
 				</v-btn>
 			</template>
 		</v-tooltip>
-		
+
+		<v-menu open-on-hover :close-on-content-click="false">
+			<template v-slot:activator="{ props }">
+				<v-btn color="primary" v-bind="props" size="32">
+					<v-icon>mdi-cog</v-icon>
+				</v-btn>
+			</template>
+
+			<v-list density="compact" class="border">
+				<v-list-item @click="initSavedString()">
+					<v-list-item-title>Export</v-list-item-title>
+					<template v-slot:prepend>
+						<v-icon>mdi-export</v-icon>
+					</template>
+				</v-list-item>
+				<v-list-item @click="initSavedString(false)">
+					<v-list-item-title>Import</v-list-item-title>
+					<template v-slot:prepend>
+						<v-icon>mdi-import</v-icon>
+					</template>
+				</v-list-item>
+				<v-list-item @click="openURL('https://github.com/Cerceis/chiyo-kdm-sheet')">
+					<v-list-item-title>Github</v-list-item-title>
+					<template v-slot:prepend>
+						<v-icon>mdi-github</v-icon>
+					</template>
+				</v-list-item>
+				<v-list-item>
+					<v-list-item-title>Set switch tab hotkey</v-list-item-title>
+					<div class="styledRow">
+						<v-select 
+							v-model="switchTabHotkeyPrefix"
+							:items="prefixKeymap"
+							item-title="label"
+							item-value="code"
+							density="compact"
+							hide-details
+							variant="outlined"
+							style="max-width: 100px;"
+							@change="saveHotkeys"
+						/>
+						+
+						<div>
+							{{ setKeyMode ? "Press any key..." : switchTabHotkey }}
+						</div>
+						<v-btn
+							v-if="!setKeyMode"
+						   @click="setKeyMode = true"
+						   color="primary"
+						>
+						   Change
+						</v-btn>
+					</div>
+
+					
+				</v-list-item>
+				<v-list-item>
+					<v-list-item-title>Set theme color</v-list-item-title>
+					<v-color-picker v-model="$vuetify.theme.themes.dark.colors.primary" @update:model-value="saveThemeColor($vuetify.theme.themes.dark.colors.primary)"></v-color-picker>
+				</v-list-item>
+			</v-list>
+		</v-menu>
 
 		<v-divider vertical />
 		<div class="styledRow text-caption">
-			Settlement
+			<KDMIcon icon="Settlement" :size="32" />
 			<v-switch
 				v-model="survivorView"
 				hide-details
 				density="compact"
 			></v-switch>
-			Survivors
+			<KDMIcon icon="Survivors" :size="32" />
 		</div>
 		<v-divider vertical />
 		<v-btn
@@ -131,7 +168,7 @@
 		</v-btn>
 		<div class="styledRow">
 			<v-chip density="compact" class="text-caption" color="secondary">KDM: 1.6</v-chip>
-			<v-chip density="compact" class="text-caption crossText" color="secondary">GCE</v-chip>
+			<v-chip density="compact" class="text-caption" color="secondary">GCE Partly</v-chip>
 		</div>
 		<v-dialog v-model="showDialog" persistent>
 			<v-sheet class="pa-3">
@@ -175,12 +212,43 @@
 </template>
  
 <script setup lang="ts">
-import { Ref, ref } from "vue";
+import { Ref, ref, onMounted, onUnmounted } from "vue";
 import { characterFunc, archive } from "@/logics/character";
 import { settlementFunc } from "@/logics/settlement";
-import { survivorView } from "@/logics/global";
-import { save, saving, lastSavedString, notSavedYet, load } from "@/logics/system";
+import { 
+	survivorView, switchTabHotkey, 
+	prefixKeymap, switchTabHotkeyPrefix,
+	saveHotkeys, loadHotkeys
+} from "@/logics/global";
+import { save, saving, lastSavedString, notSavedYet, load, saveThemeColor } from "@/logics/system";
 import { FromString } from "cerceis-lib";
+
+const setKeyMode: Ref<boolean> = ref(false);
+const initSwitchTabHotkey = (e: any) => {
+	if(!e) return;
+	if(
+		e.code.includes("Meta") || e.code.includes("Control") ||
+		e.code.includes("Alt") || e.code.includes("Shift")
+	) return;
+	if(setKeyMode.value){
+		switchTabHotkey.value = e.code;
+		setKeyMode.value = false;
+		saveHotkeys();
+		return;
+	}
+	if(
+		e.code === switchTabHotkey.value && 
+		e[switchTabHotkeyPrefix.value]
+	){
+		survivorView.value = !survivorView.value;
+	}
+}
+
+onMounted(() => {
+	window.addEventListener("keyup", initSwitchTabHotkey);
+	loadHotkeys();
+})
+onUnmounted(() => window.removeEventListener("keyup", initSwitchTabHotkey));
 
 const openURL = (url: string) => {
     window.open(url, "_blank");
@@ -202,6 +270,7 @@ const importString = () => {
 	load(saveString.value)
 	showDialog.value = false;
 }
+
 
 
 

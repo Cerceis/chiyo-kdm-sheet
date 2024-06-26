@@ -12,6 +12,7 @@ declare module 'vue' {
     CharacterSheet: typeof import('./src/components/CharacterSheet.vue')['default']
     CharacterSummary: typeof import('./src/components/CharacterSummary.vue')['default']
     copy: typeof import('./src/components/KDMIcon copy.vue')['default']
+    HelpIcon: typeof import('./src/components/HelpIcon.vue')['default']
     KDMIcon: typeof import('./src/components/KDMIcon.vue')['default']
     KDMImage: typeof import('./src/components/KDMImage.vue')['default']
     Nav: typeof import('./src/components/Nav.vue')['default']
@@ -19,5 +20,6 @@ declare module 'vue' {
     SettlementPanel: typeof import('./src/components/SettlementPanel.vue')['default']
     SettlementSheet: typeof import('./src/components/SettlementSheet.vue')['default']
     Shield: typeof import('./src/components/Shield.vue')['default']
+    ToolTip: typeof import('./src/components/ToolTip.vue')['default']
   }
 }

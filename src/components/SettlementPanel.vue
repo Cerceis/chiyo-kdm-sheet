@@ -23,6 +23,32 @@
 				</div>
 				<v-divider class="my-1" />
 				<div class="d-flex justify-end gap-1">
+					<v-tooltip text="Move to start">
+						<template v-slot:activator="{ props }">
+							<v-btn
+								v-bind="props"
+								@click="$event.stopPropagation(); settlementFunc.move(settlement.id, 2)"
+								color="primary"
+								size="32"
+								style="width: 18px;"
+							>
+								<v-icon>mdi-arrow-collapse-up</v-icon>
+							</v-btn>
+						</template>
+					</v-tooltip>
+					<v-tooltip text="Move to end">
+						<template v-slot:activator="{ props }">
+							<v-btn
+								v-bind="props"
+								@click="$event.stopPropagation(); settlementFunc.move(settlement.id, 3)"
+								color="primary"
+								size="32"
+								style="width: 18px;"
+							>
+								<v-icon>mdi-arrow-collapse-down</v-icon>
+							</v-btn>
+						</template>
+					</v-tooltip>
 					<v-tooltip text="Move up">
 						<template v-slot:activator="{ props }">
 							<v-btn
@@ -69,7 +95,7 @@
 </template>
  
 <script setup lang="ts">
-import { ref, Ref, computed } from "vue";
+import { ref, Ref, computed, onMounted, onUnmounted } from "vue";
 import { settlements, settlementFunc, Settlement } from '@/logics/settlement';
 import SettlementSheet from '@/components/SettlementSheet.vue';
 
@@ -80,6 +106,10 @@ const monsterController: Ref<string> = ref("");
 const filteredSettlement = computed( () => {
 	const fk = keyword.value.toUpperCase();
 	return settlements.value.filter(ss => ss.settlementName.toUpperCase().includes(fk));
+})
+
+onMounted(() => {
+	if(settlements.value[0]) selectedSettlement.value = settlements.value[0];
 })
 
 </script>
