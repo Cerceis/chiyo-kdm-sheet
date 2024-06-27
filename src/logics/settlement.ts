@@ -231,6 +231,9 @@ const versionUpdaterFunctions: any = {
 			s.gearStorage[i].id = Generate.objectId();
 		}
 	},
+	/**
+	 * Added show field to resource and gear
+	 */
 	3:(s: Settlement) => {
 		for(let i = 0; i<s.resourceStorage.length; i++){
 			s.resourceStorage[i].show = true;

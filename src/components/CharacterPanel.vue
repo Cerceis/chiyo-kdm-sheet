@@ -145,8 +145,8 @@ onUnmounted(() => window.removeEventListener("keyup", hotkeyListeners))
 	gap: .25em;
 	align-items: flex-start;
 	align-content: start;
-	width: 280px;
-	max-width: 280px;
+	width: 250px;
+	min-width: 250px;
 	height: calc(100vh - 56px - 40px);
 	overflow-x: hidden;
 	overflow-y: scroll;

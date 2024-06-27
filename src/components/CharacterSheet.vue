@@ -31,32 +31,38 @@
 								Systemic Pressure
 							</div>
 						</div>
-						<div>
-							<div class="styledRow"><input class="largeCheckbox" v-model="c.survival.dodge" type="checkbox">
-								<div class=text-caption>Dodge</div>
-								<HelpIcon :text="gameText.dodge" />
-							</div>
-							<div class="styledRow"><input class="largeCheckbox" v-model="c.survival.encourage" type="checkbox">
-								<div class=text-caption>Encourage</div>
-								<HelpIcon :text="gameText.dodge" />
-							</div>
-							<div class="styledRow"><input class="largeCheckbox" v-model="c.survival.surge" type="checkbox">
-								<div class=text-caption>Surge</div>
-								<HelpIcon :text="gameText.surge" />
-							</div>
-							<div class="styledRow"><input class="largeCheckbox" v-model="c.survival.dash" type="checkbox">
-								<div class=text-caption>Dash</div>
-								<HelpIcon :text="gameText.dash" />
-							</div>
-							<div class="styledRow"><input class="largeCheckbox" v-model="c.survival.endure" type="checkbox">
-								<div class=text-caption>Endure</div>
-								<HelpIcon :text="gameText.endure" />
-							</div>
-							<div class="styledRow"><input class="largeCheckbox" v-model="c.survival.fistPump" type="checkbox">
-								<div class=text-caption>Fist Pump</div>
-								<HelpIcon :text="gameText.fistPump" />
-							</div>
-						</div>
+						<table style="width:170px">
+							<tr>
+								<td><input class="largeCheckbox" v-model="c.survival.dodge" type="checkbox"></td>
+								<td>Dodge</td>
+								<td><HelpIcon :text="gameText.dodge" /></td>
+							</tr>
+							<tr>
+								<td><input class="largeCheckbox" v-model="c.survival.encourage" type="checkbox"></td>
+								<td>Encourage</td>
+								<td><HelpIcon :text="gameText.encourage" /></td>
+							</tr>
+							<tr>
+								<td><input class="largeCheckbox" v-model="c.survival.surge" type="checkbox"></td>
+								<td>Surge</td>
+								<td><HelpIcon :text="gameText.surge" /></td>
+							</tr>
+							<tr>
+								<td><input class="largeCheckbox" v-model="c.survival.dash" type="checkbox"></td>
+								<td>Dash</td>
+								<td><HelpIcon :text="gameText.dash" /></td>
+							</tr>
+							<tr>
+								<td><input class="largeCheckbox" v-model="c.survival.endure" type="checkbox"></td>
+								<td>Endure</td>
+								<td><HelpIcon :text="gameText.endure" /></td>
+							</tr>
+							<tr>
+								<td><input class="largeCheckbox" v-model="c.survival.fistPump" type="checkbox"></td>
+								<td>Fist Pump</td>
+								<td><HelpIcon :text="gameText.fistPump" /></td>
+							</tr>
+						</table>
 					</div>
 				</div>
 				<div class="borderTable w-100">
@@ -64,27 +70,27 @@
 					<div class="d-flex gap-1">
 						<div class="grid justify-center">
 							<BoxInput :v1="c.movement.base" :v2="c.movement.gear" @v1="c.movement.base = $event" @v2="c.movement.gear = $event" twin />
-							<div class="text-caption">Movement</div>
+							<div class="grid text-caption justify-center">Movement <HelpIcon :text="gameText.movement" /> </div>
 						</div>
 						<div class="grid justify-center">
 							<BoxInput :v1="c.accuracy.base" :v2="c.accuracy.gear" @v1="c.accuracy.base = $event" @v2="c.accuracy.gear = $event" twin />
-							<div class="text-caption">Accuracy</div>
+							<div class="grid text-caption justify-center">Accuracy <HelpIcon :text="gameText.accuracy" /></div>
 						</div>
 						<div class="grid justify-center">
 							<BoxInput :v1="c.strength.base" :v2="c.strength.gear" @v1="c.strength.base = $event" @v2="c.strength.gear = $event" twin />
-							<div class="text-caption">Strength</div>
+							<div class="grid text-caption justify-center">Strength <HelpIcon :text="gameText.strength" /></div>
 						</div>
 						<div class="grid justify-center">
 							<BoxInput :v1="c.evasion.base" :v2="c.evasion.gear" @v1="c.evasion.base = $event" @v2="c.evasion.gear = $event" twin />
-							<div class="text-caption">Evasion</div>
+							<div class="grid text-caption justify-center">Evasion <HelpIcon :text="gameText.evasion" /></div>
 						</div>
 						<div class="grid justify-center">
 							<BoxInput :v1="c.luck.base" :v2="c.luck.gear" @v1="c.luck.base = $event" @v2="c.luck.gear = $event" twin />
-							<div class="text-caption">Luck</div>
+							<div class="grid text-caption justify-center">Luck <HelpIcon :text="gameText.luck" /></div>
 						</div>
 						<div class="grid justify-center">
 							<BoxInput :v1="c.speed.base" :v2="c.speed.gear" @v1="c.speed.base = $event" @v2="c.speed.gear = $event" twin />
-							<div class="text-caption">Speed</div>
+							<div class="grid text-caption justify-center">Speed <HelpIcon :text="gameText.speed" /></div>
 						</div>
 						<div class="grid justify-center">
 							<BoxInput :v1="c.lumi.base" :v2="c.lumi.gear" @v1="c.lumi.base = $event" @v2="c.lumi.gear = $event" twin />

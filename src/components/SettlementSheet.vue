@@ -38,7 +38,7 @@
 					</td>
 					<td class="borderLeft">LY {{timeline.year}}</td>
 					<td>
-						<input type="text" v-model="timeline.text" style="width: 280px;">
+						<input type="text" v-model="timeline.text" style="width: 350px;">
 					</td>
 				</tr>
 			</table>
@@ -86,7 +86,7 @@
 							<input type="checkbox" class="mr-1 largeCheckbox" v-model="s.milestones[i].value" />
 						</td>
 						<td>
-							<input type="text" v-model="s.milestones[i].text" style="width: 220px" />
+							<input type="text" v-model="s.milestones[i].text" style="width: 300px" />
 						</td>
 						<td>
 							<div class="styledRowDense">

@@ -36,7 +36,7 @@ html{
 }
 
 *{
-	font-family: "Oswald", sans-serif;
+	font-family: "Montserrat", sans-serif !important;
 	font-optical-sizing: auto;
 	font-weight: 400;
 	font-style: normal;

@@ -14,7 +14,7 @@
                 <slot ></slot>
             </div>
         </template>
-        <v-sheet class="border pa-3">
+        <v-sheet class="border pa-3 readingPaper">
             <div v-if="text" v-html="text" class="tipText"></div>
             <slot v-else name="text"></slot>
         </v-sheet>
@@ -35,14 +35,18 @@ defineProps({
     },
     solid: {
         type: Boolean,
-        default: false
+        default: true
     }
 })
  
 </script>
 
-<style>
+<style scoped>
 .tipText{
 	white-space: break-spaces;
+}
+.readingPaper{
+	background-color: rgb(200, 200, 200) !important;
+	color: black;
 }
 </style>

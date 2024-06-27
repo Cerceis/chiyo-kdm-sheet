@@ -24,6 +24,27 @@ Your Luck is determined by the sum of your permanent luck attribute,
 any luck modifier tokens, and any other gear or abilities affecting your luck at the time you endure.`,
 	fistPump:`Bruhhhh~ Encourages someone using your fist.`,
 	ponder:`If you are a returning survivor and reach a new Hunt XP milestone, 
-you must rank uo your philosophy. Limit, once per settlement phase.
-	`
+you must rank uo your philosophy. Limit, once per settlement phase.`,
+	movement: `The maximum amount of spaces a monster or survivor may move with in single move action. 
+A monster or survivor with less than 1 movement may still move 1 space each move action.`,
+	accuracy:`Increases and decreases in the accuracy attribute represents permanent changes to attack rolls.
+Positive attribute adds to the dice roll, while negative attribute subtracts from the dice roll.
+
+Example: If a survivor has 2 accuracy, and rolls a 5 on their attack roll, 
+they add the 2 to make the dice value a 7.`,
+	strength:`Strength is added to the result of a wound attempt. 
+If strength is a negative number, subtract it from the wound attempt result.`,
+	evasion:`When a monster or survivor with evasion is the target of an attack,
+increase the accuracy on the attack profile by the amount of evasion the target possesses.
+Evasion can be a negative number, in which case it is subtracted from the attack profile's accuracy. 
+Regardless of evasion, a Lantern 10 on the attack roll is always a Perfect Hit,
+and an attack roll result of 1 will always be unsuccessful.`,
+	luck:`Luck modifies a survivor's chance to cause a critical wound from a wound roll.
++1 luck causes a critical wound on a wound roll result of 9 or 10, +2 luck on 8, 9, or 10, and so on.
+A luck modifier can be negative, making it impossible to critically wound.`,
+	speed:`Speed is added to a survivor's weapon speed to determine the number of attack rolls.
+If speed is negative, subtract it from the number of dice rolled for an attack.
+A survivor attack with less than one speed still has one attack roll.
+Weapons with the Slow keyword cannot benefit from positive speed bonuses.`,
+	lumi:``
 }
