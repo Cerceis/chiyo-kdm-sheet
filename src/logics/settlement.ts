@@ -4,7 +4,7 @@ import { Popup } from "@/logics/popup";
 import { archive } from "@/logics/character";
 
 export const settlements: Ref<Settlement[]> = ref([]);
-const currentVersion = 3;
+const currentVersion = 4;
 
 export type SettlementTimeline = {
 	value: boolean,
@@ -41,6 +41,7 @@ export type Settlement = {
 	monsterVolumes: string[]
 	notes: string,
 	lostSettlements: number,
+	survivorIds: string[]
 }
 
 export const settlementFunc = {
@@ -138,6 +139,7 @@ export const settlementFunc = {
 			monsterVolumes: [""],
 			notes: "",
 			lostSettlements: 0,
+			survivorIds: [],
 		}
 		settlements.value.push(tmpSettlement);
 		return tmpSettlement;
@@ -241,5 +243,11 @@ const versionUpdaterFunctions: any = {
 		for(let i = 0; i<s.gearStorage.length; i++){
 			s.gearStorage[i].show = true;
 		}
+	},
+	/**
+	 * Added survivorIds
+	 */
+	4:(s: Settlement) => {
+		s.survivorIds = [];
 	},
 }

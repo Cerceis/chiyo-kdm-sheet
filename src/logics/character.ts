@@ -13,6 +13,7 @@ import { Settlement } from "@/logics/settlement";
 
 export const characters: Ref<Character[]> = ref([]);
 export const archive: Ref<(Character | Settlement)[]> = ref([]);
+export const monsterController: Ref<string> = ref("");
 const currentVersion = 2;
 
 export type KDMCheckbox = {
@@ -452,6 +453,19 @@ export const characterFunc = {
 				}
 			}
 		}
+	},
+	swap(id1: string, id2:string){
+		// Find the indices of the items with the given IDs
+		const index1 = characters.value.findIndex(item => item.id === id1);
+		const index2 = characters.value.findIndex(item => item.id === id2);
+	
+		// Check if both items are found
+		if (index1 === -1 || index2 === -1) {
+			throw new Error('One or both IDs not found in the list');
+		}
+	
+		// Swap the items
+		[characters.value[index1], characters.value[index2]] = [characters.value[index2], characters.value[index1]];
 	}
 }
 

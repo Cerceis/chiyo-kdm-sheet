@@ -370,7 +370,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="d-flex">
+				<div class="d-flex justify-center gap-1">
 					<div class="borderTable">
 						Courage
 						<div class="d-flex gap-1 my-1">

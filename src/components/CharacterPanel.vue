@@ -111,13 +111,13 @@
  
 <script setup lang="ts">
 import { ref, Ref, computed, onMounted, onUnmounted } from "vue";
-import { characters, characterFunc, Character } from '@/logics/character';
+import { characters, characterFunc, Character, monsterController } from '@/logics/character';
 import CharacterSheet from '@/components/CharacterSheet.vue';
 import CharacterSummary from "@/components/CharacterSummary.vue";
 
 const keyword: Ref<string> = ref("");
 const selectedCharacter: Ref<Character | null> = ref(null);
-const monsterController: Ref<string> = ref("");
+
 
 const filteredSurvivor = computed( () => {
 	const fk = keyword.value.toUpperCase();

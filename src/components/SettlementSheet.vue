@@ -299,21 +299,198 @@
 				</template>
 			</table>
 		</div>
+		<v-divider class="my-2" />
+		<div>
+			<div>
+				Survivors 
+				<v-btn @click="showSelectSurvivorDialog = true" color="success" size="24">
+					<v-icon>mdi-plus</v-icon>
+				</v-btn>	
+			</div>
+			<div class="survivorGrid mt-3">
+				<div 
+					v-for="survivor in settlementSurvivors"
+					class="survivorItem"
+				>
+					<span>{{ survivor.name }}</span>
+					<v-divider class="my-1"/>
+					<CharacterSummary :c="survivor" :monster-controller-id="monsterController" />
+					<v-divider class="my-1"/>
+					<div class="d-flex justify-end gap-1">
+						<ToolTip text="Set as monster controller">
+							<v-btn
+								v-bind="props"
+								@click="$event.stopPropagation(); monsterController = survivor.id"
+								color="primary"
+								size="32"
+							>
+								<v-icon>mdi-brain</v-icon>
+							</v-btn>
+						</ToolTip>
+						<ToolTip v-if="swapFromId" text="Swap to here">
+							<v-btn
+								@click="swap(survivor.id)"
+								color="warning" size="32"
+							>
+								<v-icon>mdi-target</v-icon>
+							</v-btn>
+						</ToolTip>
+						<ToolTip v-else text="Swap position">
+							<v-btn
+								@click="swapFromId = survivor.id"
+								color="primary" size="32"
+							>
+								<v-icon>mdi-swap-horizontal-bold</v-icon>
+							</v-btn>
+						</ToolTip>
+						<ToolTip text="Check out">
+							<v-btn
+								@click="selectedSurvivorToCheckOut = survivor; showSelectedSurvivorDialog = true;"
+								color="primary" size="32"
+							>
+								<v-icon>mdi-magnify</v-icon>
+							</v-btn>
+						</ToolTip>
+					</div>
+				</div>
+			</div>
+		</div>
 		<v-divider class="mt-1" />
+		<!----Notes---->
 		<div class="d-flex justify-center pb-3">
 			<div>
 				Notes
 				<textarea v-model="s.notes" cols="100" rows="5"></textarea>
 			</div>
 		</div>
+		<!----Select survivor---->
+		<v-dialog v-model="showSelectSurvivorDialog" persistent>
+			<v-sheet>
+				<div class="d-flex justify-space-between align-center ml-2 mb-2">
+					Add survivor to settlement
+					<v-btn
+					   @click="showSelectSurvivorDialog = false"
+					   color="error" size="32"
+					>
+					   <v-icon>mdi-close</v-icon>
+					</v-btn>
+				</div>
+				<div class="mx-3 styledRow">
+					<v-btn
+					   @click="s.survivorIds = characters.map(c => c.id)"
+					   color="success"
+					>
+						<v-icon>mdi-checkbox-marked</v-icon>
+					   Check All
+					</v-btn>
+					<v-btn
+					   @click="s.survivorIds = []"
+					   color="error"
+					>
+						<v-icon>mdi-checkbox-blank-off-outline</v-icon>
+					   Uncheck All
+					</v-btn>
+					<v-btn
+					   @click="characterFunc.new()"
+					   color="success"
+					>
+						<v-icon>mdi-plus</v-icon>
+					   New survivor
+					</v-btn>
+					<v-text-field
+						v-model="selectSurviorKeyword"
+						variant="outlined"
+						density="compact"
+						hide-details
+						placeholder="Search name..."
+					/>
+				</div>
+				<v-table>
+					<thead>
+						<tr>
+							<th>Add</th>
+							<th>Name</th>
+							<th>Status</th>
+							<th>XP</th>
+							<th>Sur</th>
+							<th>Mov</th>
+							<th>Acc</th>
+							<th>Str</th>
+							<th>Eva</th>
+							<th>Luc</th>
+							<th>Spd</th>
+							<th>Lum</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr v-for="survivor in filteredSurvivor">
+							<td>
+								<input v-model="props.s.survivorIds" type="checkbox" class="largeCheckbox" :value="survivor.id" />
+							</td>
+							<td>{{ survivor.name }}</td>
+							<td>
+								<div class="styledRowDense">
+									<ToolTip text="Gender" v-if="survivor.gender.m || survivor.gender.f">
+										<v-icon>{{ survivor.gender.m ? "mdi-gender-male" : survivor.gender.f ? "mdi-gender-female" : ""}}</v-icon>
+									</ToolTip>
+									<ToolTip text="Monster Controller" v-if="survivor.id === monsterController">
+										<v-icon color="warning">mdi-brain</v-icon>
+									</ToolTip>
+									<ToolTip text="Dead" v-if="survivor.dead">
+										<v-icon color="red">mdi-emoticon-dead-outline</v-icon>
+									</ToolTip>
+									<ToolTip text="Cannot use Fighting Arts" v-if="survivor.fightingArts.locked">
+										<KDMIcon icon="FightCancel" :size="24" />
+									</ToolTip>
+									<ToolTip text="Skip hunt" v-if="survivor.abilitiesNImpairments.locked">
+										<KDMIcon icon="HuntCancel" :size="24" />
+									</ToolTip>
+								</div>
+							</td>
+							<td>{{ survivor.huntExp.reduce((a,b) => a + (b.value ? 1 : 0),0) }}</td>
+							<td>{{ survivor.survival.value }}</td>
+							<td>{{ survivor.movement.base + survivor.movement.gear }}</td>
+							<td>{{ survivor.accuracy.base + survivor.accuracy.gear }}</td>
+							<td>{{ survivor.strength.base + survivor.strength.gear }}</td>
+							<td>{{ survivor.evasion.base + survivor.evasion.gear }}</td>
+							<td>{{ survivor.luck.base + survivor.luck.gear }}</td>
+							<td>{{ survivor.speed.base + survivor.speed.gear }}</td>
+							<td>{{ survivor.lumi.base + survivor.lumi.gear }}</td>
+						</tr>
+					</tbody>
+				</v-table>
+			</v-sheet>
+		</v-dialog>
+		<!----Selected survivor---->
+		<v-dialog v-model="showSelectedSurvivorDialog" persistent>
+			<v-sheet v-if="selectedSurvivorToCheckOut">
+				<div class="d-flex justify-space-between align-center ml-2 mb-2">
+					Check out survivor
+					<v-btn
+					   @click="showSelectedSurvivorDialog = false"
+					   color="error" size="32"
+					>
+					   <v-icon>mdi-close</v-icon>
+					</v-btn>
+				</div>
+				<CharacterSheet :c="selectedSurvivorToCheckOut" />
+			</v-sheet>
+		</v-dialog>
 	</div>
 </template>
  
 <script setup lang="ts">
 import { Generate } from "cerceis-lib";
 import { Settlement } from "@/logics/settlement";
-import { PropType, ref, Ref } from "vue";
+import { characters, monsterController, characterFunc, Character } from "@/logics/character";
+import CharacterSummary from "@/components/CharacterSummary.vue";
+import CharacterSheet from '@/components/CharacterSheet.vue';
+import { PropType, ref, Ref, computed } from "vue";
 
+const showSelectSurvivorDialog: Ref<boolean> = ref(false);
+const showSelectedSurvivorDialog: Ref<boolean> = ref(false);
+const selectSurviorKeyword: Ref<string> = ref("");
+const selectedSurvivorToCheckOut: Ref<Character | null> = ref(null);
 
 const props = defineProps({
 	s:{
@@ -371,6 +548,21 @@ const filterGears = () => {
 	}
 }
 
+const settlementSurvivors = computed(() => {
+	return characters.value.filter(c => props.s.survivorIds.includes(c.id))
+})
+
+const filteredSurvivor = computed(() => {
+	return characters.value.filter(c => c.name.toUpperCase().includes(selectSurviorKeyword.value.toUpperCase()))
+})
+
+// Swap
+const swapFromId: Ref<string> = ref("");
+const swap = (toId: string) => {
+	if(!swapFromId.value || !toId) return;
+	characterFunc.swap(swapFromId.value, toId);
+	swapFromId.value = "";
+}
 
 
 </script>
@@ -416,5 +608,20 @@ const filterGears = () => {
 	border-left: 1px solid rgba(255,255,255,.3);
 	border-top: 1px solid rgba(255,255,255,.3);
 	border-bottom: 1px solid rgba(255,255,255,.3);
+}
+.survivorGrid{
+	display: grid;
+	gap: .25em;
+	grid-template-columns: repeat( auto-fit, minmax(250px, 1fr) );
+}
+.survivorItem{
+	display: grid;
+	align-items: space-between;
+	min-height: 180px;
+	width: 250px;
+	min-width: 250px;
+	padding: .25em;
+	border-radius: .5em;
+	border: 1px solid rgba(255,255,255,.3);
 }
 </style>
