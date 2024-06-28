@@ -44,7 +44,11 @@ export const load = (inputString?: string) => {
 	if(!saveString) return;
 	const parsedSaveString = JSON.parse(saveString);
 	characters.value = parsedSaveString.survivors.map( (c: Character) => {characterFunc.update(c); return c}) ?? [];
-	archive.value = parsedSaveString.archive.map( (c: Character) => {characterFunc.update(c); return c}) ?? [];
+	archive.value = parsedSaveString.archive.map( (i: any) => {
+		characterFunc.update(i); 
+		settlementFunc.update(i)
+		return i
+	}) ?? [];
 	settlements.value = parsedSaveString.settlements.map( (s: Settlement) => {settlementFunc.update(s); return s}) ?? [];
 
 	refreshKey.value ++;

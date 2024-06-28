@@ -26,7 +26,7 @@ const app = createApp(App)
 registerPlugins(app)
 
 app.component("KDMIcon", KDMIcon);
-app.component("KDMImage", KDMImage);
+app.component("KDMImage", KDMImage); 
 app.component("Shield", Shield);
 app.component("BoxInput", BoxInput);
 app.component("ToolTip", ToolTip);

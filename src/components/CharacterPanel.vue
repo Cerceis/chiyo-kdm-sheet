@@ -1,13 +1,16 @@
 <template>
 	<div class="d-flex">
 		<div class="survivalDrawer">
-			<v-text-field
-				v-model="keyword"
-				density="compact"
-				variant="outlined"
-				hide-details
-				placeholder="Search..."
-			/>
+			<div class="d-flex gap-1">
+				<v-text-field
+					v-model="keyword"
+					density="compact"
+					variant="outlined"
+					hide-details
+					placeholder="Search..."
+				/>
+			
+			</div>
 			<v-list-item 
 				v-for="survivor in filteredSurvivor" 
 				class="survivalCard"
