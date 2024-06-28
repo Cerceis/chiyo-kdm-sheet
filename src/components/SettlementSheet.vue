@@ -319,12 +319,20 @@
 					<div class="d-flex justify-end gap-1">
 						<ToolTip text="Set as monster controller">
 							<v-btn
-								v-bind="props"
 								@click="$event.stopPropagation(); monsterController = survivor.id"
 								color="primary"
 								size="32"
 							>
 								<v-icon>mdi-brain</v-icon>
+							</v-btn>
+						</ToolTip>
+						<ToolTip text="Send to archive">
+							<v-btn
+								@click="$event.stopPropagation(); characterFunc.moveToArchive(survivor)"
+								color="primary"
+								size="32"
+							>
+								<v-icon>mdi-grave-stone</v-icon>
 							</v-btn>
 						</ToolTip>
 						<ToolTip v-if="swapFromId" text="Swap to here">
