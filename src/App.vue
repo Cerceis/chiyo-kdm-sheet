@@ -3,8 +3,14 @@
 		<v-main>
 			<Nav />
 			<v-divider class="my-1" />
-			<CharacterPanel v-if="survivorView" :key="`cp-${refreshKey}`" />
-			<SettlementPanel v-else :key="`sp-${refreshKey}`" />
+			<SideNav />
+			<div v-if="survivorView" :key="`cp-${refreshKey}`">
+				<CharacterSheet v-if="selectedCharacter" :c="selectedCharacter" />
+			</div>
+			
+			<div v-else :key="`sp-${refreshKey}`">		
+				<SettlementSheet v-if="selectedSettlement" :s="selectedSettlement" />
+			</div>
 		</v-main>
 		<Popup />
 	</v-app>
@@ -13,12 +19,13 @@
 <script setup lang="ts">
 import Nav from "@/components/Nav.vue";
 import Popup from "@/components/Popup.vue";
-import CharacterPanel from '@/components/CharacterPanel.vue';
-import SettlementPanel from "@/components/SettlementPanel.vue";
+import SideNav from "@/components/SideNav.vue";
 import { load } from "@/logics/system";
 import { survivorView, refreshKey } from "@/logics/global";
 import { onMounted } from "vue";
 import { useTheme } from "vuetify";
+import { selectedSettlement } from "@/logics/settlement";
+import { selectedCharacter } from "./logics/character";
 
 onMounted(() => {
 	load();
@@ -78,4 +85,44 @@ input, textarea{
   width: 100%;
   display: block;
 }
+.v-navigation-drawer__content{
+	overflow-y: hidden;
+}
+.sheetWrapper{
+	display: grid;
+	overflow-y: auto;	
+	height: calc(100vh - 56px);
+	justify-content: center;
+}
+.sheetPanelWrapper{
+	display: grid;
+	gap: .25em;
+	align-items: flex-start;
+	align-content: start;
+	width: 100%;
+	height: calc(100vh - 132px - 32px - 16px - 40px);
+	overflow-x: hidden;
+	overflow-y: scroll;
+}
+.autocomplete-suggestions-wrapper{
+	position: relative;
+}
+.autocomplete-suggestions {
+	border: 1px solid #d4d4d4;
+	border-radius: 8px;
+	border-top: none;
+	position: absolute;
+	max-height: 200px;
+	overflow-y: auto;
+	background-color: #d4d4d4;
+	color: black;
+	z-index: 99;
+}
+.autocomplete-suggestion {
+	padding: .25em;
+	cursor: pointer;
+}
+.autocomplete-suggestion.active {
+	background-color: rgba(100,100,100,.3);
+}	
 </style>

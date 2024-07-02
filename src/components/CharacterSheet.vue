@@ -1,5 +1,5 @@
 <template>
-	<div class="pa-2">
+	<div class="sheetWrapper pa-2">
 		<div class="d-flex justify-center">
 			<div class="grid align-start">
 				<div class="text-caption caption">Character sheet version: {{ c.v }}</div>
@@ -99,6 +99,15 @@
 					</div>
 				</div>
 				<div class="borderTable w-100">
+					<div class="styledRow">
+						<v-btn
+						   @click="usefulFuncs.healInjuries(c)"
+						   color="primary" size="x-small"
+						>
+							Reset all injuries (light, heavy)
+						</v-btn>
+					</div>
+					<v-divider class="my-2"/>
 					<table>
 						<tr>
 							<td>

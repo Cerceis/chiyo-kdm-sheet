@@ -1,23 +1,21 @@
 <template>
-	<img :width="size" :height="size" :src="getImgSrc()"  />
+	<img :width="size" :height="size" :src="getImgSrc(icon as string)"  />
 </template>
  
 <script setup lang="ts">
+import { getImgSrc } from "@/logics/global";
 
-const props = defineProps({
+defineProps({
 	icon:{
 		type: String,
-		require: true,
+		required: true,
 	},
 	size: {
 		type: Number,
 		default: 24
 	}
 })
- 
-const getImgSrc = () => {
-    return new URL(`../assets/images/${props.icon}.png`, import.meta.url).href;
-};
+
 </script>
  
 <style scoped>

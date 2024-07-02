@@ -4,7 +4,8 @@ import { Popup } from "@/logics/popup";
 import { archive } from "@/logics/character";
 
 export const settlements: Ref<Settlement[]> = ref([]);
-const currentVersion = 4;
+export const selectedSettlement: Ref<Settlement | null> = ref(null);
+const currentVersion = 5;
 
 export type SettlementTimeline = {
 	value: boolean,
@@ -41,48 +42,49 @@ export type Settlement = {
 	monsterVolumes: string[]
 	notes: string,
 	lostSettlements: number,
-	survivorIds: string[]
+	survivorIds: string[],
+	autoUpdatePopulation: boolean
 }
 
 export const settlementFunc = {
 	generateSettlementDefaultTimeline(){
 		return [
-			{ "year": 1, "value": false, "text": "[SE] First Day, Returning Survivors" },
-			{ "year": 2, "value": false, "text": "[SE] Endless Screams" },
-			{ "year": 3, "value": false, "text": "" },
-			{ "year": 4, "value": false, "text": "Namesis Encounter - Butcher Lvl 1" },
-			{ "year": 5, "value": false, "text": "[SE] Hands of Heat" },
-			{ "year": 6, "value": false, "text": "[SE] Armored Strangers" },
-			{ "year": 7, "value": false, "text": "[SE] Phoenix Feather" },
-			{ "year": 8, "value": false, "text": "" },
-			{ "year": 9, "value": false, "text": "Namesis Encounter - King's Man Lvl 1" },
-			{ "year": 10, "value": false, "text": "" },
-			{ "year": 11, "value": false, "text": "[SE] Regal Visit" },
-			{ "year": 12, "value": false, "text": "[SE] Principle: Conviction" },
-			{ "year": 13, "value": false, "text": "Namesis Encounter - The Hand Lvl 1" },
-			{ "year": 14, "value": false, "text": "" },
-			{ "year": 15, "value": false, "text": "" },
-			{ "year": 16, "value": false, "text": "Namesis Encounter - Butcher Lvl 2" },
-			{ "year": 17, "value": false, "text": "" },
-			{ "year": 18, "value": false, "text": "" },
-			{ "year": 19, "value": false, "text": "Namesis Encounter - King's Man Lvl 2" },
-			{ "year": 20, "value": false, "text": "[SE] Watched" },
-			{ "year": 21, "value": false, "text": "" },
-			{ "year": 22, "value": false, "text": "" },
-			{ "year": 23, "value": false, "text": "Namesis Encounter - Butcher Lvl 3" },
-			{ "year": 24, "value": false, "text": "" },
-			{ "year": 25, "value": false, "text": "Namesis Encounter - Watcher" },
-			{ "year": 26, "value": false, "text": "" },
-			{ "year": 27, "value": false, "text": "" },
-			{ "year": 28, "value": false, "text": "Namesis Encounter - King's Man Lvl 3" },
-			{ "year": 29, "value": false, "text": "" },
-			{ "year": 30, "value": false, "text": "Namesis Encounter - Gold Smoke Knight" },
-			{ "year": 31, "value": false, "text": "" },
-			{ "year": 32, "value": false, "text": "" },
-			{ "year": 33, "value": false, "text": "" },
-			{ "year": 34, "value": false, "text": "" },
-			{ "year": 35, "value": false, "text": "" },
-			{ "year": 36, "value": false, "text": "" },
+			{ "year": 1, "value": false, "text": "[SE] First Day, [B] Returning Survivors" },
+			{ "year": 2, "value": false, "text": "[SE], [B]Endless Screams" },
+			{ "year": 3, "value": false, "text": "[SE]" },
+			{ "year": 4, "value": false, "text": "[SE], [NE]  Butcher Lvl 1" },
+			{ "year": 5, "value": false, "text": "[SE], [B] Hands of Heat" },
+			{ "year": 6, "value": false, "text": "[SE], [B] Armored Strangers" },
+			{ "year": 7, "value": false, "text": "[SE], [B] Phoenix Feather" },
+			{ "year": 8, "value": false, "text": "[SE]" },
+			{ "year": 9, "value": false, "text": "[SE], [NE]  King's Man Lvl 1" },
+			{ "year": 10, "value": false, "text": "[SE]" },
+			{ "year": 11, "value": false, "text": "[SE], [B] Regal Visit" },
+			{ "year": 12, "value": false, "text": "[SE], [B] Principle: Conviction" },
+			{ "year": 13, "value": false, "text": "[SE], [NE]  The Hand Lvl 1" },
+			{ "year": 14, "value": false, "text": "[SE]" },
+			{ "year": 15, "value": false, "text": "[SE]" },
+			{ "year": 16, "value": false, "text": "[SE], [NE]  Butcher Lvl 2" },
+			{ "year": 17, "value": false, "text": "[SE]" },
+			{ "year": 18, "value": false, "text": "[SE]" },
+			{ "year": 19, "value": false, "text": "[SE], [NE]  King's Man Lvl 2" },
+			{ "year": 20, "value": false, "text": "[SE], [B] Watched" },
+			{ "year": 21, "value": false, "text": "[SE]" },
+			{ "year": 22, "value": false, "text": "[SE]" },
+			{ "year": 23, "value": false, "text": "[SE], [NE]  Butcher Lvl 3" },
+			{ "year": 24, "value": false, "text": "[SE]" },
+			{ "year": 25, "value": false, "text": "[SE], [NE]  Watcher" },
+			{ "year": 26, "value": false, "text": "[SE]" },
+			{ "year": 27, "value": false, "text": "[SE]" },
+			{ "year": 28, "value": false, "text": "[SE], [NE]  King's Man Lvl 3" },
+			{ "year": 29, "value": false, "text": "[SE]" },
+			{ "year": 30, "value": false, "text": "[SE], [NE]  Gold Smoke Knight" },
+			{ "year": 31, "value": false, "text": "[SE]" },
+			{ "year": 32, "value": false, "text": "[SE]" },
+			{ "year": 33, "value": false, "text": "[SE]" },
+			{ "year": 34, "value": false, "text": "[SE]" },
+			{ "year": 35, "value": false, "text": "[SE]" },
+			{ "year": 36, "value": false, "text": "[SE]" },
 		]
 	},
 	new(){
@@ -140,6 +142,7 @@ export const settlementFunc = {
 			notes: "",
 			lostSettlements: 0,
 			survivorIds: [],
+			autoUpdatePopulation: false
 		}
 		settlements.value.push(tmpSettlement);
 		return tmpSettlement;
@@ -249,5 +252,11 @@ const versionUpdaterFunctions: any = {
 	 */
 	4:(s: Settlement) => {
 		s.survivorIds = [];
+	},
+	/**
+	 * Added autoupdate population
+	 */
+	5:(s: Settlement) => {
+		s.autoUpdatePopulation = false;
 	},
 }

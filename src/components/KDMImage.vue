@@ -1,13 +1,14 @@
 <template>
-	<img :width="w" :height="h" :src="getImgSrc()"  />
+	<img :width="w" :height="h" :src="getImgSrc(src)"  />
 </template>
  
 <script setup lang="ts">
+import { getImgSrc } from "@/logics/global";
 
-const props = defineProps({
+defineProps({
 	src:{
 		type: String,
-		require: true,
+		required: true,
 	},
 	w:{
 		type: String,
@@ -18,10 +19,6 @@ const props = defineProps({
 		default: ""
 	}
 })
- 
-const getImgSrc = () => {
-    return new URL(`../assets/images/${props.src}.png`, import.meta.url).href;
-};
 </script>
  
 <style scoped>

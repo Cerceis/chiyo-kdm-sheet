@@ -12,6 +12,7 @@ import { Settlement } from "@/logics/settlement";
  */
 
 export const characters: Ref<Character[]> = ref([]);
+export const selectedCharacter: Ref<Character | null> = ref(null);
 export const archive: Ref<(Character | Settlement)[]> = ref([]);
 export const monsterController: Ref<string> = ref("");
 const currentVersion = 2;
@@ -273,6 +274,19 @@ export const usefulFuncs = {
 			rules: "",
 			observationConditions: "",
 		}
+	},
+	healInjuries(c: Character){
+		c.brain.injury.light = false;
+		c.head.injury.light = false;
+		c.head.injury.heavy = false;
+		c.arms.injury.light = false;
+		c.arms.injury.heavy = false;
+		c.body.injury.light = false;
+		c.body.injury.heavy = false;
+		c.waist.injury.light = false;
+		c.waist.injury.heavy = false;
+		c.legs.injury.light = false;
+		c.legs.injury.heavy = false;
 	}
 }
 

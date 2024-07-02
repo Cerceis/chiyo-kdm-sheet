@@ -1,7 +1,7 @@
 <template>
-	<div class="pa-1">
+	<div class="sheetWrapper pa-2">
 		<div class="text-caption caption">Settlement sheet version: {{ s.v }}</div>
-		<div class="styledRow">
+		<div class="styledRow justify-center">
 			<div>
 				<input v-model="s.settlementName" type="text">
 				<div class="text-caption caption">
@@ -9,26 +9,51 @@
 				</div>
 			</div>
 			<v-divider vertical />
-			<div class="grid justify-center">
-				Survival Limit
-				<BoxInput v-model="s.survivalLimit" />
-			</div>
-			<div class="grid justify-center">
-				Population
-				<BoxInput v-model="s.population" />
-			</div>
-			<div class="grid justify-center">
-				Death Count
-				<BoxInput v-model="s.deathCount" />
-			</div>
-			<div class="grid justify-center">
-				Lost Settlements
-				<BoxInput v-model="s.lostSettlements" />
+			<div class="d-flex align-end gap-1 justify-space-between">
+				<div class="grid justify-center">
+					Survival Limit
+					<BoxInput v-model="s.survivalLimit" />
+				</div>
+				<div class="grid justify-center">
+					<div class="text-caption styledRow">
+						<input v-model="s.autoUpdatePopulation" id="autoUpdatePopulation" type="checkbox"> 
+						<label for="autoUpdatePopulation">Auto update</label>
+					</div>
+					Population
+					<BoxInput v-model="s.population" :value="s.autoUpdatePopulation ? populationCount : 0" :readonly="s.autoUpdatePopulation" />
+				</div>
+				<div class="grid justify-center">
+					Death Count
+					<BoxInput v-model="s.deathCount" />
+				</div>
+				<div class="grid justify-center">
+					Lost Settlements
+					<BoxInput v-model="s.lostSettlements" />
+				</div>
 			</div>
 		</div>
 		<v-divider class="my-1"/>
 		<div class="styledRow align-start">
 			<table class="tableWithBorder">
+				<tr>
+					<th colspan="3">
+						<v-btn
+							@click="s.timeline = settlementFunc.generateSettlementDefaultTimeline()"
+							color="primary"
+							size="x-small"
+						>
+							RESET timeline
+						</v-btn>
+					</th>
+				</tr>
+				<tr>
+					<th colspan="3" class="text-caption">
+						<div class="styledRow">
+							[SE] = Settlement Event, [B] = Story Event, [NE] = Namesis Encounter
+							
+						</div>
+					</th>
+				</tr>
 				<tr>
 					<th></th><th>Year</th><th>Events</th>
 				</tr>
@@ -228,8 +253,9 @@
 			</table>
 			<v-divider vertical />
 			<table>
+				<tr><td>Resource Storage</td></tr>
 				<tr>
-					<td>Resource Storage</td>
+					<td colspan="3" class="text-caption caption">Type "#" to assign a type to a resource.</td>
 				</tr>
 				<tr>
 					<td>
@@ -246,10 +272,26 @@
 						</v-btn>	
 					</td>
 				</tr>
+				<tr>
+					<td colspan="3">
+						<div class="text-caption">
+							Results: {{ s.resourceStorage.filter(rs => rs.show).length }},
+							Count: {{ s.resourceStorage.reduce((a,b) => a + (b.show ? b.count : 0), 0) }} 
+						</div>
+					</td>
+				</tr>
 				<template v-for="(v, i) in s.resourceStorage">
 					<tr v-if="s.resourceStorage[i].show">
 						<td>
-							<input @keyup="triggerNewLine($event, () => s.resourceStorage.push({id: Generate.objectId(), text:'', count:1, show: true}) )" type="text" v-model="s.resourceStorage[i].text" />
+							<input 
+								@input="acCheckInput($event, `ac-${v.id}`, s.resourceStorage[i])"
+								@keydown="acInitSuggestion($event) ? null : triggerNewLine($event, () => s.resourceStorage.push({id: Generate.objectId(), text:'', count:1, show: true}) )"
+								type="text" 
+								v-model="s.resourceStorage[i].text" 
+							/>
+							<div class="autocomplete-suggestions-wrapper">
+								<div :id="`ac-${v.id}`" class="autocomplete-suggestions"></div>
+							</div>
 						</td>
 						<td>
 							<input type="number" v-model="s.resourceStorage[i].count" style="width:48px" />
@@ -301,10 +343,16 @@
 		</div>
 		<v-divider class="my-2" />
 		<div>
-			<div>
+			<div class="styledRow">
 				Survivors 
-				<v-btn @click="showSelectSurvivorDialog = true" color="success" size="24">
+				<v-btn @click="showSelectSurvivorDialog = true" color="success" size="20">
 					<v-icon>mdi-plus</v-icon>
+				</v-btn>
+				<v-btn
+					@click="settlementSurvivors.forEach(survivor => usefulFuncs.healInjuries(survivor))"
+					color="primary" size="x-small"
+				>
+					Reset all injuries (light, heavy)
 				</v-btn>	
 			</div>
 			<div class="survivorGrid mt-3">
@@ -489,11 +537,12 @@
  
 <script setup lang="ts">
 import { Generate } from "cerceis-lib";
-import { Settlement } from "@/logics/settlement";
-import { characters, monsterController, characterFunc, Character } from "@/logics/character";
+import { Settlement, settlementFunc } from "@/logics/settlement";
+import { characters, monsterController, characterFunc, Character, usefulFuncs } from "@/logics/character";
 import CharacterSummary from "@/components/CharacterSummary.vue";
 import CharacterSheet from '@/components/CharacterSheet.vue';
 import { PropType, ref, Ref, computed } from "vue";
+import { acCheckInput, acInitSuggestion, currentUID } from "@/logics/autocomplete";
 
 const showSelectSurvivorDialog: Ref<boolean> = ref(false);
 const showSelectedSurvivorDialog: Ref<boolean> = ref(false);
@@ -572,6 +621,7 @@ const swap = (toId: string) => {
 	swapFromId.value = "";
 }
 
+const populationCount = computed(() => props.s.survivorIds.length)
 
 </script>
  

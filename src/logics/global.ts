@@ -24,3 +24,7 @@ export const loadHotkeys = () => {
 	const hkp = localStorage.getItem("chiyoKDMHotkeyPrefix");
 	if(hkp) switchTabHotkeyPrefix.value = hkp;
 }
+
+export const getImgSrc = (name: string) => {
+    return new URL(`../assets/images/${name}.png`, import.meta.url).href;
+};

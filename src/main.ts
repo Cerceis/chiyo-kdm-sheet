@@ -15,6 +15,7 @@ import Shield from "./components/Shield.vue";
 import BoxInput from './components/BoxInput.vue';
 import ToolTip from './components/ToolTip.vue';
 import HelpIcon from './components/HelpIcon.vue';
+import AutoComplete from './components/AutoComplete.vue';
 
 // Composables
 import { createApp } from 'vue'
@@ -31,5 +32,6 @@ app.component("Shield", Shield);
 app.component("BoxInput", BoxInput);
 app.component("ToolTip", ToolTip);
 app.component("HelpIcon", HelpIcon);
+app.component("AutoComplete", AutoComplete);
 
 app.mount('#app')

@@ -6,13 +6,13 @@
 			</div>
 		</div>
 		<div class="d-flex">
-			<div class="boxWrapperMini" id="v1" contenteditable @input="sync($event.target as any)">{{ val1 }}</div>
-			<div class="boxWrapperMini" id="v2" contenteditable @input="sync($event.target as any)">{{ val2 }}</div>
+			<div class="boxWrapperMini" id="v1" :contenteditable="!readonly" @input="sync($event.target as any)">{{ val1 }}</div>
+			<div class="boxWrapperMini" id="v2" :contenteditable="!readonly" @input="sync($event.target as any)">{{ val2 }}</div>
 		</div>
 	</div>
 	<div v-else class="boxWrapper">
-		<div class="boxInner" contenteditable @input="sync($event.target as any)">
-			{{ props.modelValue }}
+		<div class="boxInner" :contenteditable="!readonly" @input="sync($event.target as any)">
+			{{ value ? value : props.modelValue }}
 		</div>
 	</div>
 </template>
@@ -28,12 +28,19 @@ const props = defineProps({
 	modelValue:{
 		type: [String, Number],
 	},
+	value:{
+		type: [String, Number],
+	},
 	v1: {
 		type: Number
 	},
 	v2: {
 		type: Number
 	},
+	readonly:{
+		type: Boolean,
+		default: false,
+	}
 })
 
 const val1 = computed(() => props.v1 ?? 0);

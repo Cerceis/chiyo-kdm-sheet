@@ -7,11 +7,12 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
+    AutoComplete: typeof import('./src/components/AutoComplete.vue')['default']
     BoxInput: typeof import('./src/components/BoxInput.vue')['default']
     CharacterPanel: typeof import('./src/components/CharacterPanel.vue')['default']
     CharacterSheet: typeof import('./src/components/CharacterSheet.vue')['default']
     CharacterSummary: typeof import('./src/components/CharacterSummary.vue')['default']
-    copy: typeof import('./src/components/KDMIcon copy.vue')['default']
+    copy: typeof import('./src/components/SettlementPanel copy.vue')['default']
     HelpIcon: typeof import('./src/components/HelpIcon.vue')['default']
     KDMIcon: typeof import('./src/components/KDMIcon.vue')['default']
     KDMImage: typeof import('./src/components/KDMImage.vue')['default']
@@ -20,6 +21,7 @@ declare module 'vue' {
     SettlementPanel: typeof import('./src/components/SettlementPanel.vue')['default']
     SettlementSheet: typeof import('./src/components/SettlementSheet.vue')['default']
     Shield: typeof import('./src/components/Shield.vue')['default']
+    SideNav: typeof import('./src/components/SideNav.vue')['default']
     ToolTip: typeof import('./src/components/ToolTip.vue')['default']
   }
 }
