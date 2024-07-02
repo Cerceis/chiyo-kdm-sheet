@@ -379,8 +379,8 @@
 						</div>
 					</div>
 				</div>
-				<div class="d-flex justify-center gap-1">
-					<div class="borderTable">
+				<div class="d-flex w-100 gap-1">
+					<div class="borderTable w-100">
 						Courage
 						<div class="d-flex gap-1 my-1">
 							<input v-for="cLevel in c.courage.level" type="checkbox" :class="cLevel.type === 2 ? 'checkT2' : '' " v-model="cLevel.value" />
@@ -424,7 +424,7 @@
 							</tr>
 						</table>
 					</div>
-					<div class="borderTable">
+					<div class="borderTable w-100">
 						Understanding
 						<div class="d-flex gap-1 my-1">
 							<input v-for="cLevel in c.understanding.level" type="checkbox" :class="cLevel.type === 2 ? 'checkT2' : '' " v-model="cLevel.value" />
@@ -595,8 +595,7 @@
 			</div>
 		</div>
 		<v-divider class="my-1" />
-		<div class="styledRow align-start justify-center">
-
+		<div class="styledRow align-start justify-space-between">
 			<table>
 				<tr>
 					<td>

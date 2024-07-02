@@ -68,7 +68,7 @@
 				</tr>
 			</table>
 			<div class="grid justify-center">
-				<div class="borderTable styledRow">
+				<div class="borderTable styledRow w-100 justify-space-between">
 					<div>
 						Lantern Research Level
 						<div class="text-caption caption">
@@ -77,26 +77,7 @@
 					</div>
 					<BoxInput />
 				</div>
-				<table>
-					<tr>
-						<td>Monster Volumes</td>
-						<td>
-							<v-btn @click="s.monsterVolumes.push('')" color="success" size="24">
-								<v-icon>mdi-plus</v-icon>
-							</v-btn>	
-						</td>
-					</tr>
-					<tr v-for="(v, i) in s.monsterVolumes">
-						<td>
-							<input type="text" v-model="s.monsterVolumes[i]" />
-						</td>
-						<td>
-							<v-btn @click="s.monsterVolumes.splice(i, 1)" color="error" size="24">
-								<v-icon>mdi-close</v-icon>
-							</v-btn>	
-						</td>
-					</tr>
-				</table>
+				<v-divider class="my-1" />
 				<table>
 					<tr>
 						<td colspan="3">Milestone Story Events</td>
@@ -125,21 +106,21 @@
 						</td>
 					</tr>
 				</table>
-				<div>
-					<div class="styledRow">
+				<div class="w-100">
+					<div class="styledRow my-2">
 						Principles
 						<v-btn @click="s.principles.push(['', {text: '', value: false}, {text: '', value: false}])" color="success" size="24">
 							<v-icon>mdi-plus</v-icon>
 						</v-btn>	
 					</div>
-					<div v-for="(v, i) in s.principles" class="borderTable">
+					<div v-for="(v, i) in s.principles" class="borderTable w-100">
 						<div class="d-flex justify-space-between mb-1">
 							<input type="text" v-model="s.principles[i][0]" />
 							<v-btn @click="s.principles.splice(i, 1)" color="error" size="24">
 								<v-icon>mdi-close</v-icon>
 							</v-btn>	
 						</div>
-						<div class="styledRow">
+						<div class="styledRow justify-center">
 							<input class="largeCheckbox" type="checkbox" v-model="s.principles[i][1].value">
 							<input type="text" v-model="s.principles[i][1].text" />
 							or
@@ -149,53 +130,46 @@
 					</div>
 				</div>
 				
-				<div class="styledRow align-start">
-					<table>
+				<div class="styledRow align-start w-100">
+					<table class="w-100">
 						<tr>
-							<td colspan="2">Quarries</td>
+							<td>Innovations</td>
 							<td>
-								<v-btn @click="s.quarries.push({text: '', value: false})" color="success" size="24">
+								<v-btn @click="s.innovations.push('')" color="success" size="24">
 									<v-icon>mdi-plus</v-icon>
 								</v-btn>	
 							</td>
 						</tr>
-						<tr v-for="(v, i) in s.quarries">
+						<tr v-for="(v, i) in s.innovations">
 							<td>
-								<input class="largeCheckbox" type="checkbox" v-model="s.quarries[i].value" />
+								<input style="width:250px" type="text" v-model="s.innovations[i]" />
 							</td>
 							<td>
-								<input type="text" v-model="s.quarries[i].text" />
-							</td>
-							<td>
-								<v-btn @click="s.quarries.splice(i, 1)" color="error" size="24">
+								<v-btn @click="s.innovations.splice(i, 1)" color="error" size="24">
 									<v-icon>mdi-close</v-icon>
 								</v-btn>	
 							</td>
 						</tr>
 					</table>
 					<v-divider vertical />
-					<table>
+					<table class="w-100">
 						<tr>
-							<td colspan="2">Nemesis</td>
-							<td align="center">1</td><td align="center">2</td><td align="center">3</td>
+							<td colspan="2">Settlement Locations</td>
 							<td>
-								<v-btn @click="s.namesis.push({text: '', value: false, level: [false, false, false]})" color="success" size="24">
+								<v-btn @click="s.settlementLocations.push({text: '', value: false})" color="success" size="24">
 									<v-icon>mdi-plus</v-icon>
 								</v-btn>	
 							</td>
 						</tr>
-						<tr v-for="(v, i) in s.namesis">
+						<tr v-for="(v, i) in s.settlementLocations">
 							<td>
-								<input class="largeCheckbox" type="checkbox" v-model="s.namesis[i].value" />
+								<input class="largeCheckbox" type="checkbox" v-model="s.settlementLocations[i].value" />
 							</td>
 							<td>
-								<input type="text" v-model="s.namesis[i].text" />
+								<input style="width:220px" type="text" v-model="s.settlementLocations[i].text" />
 							</td>
-							<td><input class="largeCheckbox" type="checkbox" v-model="s.namesis[i].level[0]"></td>
-							<td><input class="largeCheckbox" type="checkbox" v-model="s.namesis[i].level[1]"></td>
-							<td><input class="largeCheckbox" type="checkbox" v-model="s.namesis[i].level[2]"></td>
 							<td>
-								<v-btn @click="s.namesis.splice(i, 1)" color="error" size="24">
+								<v-btn @click="s.settlementLocations.splice(i, 1)" color="error" size="24">
 									<v-icon>mdi-close</v-icon>
 								</v-btn>	
 							</td>
@@ -207,103 +181,135 @@
 		</div>
 		<v-divider class="my-1"/>
 		<div class="styledRow align-start">
-			<table>
-				<tr>
-					<td>Innovations</td>
-					<td>
-						<v-btn @click="s.innovations.push('')" color="success" size="24">
-							<v-icon>mdi-plus</v-icon>
-						</v-btn>	
-					</td>
-				</tr>
-				<tr v-for="(v, i) in s.innovations">
-					<td>
-						<input type="text" v-model="s.innovations[i]" />
-					</td>
-					<td>
-						<v-btn @click="s.innovations.splice(i, 1)" color="error" size="24">
-							<v-icon>mdi-close</v-icon>
-						</v-btn>	
-					</td>
-				</tr>
-			</table>
-			<v-divider vertical />
-			<table>
-				<tr>
-					<td colspan="2">Settlement Locations</td>
-					<td>
-						<v-btn @click="s.settlementLocations.push({text: '', value: false})" color="success" size="24">
-							<v-icon>mdi-plus</v-icon>
-						</v-btn>	
-					</td>
-				</tr>
-				<tr v-for="(v, i) in s.settlementLocations">
-					<td>
-						<input class="largeCheckbox" type="checkbox" v-model="s.settlementLocations[i].value" />
-					</td>
-					<td>
-						<input type="text" v-model="s.settlementLocations[i].text" />
-					</td>
-					<td>
-						<v-btn @click="s.settlementLocations.splice(i, 1)" color="error" size="24">
-							<v-icon>mdi-close</v-icon>
-						</v-btn>	
-					</td>
-				</tr>
-			</table>
-			<v-divider vertical />
-			<table>
-				<tr><td>Resource Storage</td></tr>
-				<tr>
-					<td colspan="3" class="text-caption caption">Type "#" to assign a type to a resource.</td>
-				</tr>
-				<tr>
-					<td>
-						<input @keyup="filterResources" v-model="resourceKeyword" type="text" placeholder="Search keyword">
-					</td>
-					<td align="right">
-						<v-btn size="24" color="primary" @click="s.resourceStorage.sort((a,b) => a.text.localeCompare(b.text))">
-							<v-icon>mdi-sort-alphabetical-ascending</v-icon>
-						</v-btn>
-					</td>
-					<td>
-						<v-btn @click="s.resourceStorage.push({id: Generate.objectId(), text:'', count:1, show: true})" color="success" size="24">
-							<v-icon>mdi-plus</v-icon>
-						</v-btn>	
-					</td>
-				</tr>
-				<tr>
-					<td colspan="3">
-						<div class="text-caption">
-							Results: {{ s.resourceStorage.filter(rs => rs.show).length }},
-							Count: {{ s.resourceStorage.reduce((a,b) => a + (b.show ? b.count : 0), 0) }} 
-						</div>
-					</td>
-				</tr>
-				<template v-for="(v, i) in s.resourceStorage">
-					<tr v-if="s.resourceStorage[i].show">
+			<div>
+				<table class="w-100">
+					<tr>
+						<td colspan="2">Quarries</td>
 						<td>
-							<input 
-								@input="acCheckInput($event, `ac-${v.id}`, s.resourceStorage[i])"
-								@keydown="acInitSuggestion($event) ? null : triggerNewLine($event, () => s.resourceStorage.push({id: Generate.objectId(), text:'', count:1, show: true}) )"
-								type="text" 
-								v-model="s.resourceStorage[i].text" 
-							/>
-							<div class="autocomplete-suggestions-wrapper">
-								<div :id="`ac-${v.id}`" class="autocomplete-suggestions"></div>
-							</div>
+							<v-btn @click="s.quarries.push({text: '', value: false})" color="success" size="24">
+								<v-icon>mdi-plus</v-icon>
+							</v-btn>	
+						</td>
+					</tr>
+					<tr v-for="(v, i) in s.quarries">
+						<td>
+							<input class="largeCheckbox" type="checkbox" v-model="s.quarries[i].value" />
 						</td>
 						<td>
-							<input type="number" v-model="s.resourceStorage[i].count" style="width:48px" />
+							<input style="width:260px" type="text" v-model="s.quarries[i].text" />
 						</td>
 						<td>
-							<v-btn @click="s.resourceStorage.splice(i, 1)" color="error" size="24">
+							<v-btn @click="s.quarries.splice(i, 1)" color="error" size="24">
 								<v-icon>mdi-close</v-icon>
 							</v-btn>	
 						</td>
 					</tr>
-				</template>
-			</table>
+				</table>
+				<table>
+					<tr>
+						<td colspan="2">Nemesis</td>
+						<td align="center">1</td><td align="center">2</td><td align="center">3</td>
+						<td>
+							<v-btn @click="s.namesis.push({text: '', value: false, level: [false, false, false]})" color="success" size="24">
+								<v-icon>mdi-plus</v-icon>
+							</v-btn>	
+						</td>
+					</tr>
+					<tr v-for="(v, i) in s.namesis">
+						<td>
+							<input class="largeCheckbox" type="checkbox" v-model="s.namesis[i].value" />
+						</td>
+						<td>
+							<input style="width:192px" type="text" v-model="s.namesis[i].text" />
+						</td>
+						<td><input class="largeCheckbox" type="checkbox" v-model="s.namesis[i].level[0]"></td>
+						<td><input class="largeCheckbox" type="checkbox" v-model="s.namesis[i].level[1]"></td>
+						<td><input class="largeCheckbox" type="checkbox" v-model="s.namesis[i].level[2]"></td>
+						<td>
+							<v-btn @click="s.namesis.splice(i, 1)" color="error" size="24">
+								<v-icon>mdi-close</v-icon>
+							</v-btn>	
+						</td>
+					</tr>
+				</table>
+				<table>
+					<tr>
+						<td>Monster Volumes</td>
+						<td>
+							<v-btn @click="s.monsterVolumes.push('')" color="success" size="24">
+								<v-icon>mdi-plus</v-icon>
+							</v-btn>	
+						</td>
+					</tr>
+					<tr v-for="(v, i) in s.monsterVolumes">
+						<td>
+							<input style="width:297px" type="text" v-model="s.monsterVolumes[i]" />
+						</td>
+						<td>
+							<v-btn @click="s.monsterVolumes.splice(i, 1)" color="error" size="24">
+								<v-icon>mdi-close</v-icon>
+							</v-btn>	
+						</td>
+					</tr>
+				</table>
+			</div>
+			
+			<v-divider vertical />
+			<div :style="{display:'grid', height: `${20 + 64 + 18 + 24 + (24 * s.resourceStorage.length)}px`}">
+				<table class="w-100" style="height: fit-content;">
+					<tr><td>Resource Storage</td></tr>
+					<tr>
+						<td colspan="3" class="text-caption caption">Type "#" to assign a type to a resource.</td>
+					</tr>
+					<tr>
+						<td>
+							<input @keyup="filterResources" v-model="resourceKeyword" type="text" placeholder="Search keyword">
+						</td>
+						<td align="right">
+							<v-btn size="24" color="primary" @click="s.resourceStorage.sort((a,b) => a.text.localeCompare(b.text))">
+								<v-icon>mdi-sort-alphabetical-ascending</v-icon>
+							</v-btn>
+						</td>
+						<td>
+							<v-btn @click="s.resourceStorage.push({id: Generate.objectId(), text:'', count:1, show: true})" color="success" size="24">
+								<v-icon>mdi-plus</v-icon>
+							</v-btn>	
+						</td>
+					</tr>
+					<tr>
+						<td colspan="3">
+							<div class="text-caption">
+								Results: {{ s.resourceStorage.filter(rs => rs.show).length }},
+								Count: {{ s.resourceStorage.reduce((a,b) => a + (b.show ? b.count : 0), 0) }} 
+							</div>
+						</td>
+					</tr>
+					<template v-for="(v, i) in s.resourceStorage">
+						<tr v-if="s.resourceStorage[i].show">
+							<td>
+								<input 
+								style="width: 315px"
+									@input="acCheckInput($event, `ac-${v.id}`, s.resourceStorage[i])"
+									@keydown="acInitSuggestion($event) ? null : triggerNewLine($event, () => s.resourceStorage.push({id: Generate.objectId(), text:'', count:1, show: true}) )"
+									type="text" 
+									v-model="s.resourceStorage[i].text" 
+								/>
+								<div class="autocomplete-suggestions-wrapper">
+									<div :id="`ac-${v.id}`" class="autocomplete-suggestions"></div>
+								</div>
+							</td>
+							<td>
+								<input type="number" v-model="s.resourceStorage[i].count" style="width:48px" />
+							</td>
+							<td>
+								<v-btn @click="s.resourceStorage.splice(i, 1)" color="error" size="24">
+									<v-icon>mdi-close</v-icon>
+								</v-btn>	
+							</td>
+						</tr>
+					</template>
+				</table>
+			</div>
 			<v-divider vertical />
 			<table>
 				<tr>
@@ -542,7 +548,7 @@ import { characters, monsterController, characterFunc, Character, usefulFuncs } 
 import CharacterSummary from "@/components/CharacterSummary.vue";
 import CharacterSheet from '@/components/CharacterSheet.vue';
 import { PropType, ref, Ref, computed } from "vue";
-import { acCheckInput, acInitSuggestion, currentUID } from "@/logics/autocomplete";
+import { acCheckInput, acInitSuggestion } from "@/logics/autocomplete";
 
 const showSelectSurvivorDialog: Ref<boolean> = ref(false);
 const showSelectedSurvivorDialog: Ref<boolean> = ref(false);
