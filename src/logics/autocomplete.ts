@@ -10,7 +10,7 @@ export const acCheckInput = (e: any, uid: string, item: any) => {
 	currentUID.value = uid
 	if (input.includes('#')) {
 		let query = input.split('#').pop();
-		showSuggestions(query, item);
+		showSuggestions(e, query, item);
 	} else {
 		clearSuggestions();
 	}
@@ -43,19 +43,33 @@ export const acInitSuggestion = (e: any) => {
 	}
 }
 
-export const showSuggestions = (query: string, item: any) => {
+export const showSuggestions = (e: KeyboardEvent, query: string, item: any) => {
 	if(!currentUID.value) return;
 	const suggestionBox = document.getElementById(currentUID.value);
 	if(!suggestionBox) return;
 	suggestionBox.innerHTML = '';
 	currentIndex = -1;
 	const filteredSuggestions = suggestions.filter(suggestion => suggestion.includes(query));
-	filteredSuggestions.forEach(suggestion => {
+ 	filteredSuggestions.forEach(suggestion => {
 		const suggestionItem = document.createElement('div');
 		suggestionItem.classList.add('autocomplete-suggestion');
 		suggestionItem.textContent = suggestion;
 		suggestionItem.addEventListener('click', () => {
 			item.text = item.text.split('#').slice(0, -1).join('#') + '#' + suggestion.replace('#', '') + " ";
+			/**
+			 * First tag,
+			 * when a first tag is detected, and a | infront to split it visually.
+			 */
+			const iT = item.text.split(" ");
+			for(let i = 0; i < iT.length; i++){
+				if(iT[i].charAt(0) === "|")
+					break;
+				if(iT[i].charAt(0) === "#"){
+					iT[i] = `|${iT[i]}`;
+					break;
+				}
+			}
+			item.text = iT.join(" ")
 			clearSuggestions();
 		});
 		suggestionBox.appendChild(suggestionItem);
@@ -80,4 +94,19 @@ export const clearSuggestions = () => {
 	suggestionBox.innerHTML = '';
 	currentIndex = -1;
 	currentUID.value = "";
+}
+
+export const selectText = (obj: HTMLDivElement, start: number, stop: number) => {
+	const mainDiv = obj;
+	const startNode = mainDiv.childNodes[0];
+	const endNode = mainDiv.childNodes[0];
+	const sel = window.getSelection();
+	if(!sel) return;
+	if(!startNode || !endNode) return;
+	//startNode.nodeValue = startNode.nodeValue.trim();
+	const range = document.createRange();
+	range.setStart(startNode, start + 1);
+	range.setEnd(endNode, stop + 1);
+	sel.removeAllRanges();
+	sel.addRange(range);
 }

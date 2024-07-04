@@ -14,6 +14,7 @@ declare module 'vue' {
     CharacterSummary: typeof import('./src/components/CharacterSummary.vue')['default']
     copy: typeof import('./src/components/SettlementPanel copy.vue')['default']
     HelpIcon: typeof import('./src/components/HelpIcon.vue')['default']
+    KDMCombobox: typeof import('./src/components/KDMCombobox.vue')['default']
     KDMIcon: typeof import('./src/components/KDMIcon.vue')['default']
     KDMImage: typeof import('./src/components/KDMImage.vue')['default']
     Nav: typeof import('./src/components/Nav.vue')['default']

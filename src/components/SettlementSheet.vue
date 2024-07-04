@@ -255,7 +255,7 @@
 			</div>
 			
 			<v-divider vertical />
-			<div :style="{display:'grid', height: `${20 + 64 + 18 + 24 + (24 * s.resourceStorage.length)}px`}">
+			<div :style="{display:'grid', height: `${20 + 64 + 18 + 48 + (24 * s.resourceStorage.length)}px`}">
 				<table class="w-100" style="height: fit-content;">
 					<tr><td>Resource Storage</td></tr>
 					<tr>
@@ -287,13 +287,15 @@
 					<template v-for="(v, i) in s.resourceStorage">
 						<tr v-if="s.resourceStorage[i].show">
 							<td>
-								<input 
-								style="width: 315px"
+								<input
+								
+									v-model="s.resourceStorage[i].text"
+									style="width: 315px"
 									@input="acCheckInput($event, `ac-${v.id}`, s.resourceStorage[i])"
 									@keydown="acInitSuggestion($event) ? null : triggerNewLine($event, () => s.resourceStorage.push({id: Generate.objectId(), text:'', count:1, show: true}) )"
-									type="text" 
-									v-model="s.resourceStorage[i].text" 
-								/>
+									type="text"
+								>
+								</input>
 								<div class="autocomplete-suggestions-wrapper">
 									<div :id="`ac-${v.id}`" class="autocomplete-suggestions"></div>
 								</div>
@@ -548,7 +550,8 @@ import { characters, monsterController, characterFunc, Character, usefulFuncs } 
 import CharacterSummary from "@/components/CharacterSummary.vue";
 import CharacterSheet from '@/components/CharacterSheet.vue';
 import { PropType, ref, Ref, computed } from "vue";
-import { acCheckInput, acInitSuggestion } from "@/logics/autocomplete";
+import { acCheckInput, acInitSuggestion, selectText } from "@/logics/autocomplete";
+import KDMCombobox from "@/components/KDMCombobox.vue";
 
 const showSelectSurvivorDialog: Ref<boolean> = ref(false);
 const showSelectedSurvivorDialog: Ref<boolean> = ref(false);
@@ -565,17 +568,24 @@ const props = defineProps({
 const triggerNewLine = (e: KeyboardEvent, func: Function) => {
 	if(!e || !e.code) return;
 	if(e.code === "Enter"){
+		e.preventDefault();
 		func();
 		setTimeout(() => {
 			const t = e.target as HTMLElement || null
 			if(!t) return;
-			t.closest("tr")?.nextElementSibling?.querySelector("input")?.focus();
+			(t.closest("tr")?.nextElementSibling?.querySelector(".inputDiv") as any)?.focus();
 		}, 50);
 	}
 }
 
 const resourceKeyword: Ref<string> = ref("");
 const gearKeyword: Ref<string> = ref("");
+
+const syncInputData = (e: KeyboardEvent, rsItem: any) => {
+	if(!e) return;
+	if(!e.target) return;
+	rsItem.text = (e.target as HTMLDivElement).textContent;
+}
 
 const filterResources = () => {
 	const fixedWord = resourceKeyword.value.toUpperCase();
@@ -687,5 +697,9 @@ const populationCount = computed(() => props.s.survivorIds.length)
 	padding: .25em;
 	border-radius: .5em;
 	border: 1px solid rgba(255,255,255,.3);
+}
+.inputDiv{
+	border: 1px solid rgba(255,255,255,.3);
+	border-radius: 4px;
 }
 </style>
