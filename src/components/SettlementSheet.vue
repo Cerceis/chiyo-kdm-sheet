@@ -572,7 +572,7 @@ const triggerNewLine = (e: KeyboardEvent, func: Function) => {
 		setTimeout(() => {
 			const t = e.target as HTMLElement || null
 			if(!t) return;
-			(t.closest("tr")?.nextElementSibling?.querySelector(".input") as any)?.focus();
+			(t.closest("tr")?.nextElementSibling?.querySelector("input") as any)?.focus();
 		}, 50);
 	}
 }
