@@ -95,18 +95,3 @@ export const clearSuggestions = () => {
 	currentIndex = -1;
 	currentUID.value = "";
 }
-
-export const selectText = (obj: HTMLDivElement, start: number, stop: number) => {
-	const mainDiv = obj;
-	const startNode = mainDiv.childNodes[0];
-	const endNode = mainDiv.childNodes[0];
-	const sel = window.getSelection();
-	if(!sel) return;
-	if(!startNode || !endNode) return;
-	//startNode.nodeValue = startNode.nodeValue.trim();
-	const range = document.createRange();
-	range.setStart(startNode, start + 1);
-	range.setEnd(endNode, stop + 1);
-	sel.removeAllRanges();
-	sel.addRange(range);
-}

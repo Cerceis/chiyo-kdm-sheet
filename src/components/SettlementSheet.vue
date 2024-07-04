@@ -550,8 +550,7 @@ import { characters, monsterController, characterFunc, Character, usefulFuncs } 
 import CharacterSummary from "@/components/CharacterSummary.vue";
 import CharacterSheet from '@/components/CharacterSheet.vue';
 import { PropType, ref, Ref, computed } from "vue";
-import { acCheckInput, acInitSuggestion, selectText } from "@/logics/autocomplete";
-import KDMCombobox from "@/components/KDMCombobox.vue";
+import { acCheckInput, acInitSuggestion } from "@/logics/autocomplete";
 
 const showSelectSurvivorDialog: Ref<boolean> = ref(false);
 const showSelectedSurvivorDialog: Ref<boolean> = ref(false);
@@ -573,19 +572,13 @@ const triggerNewLine = (e: KeyboardEvent, func: Function) => {
 		setTimeout(() => {
 			const t = e.target as HTMLElement || null
 			if(!t) return;
-			(t.closest("tr")?.nextElementSibling?.querySelector(".inputDiv") as any)?.focus();
+			(t.closest("tr")?.nextElementSibling?.querySelector(".input") as any)?.focus();
 		}, 50);
 	}
 }
 
 const resourceKeyword: Ref<string> = ref("");
 const gearKeyword: Ref<string> = ref("");
-
-const syncInputData = (e: KeyboardEvent, rsItem: any) => {
-	if(!e) return;
-	if(!e.target) return;
-	rsItem.text = (e.target as HTMLDivElement).textContent;
-}
 
 const filterResources = () => {
 	const fixedWord = resourceKeyword.value.toUpperCase();
