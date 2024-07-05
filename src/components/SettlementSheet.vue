@@ -313,7 +313,8 @@
 				</table>
 			</div>
 			<v-divider vertical />
-			<table>
+			<!-----Gear------>
+			<table class="w-100">
 				<tr>
 					<td>Gear Storage</td>
 				</tr>
@@ -350,6 +351,7 @@
 			</table>
 		</div>
 		<v-divider class="my-2" />
+		<!----Survivors---->
 		<div>
 			<div class="styledRow">
 				Survivors 

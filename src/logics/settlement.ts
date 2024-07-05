@@ -184,6 +184,9 @@ export const settlementFunc = {
 		if(!s) return;
 		if(!s.type) return;
 		if(s.type !== "settlement") return;
+		// Extra logic here.
+		// Reset the settlement's resrouce's show back to true
+		s.resourceStorage.forEach(rs => rs.show = true);
 		if(!s.v) s.v = 0;
 		while(s.v < currentVersion)	{
 			const upgradeTo: number = ++s.v;
